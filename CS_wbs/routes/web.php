@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('backend.home');
 });
+Route::prefix('admin')->group(function(){
+    Route::get('list',[\App\Http\Controllers\AuthorController::class,'index'])->name('admin.list');
+    Route::get('create',[\App\Http\Controllers\AuthorController::class,'create'])->name('admin.create');
+    Route::post('store',[\App\Http\Controllers\AuthorController::class,'store'])->name('admin.store');
+});
