@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.home');
+    return view('backend.category.list');
 });
-Route::prefix('admin')->group(function(){
-    Route::get('list',[\App\Http\Controllers\AuthorController::class,'index'])->name('admin.list');
-    Route::get('create',[\App\Http\Controllers\AuthorController::class,'create'])->name('admin.create');
-    Route::post('store',[\App\Http\Controllers\AuthorController::class,'store'])->name('admin.store');
+
+Route::prefix('/admin')->group(function (){
+    Route::prefix("author")->group(function () {
+        Route::get('list',[AuthorController::class,'index'])->name('author.list');
+        Route::get('create',[AuthorController::class,'create'])->name('author.create');
+        Route::post('store',[AuthorController::class,'store'])->name('author.store');
+    });
+    Route::prefix('category')->group(function (){
+        Route::get('/', [CategoryController::class, 'index'])->name('category.index');
+        Route::get('/add', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('/add', [CategoryController::class, 'store'])->name('category.store');
+        Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('category.update');
+        Route::get('/delete/{id}',[CategoryController::class, 'destroy'])->name('category.destroy');
+    });
 });
