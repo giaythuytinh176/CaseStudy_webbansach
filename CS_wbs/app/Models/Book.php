@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
-    protected $fillable=[
+
+    protected $fillable = [
         'name',
         'price',
         'stock',
@@ -21,11 +22,18 @@ class Book extends Model
         'release'
     ];
 
-    public function authors(){
-        return $this->belongsToMany(Author::class,'author_books','book_id','author_id');
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class, 'author_books', 'book_id', 'author_id');
     }
 
-    public function orders(){
-        return $this->belongsToMany(Order::class,'order_details','book_id','order_id');
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'order_details', 'book_id', 'order_id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class, 'id');
     }
 }
