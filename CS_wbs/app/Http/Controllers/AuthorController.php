@@ -14,7 +14,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.author.list');
     }
 
     /**
@@ -24,6 +24,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
+    return view('backend.author.create');
 
     }
 
@@ -35,7 +36,10 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $author=new Author();
+        $author->fill($request->all());
+        $author->save();
+        return redirect()->route('admin.list');
     }
 
     /**
@@ -46,7 +50,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+
     }
 
     /**
