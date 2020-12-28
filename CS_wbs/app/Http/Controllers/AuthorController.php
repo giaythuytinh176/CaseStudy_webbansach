@@ -39,7 +39,7 @@ class AuthorController extends Controller
         $author=new Author();
         $author->fill($request->all());
         $author->save();
-        return redirect()->route('admin.list');
+        return redirect()->route('author.list');
     }
 
     /**

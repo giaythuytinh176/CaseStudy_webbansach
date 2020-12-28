@@ -1,5 +1,5 @@
 
-<form method="post" action="{{route('admin.store')}}">
+<form method="post" action="{{route('author.store')}}">
     <table class="table">
         @csrf
         <tr>
