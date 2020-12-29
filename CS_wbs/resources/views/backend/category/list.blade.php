@@ -19,21 +19,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>System Architect</td>
-                                    <td>
-                                        <a href="" class="btn btn-success">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
-                                    </td>
-                                </tr>
+                                @if(count($categorys) == 0)
+                                    <tr>
+                                        <td colspan="4" class="text-center">Không có dữ liệu</td>
+                                    </tr>
+                                @else
+                                    @foreach($categorys as $key => $category)
+                                        <tr>
+                                            <th scope="row">{{ ++$key }}</th>
+                                            <td>{{ $category->name }}</td>
+                                            <td>
+                                                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">sửa</a>
+                                                <a href="{{ route('category.destroy', $category->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                                 </tbody>
                                 <tfoot>
 
                                 </tfoot>
                             </table>
                             <a class="btn btn-primary" href="{{ route('category.create') }}">Thêm mới</a>
-
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequest_Category;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -34,12 +35,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest_Category $request)
     {
         $category = new Category();
         $category->fill($request->all());
         $category->save();
-        return redirect()->route('backend.category.index');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -62,7 +63,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('edit', compact('category'));
+        return view('backend.category.edit', compact('category'));
     }
 
     /**
@@ -72,7 +73,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormRequest_Category $request, $id)
     {
         $category = Category::findOrFail($id);
         $category->fill($request->all());
