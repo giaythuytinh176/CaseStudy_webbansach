@@ -15,17 +15,17 @@ class CategoryController extends Controller
     public function index()
     {
         $categorys = Category::all();
-        return view('category.list', compact('categorys'));
+        return view('backend.category.list', compact('categorys'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for cbackend.reating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('category.create');
+        return view('backend.category.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->fill($request->all());
         $category->save();
-        return redirect()->route('category.index');
+        return redirect()->route('backend.category.index');
     }
 
     /**
