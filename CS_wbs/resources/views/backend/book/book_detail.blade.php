@@ -35,7 +35,7 @@
                                 </tr>
                                 <tr>
                                     <th>Category</th>
-                                    <td>{{$book_detail->category_id}} </td>
+                                    <td>{{$category_detail->name}} </td>
                                 </tr>
                                 <tr>
                                     <th>Description</th>

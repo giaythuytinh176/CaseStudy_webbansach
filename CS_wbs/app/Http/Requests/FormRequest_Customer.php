@@ -24,8 +24,8 @@ class FormRequest_Customer extends FormRequest
     public function rules()
     {
         return [
-            'first_name'=>'required|alpha|max:25',
-            'last_name'=>'required|alpha|max:25',
+            'first_name'=>'required|string|max:25',
+            'last_name'=>'required|string|max:25',
             'address'=>'required|string|max:225',
             'phone'=>'required|regex:/(0)[0-9]{9}/',
         ];

@@ -16,7 +16,8 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view("backend.book.list", compact(['books']));
+        $categories = Category::all();
+        return view("backend.book.list", compact(['books', 'categories']));
     }
 
     /**
@@ -69,7 +70,8 @@ class BookController extends Controller
     public function show(Book $book, Request $request)
     {
         $book_detail = Book::findOrFail($request->id);
-        return view("backend.book.book_detail", compact(['book_detail']));
+        $category_detail = Category::findOrFail($book_detail->category_id);
+        return view("backend.book.book_detail", compact(['book_detail', 'category_detail']));
     }
 
     /**
