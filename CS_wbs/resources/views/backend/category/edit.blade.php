@@ -8,7 +8,7 @@
                         Sửa Thể Loại
                     </div>
                     <div class="tables">
-                        <form method="post" action="{{ route('category.store') }}">
+                        <form method="post" action="{{ route('category.update', $category->id) }}">
                             @csrf
                             <div class="form-group">
                                 <label>Name</label>
