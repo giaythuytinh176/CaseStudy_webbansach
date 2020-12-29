@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequest_Customer;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::all();
+        return view('backend.customer.list', compact('customers'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.customer.create');
     }
 
     /**
@@ -33,9 +35,12 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest_Customer $request)
     {
-        //
+        $customer = new Customer();
+        $customer->fill($request->all());
+        $customer->save();
+        return redirect()->route('customer.index');
     }
 
     /**
@@ -55,9 +60,10 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        return view('backend.customer.edit', compact('customer'));
     }
 
     /**
@@ -67,9 +73,13 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(FormRequest_Customer $request, $id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $customer->fill($request->all());
+        $customer->save();
+        return redirect()->route('customer.index');
+
     }
 
     /**
@@ -78,8 +88,10 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+        return redirect()->route('customer.index');
     }
 }
