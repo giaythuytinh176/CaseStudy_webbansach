@@ -21,7 +21,7 @@
             <td>FirstName
                 <div class="form-control"><input type="text" name="first_name"></div>
                 @if ($errors->any())
-                    <div class="alert alert-danger">{{ $errors->first('first_name') }}</div>
+                    <div class=" alert-danger">{{ $errors->first('first_name') }}</div>
                @endif
             </td>
         </tr>
@@ -29,7 +29,7 @@
             <td>LastName
                 <div class="form-control"><input type="text" name="last_name"></div>
                 @if ($errors->any())
-                    <div class="alert alert-danger">{{ $errors->first('last_name') }}</div>
+                    <div class=" alert-danger">{{ $errors->first('last_name') }}</div>
                 @endif
             </td>
         </tr>
