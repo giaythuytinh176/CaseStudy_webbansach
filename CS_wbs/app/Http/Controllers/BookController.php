@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -14,7 +15,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+        $categories = Category::all();
+        return view("backend.book.list", compact(['books', 'categories']));
     }
 
     /**
@@ -24,35 +27,57 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('backend.book.create', compact(['categories']));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $imageName = time() . '.' . $request->img->getClientOriginalExtension();
+            $request->img->move(public_path('images'), $imageName);
+        }
+        catch (\Exception $e) {
+            if (file_exists(public_path('images').$imageName)) unlink(public_path('images').$imageName);
+            return back()->with('error', 'Your must upload image file.');
+        }
+        $book = new Book();
+        try {
+            $book->fill($request->all());
+            $book->img = $imageName;
+            $book->save();
+        }
+        catch (\Exception $e) {
+            if (file_exists(public_path('images').$imageName)) unlink(public_path('images').$imageName);
+            //return back()->with('error', $e->getMessage());
+            return back()->with('error', 'There are problem when you add this book.');
+        }
+        return redirect()->route('book.list');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(Book $book, Request $request)
     {
-        //
+        $book_detail = Book::findOrFail($request->id);
+        $category_detail = Category::findOrFail($book_detail->category_id);
+        return view("backend.book.book_detail", compact(['book_detail', 'category_detail']));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
     public function edit(Book $book)
@@ -63,8 +88,8 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Book $book)
@@ -75,7 +100,7 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
+     * @param \App\Models\Book $book
      * @return \Illuminate\Http\Response
      */
     public function destroy(Book $book)

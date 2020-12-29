@@ -24,8 +24,8 @@ class FormRequest_Author extends FormRequest
     public function rules()
     {
         return [
-            'first_name'=>'required|alpha|max:20',
-            'last_name'=>'required|alpha|max:20'
+            'first_name'=>'required|string|max:20',
+            'last_name'=>'required|string|max:20'
         ];
     }
 
