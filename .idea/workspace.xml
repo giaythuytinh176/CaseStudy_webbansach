@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d23b0f8f-7f33-45d8-80d7-04bbed0746c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS_wbs/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +166,7 @@
       <updated>1609125086575</updated>
       <workItem from="1609125088127" duration="16025000" />
       <workItem from="1609149409068" duration="1716000" />
-      <workItem from="1609204342233" duration="7702000" />
+      <workItem from="1609204342233" duration="9175000" />
     </task>
     <servers />
   </component>
