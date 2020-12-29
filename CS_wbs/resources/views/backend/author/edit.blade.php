@@ -20,17 +20,15 @@
         <tr>
             <td>FirstName<div class="form-control"><input type="text" name="first_name" value="{{$author->first_name}}">
                 </div>
-                <div class="form-control"><input type="text" name="first_name"></div>
                 @if ($errors->any())
-                    <div class="alert alert-danger">{{ $errors->first('first_name') }}</div>
+                    <div class=" alert-danger">{{ $errors->first('first_name') }}</div>
                 @endif
             </td>
         </tr>
         <tr>
             <td>LastName<div class="form-control"><input type="text" name="last_name" value="{{$author->last_name}}"></div>
-                <div class="form-control"><input type="text" name="first_name"></div>
                 @if ($errors->any())
-                    <div class="alert alert-danger">{{ $errors->first('first_name') }}</div>
+                    <div class=" alert-danger">{{ $errors->first('last_name') }}</div>
                 @endif
             </td>
         </tr>

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/admin')->group(function (){
     Route::prefix("author")->group(function () {
-        Route::get('list',[AuthorController::class,'index'])->name('author.list');
+        Route::get('/',[AuthorController::class,'index'])->name('author.list');
         Route::get('create',[AuthorController::class,'create'])->name('author.create');
         Route::post('store',[AuthorController::class,'store'])->name('author.store');
         Route::get('edit/{id}',[AuthorController::class,'edit'])->name('author.edit');

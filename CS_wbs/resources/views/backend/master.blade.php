@@ -56,7 +56,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Danh sách tác giả</a>
+                            <a class="nav-link" href="{{route('author.list')}}">Danh sách tác giả</a>
                             <a class="nav-link" href="{{route('author.create')}}">Thêm tác giả</a>
                         </nav>
                     </div>
@@ -67,8 +67,8 @@
                     </a>
                     <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Danh sách chủ đề</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Thêm chủ đề</a>
+                            <a class="nav-link" href="{{route('category.index')}}">Danh sách chủ đề</a>
+                            <a class="nav-link" href="{{route('category.create')}}">Thêm chủ đề</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
