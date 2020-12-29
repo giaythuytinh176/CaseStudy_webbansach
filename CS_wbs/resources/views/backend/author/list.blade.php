@@ -20,21 +20,24 @@
                                     <th>#</th>
                                     <th>FirstName</th>
                                     <th>LastName</th>
+                                    <th>Action</th>
                                     <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh </td>
-                                    <td>
-                                        <a href="" class="btn btn-primary">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                @foreach($author as $key => $val)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{$val->first_name}}</td>
+                                        <td>{{$val->last_name}} </td>
+                                        <td>
+                                            <a href="{{route('author.edit',['id'=> $val->id])}}" class="btn btn-primary">Edit</a>
+                                            <a href="{{route('author.delete',['id'=>$val->id])}}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
 
-                                    </td>
+                                        </td>
 
-                                </tr>
+                                    </tr>
+                                @endforeach
                                 </tbody>
 
                             </table>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequest_Author;
 use App\Models\Author;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view('backend.author.list');
+        $author = Author::all();
+        return view('backend.author.list', compact('author'));
     }
 
     /**
@@ -34,7 +36,7 @@ class AuthorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest_Author $request)
     {
         $author=new Author();
         $author->fill($request->all());
@@ -59,9 +61,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function edit(Author $author)
+    public function edit(Author  $author,Request $request)
     {
-        //
+        $author=Author::findOrFail($request->id);
+        return view('backend.author.edit', compact('author'));
     }
 
     /**
@@ -71,9 +74,12 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(FormRequest_Author $request, Author $author)
     {
-        //
+        $author=Author::findOrFail($request->id);
+        $author->fill($request->all());
+        $author->save();
+        return redirect()->route('author.list');
     }
 
     /**
@@ -82,8 +88,10 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Author $author)
+    public function destroy(Author $author,Request $request)
     {
-        //
+        $author=Author::findOrFail($request->id);
+        $author->delete();
+        return redirect()->route('author.list');
     }
 }

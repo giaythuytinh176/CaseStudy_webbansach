@@ -24,6 +24,9 @@ Route::prefix('/admin')->group(function (){
         Route::get('list',[AuthorController::class,'index'])->name('author.list');
         Route::get('create',[AuthorController::class,'create'])->name('author.create');
         Route::post('store',[AuthorController::class,'store'])->name('author.store');
+        Route::get('edit/{id}',[AuthorController::class,'edit'])->name('author.edit');
+        Route::post('edit/{id}',[AuthorController::class,'update'])->name('author.update');
+        Route::get('delete/{id}',[AuthorController::class,'destroy'])->name('author.delete');
     });
     Route::prefix('category')->group(function (){
         Route::get('/', [CategoryController::class, 'index'])->name('category.index');
