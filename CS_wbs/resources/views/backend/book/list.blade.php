@@ -45,7 +45,13 @@
                                                 foreach($book as $b){
                                                     //dd($b->categories());
                                                 }
-                                                echo \App\Models\Book::find($book_id)->categories()->get()->first()->name;
+                                                $category_id = $val->category_id;
+                                                $category_name = \App\Models\Book::find($book_id)->categories()->get()->first()->name;
+                                                //$category = \App\Models\Category::find($category_id)->books()->get()->toArray();
+                                                //dd($category);
+                                                echo "
+                                                    <a href='" . route('category.detail', $category_id) ."'>".$category_name."</a>
+                                                ";
                                                 //dd(\App\Models\Book::find($book_id)->categories()->get()->first()->name);
                                             @endphp
                                         </td>

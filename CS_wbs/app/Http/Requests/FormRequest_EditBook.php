@@ -28,7 +28,7 @@ class FormRequest_EditBook extends FormRequest
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
             'category_id' => 'required|exists:categories,id',
-            //'img' => 'mimes:jpeg,jpg,png,gif|required|max:2048',
+            'img' => 'mimes:jpeg,jpg,png,gif|max:2048',
             'description' => 'required|string',
             'isbn' => 'required',
             'height' => 'required',
