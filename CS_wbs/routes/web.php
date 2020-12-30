@@ -41,10 +41,10 @@ Route::prefix('/admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\BookController::class, 'index'])->name('book.list');
         Route::get('/{id}/detailbook', [\App\Http\Controllers\BookController::class, 'show'])->name('book.detail');
         Route::get('add', [\App\Http\Controllers\BookController::class, 'create'])->name('book.add');
+        Route::get('edit/{id}', [\App\Http\Controllers\BookController::class, 'edit'])->name('book.edit');
+        Route::post('edit/{id}', [\App\Http\Controllers\BookController::class, 'update'])->name('book.update');
         Route::post('store', [\App\Http\Controllers\BookController::class, 'store'])->name('book.store');
-
-
-
+        Route::get('/delete/{id}', [\App\Http\Controllers\BookController::class, 'destroy'])->name('book.delete');
     });
     Route::prefix('customer')->group(function (){
         Route::get('/', [CustomerController::class, 'index'])->name('customer.index');

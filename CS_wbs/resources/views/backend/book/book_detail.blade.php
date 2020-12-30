@@ -1,8 +1,7 @@
 @extends('backend.master')
 @section('content')
-    <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid">
+            <div class="container">
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Dashboard</li>
@@ -20,14 +19,14 @@
                                     <td>{{$book_detail->name}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Img</th>
+                                    <th>Image</th>
                                     <td>
                                        <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$book_detail->img) }} " alt="">
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Price</th>
-                                    <td>{{$book_detail->price}} </td>
+                                    <td>{{ number_format($book_detail->price) }} đ</td>
                                 </tr>
                                 <tr>
                                     <th>Stock</th>
@@ -39,7 +38,7 @@
                                 </tr>
                                 <tr>
                                     <th>Description</th>
-                                    <td>{{$book_detail->description}} </td>
+                                    <td>{!! $book_detail->description !!}</td>
                                 </tr>
                                 <tr>
                                     <th>Isbn</th>
@@ -63,19 +62,4 @@
                 </div>
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-
 @endsection
