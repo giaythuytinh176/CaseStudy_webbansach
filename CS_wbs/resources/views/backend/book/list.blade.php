@@ -1,6 +1,5 @@
 @extends('backend.master')
 @section('content')
-    <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid">
                 <h1 class="mt-4">Dashboard</h1>
@@ -20,8 +19,8 @@
                                     <th style="width: 5%">#</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th style="width: 30%">Img</th>
-                                    <th style="width: 15%"></th>
+                                    <th style="width: 30%">Image</th>
+                                    <th style="width: 10%"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -33,19 +32,29 @@
                                         </td>
                                         <td>
                                             @php
-                                            $id_book = $val->id;
-                                            $book_category = \App\Models\Category::whereHas("books", function(\Illuminate\Database\Eloquent\Builder $q) use ($id_book) {
-                                                $q->where("id", "=", $id_book);
-                                            })->get();
-                                            echo $book_category[0]->name;
+                                                $book_id = $val->id;
+                                                $category = \App\Models\Category::whereHas("books", function (\Illuminate\Database\Eloquent\Builder $q) use ($book_id) {
+                                                    $q->where("id", "=", $book_id);
+                                                })->get();
+                                                //echo $category[0]->name;
+                                                //$category = \App\Models\Category::with('books')->where('id', '=', $val->category_id)->get();
+                                                //foreach($category as $c){
+                                                    //echo $c->name;
+                                                //}
+                                                $book = \App\Models\Book::with('categories')->get();
+                                                foreach($book as $b){
+                                                    //dd($b->categories());
+                                                }
+                                                echo \App\Models\Book::find($book_id)->categories()->get()->first()->name;
+                                                //dd(\App\Models\Book::find($book_id)->categories()->get()->first()->name);
                                             @endphp
                                         </td>
                                         <td>
                                             <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$val->img) }} " alt="">
                                         </td>
                                         <td>
-                                            <a href="{{route('author.edit',['id'=> $val->id])}}" class="btn btn-primary">Edit</a>
-                                            <a href="{{route('author.delete',['id'=>$val->id])}}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
+                                            <a href="{{route('book.edit',['id'=> $val->id])}}" class="btn btn-primary">Edit</a>
+                                            <a href="{{route('book.delete',['id'=>$val->id])}}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -57,19 +66,4 @@
                 </div>
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-
 @endsection
