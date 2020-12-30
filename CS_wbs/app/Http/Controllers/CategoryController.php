@@ -49,9 +49,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Category $category, $id)
     {
-        //
+        $category_data = \App\Models\Category::find($id)->books()->get();
+        return view("backend.category.detail", compact(['category_data', 'category']));
     }
 
     /**
