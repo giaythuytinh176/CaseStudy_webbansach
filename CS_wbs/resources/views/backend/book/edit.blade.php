@@ -20,7 +20,7 @@
                                 <form action="{{ route('book.update', $book_detail->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <tr>
-                                        <th>Name</th>
+                                        <th>{!! __('language.BookName') !!}</th>
                                         <td>
                                             <input type="text" name="name" class="form-control" value="{{$book_detail->name}}">
                                             @if($errors->any())
@@ -29,7 +29,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Image</th>
+                                        <th>{!! __('language.ImageBook') !!}</th>
                                         <td>
                                             <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$book_detail->img) }} " alt="">
                                             <input type="file" name="img" class="form-control">
@@ -40,7 +40,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Price</th>
+                                        <th>{!! __('language.PriceBook') !!}</th>
                                         <td>
                                             <input type="number" name="price" class="form-control" value="{{ $book_detail->price }}">
                                             @if($errors->any())
@@ -49,7 +49,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Stock</th>
+                                        <th>{!! __('language.StockBook') !!}</th>
                                         <td>
                                             <input type="number" name="stock" class="form-control" value="{{$book_detail->stock}}">
                                             @if($errors->any())
@@ -58,7 +58,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Category</th>
+                                        <th>{!! __('language.category') !!}</th>
                                         <td>
                                             <select name="category_id" required>
                                                 @forelse($categories as $k => $v)
@@ -73,7 +73,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Description</th>
+                                        <th>{!! __('language.description') !!}</th>
                                         <td>
                                         <textarea id="mytextarea" name="description" cols="100%" rows="25">
                                              {!! $book_detail->description !!}
@@ -93,7 +93,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Height</th>
+                                        <th>{!! __('language.height') !!}</th>
                                         <td>
                                             <input type="text" name="height" class="form-control" value="{{$book_detail->height}}">
                                             @if($errors->any())
@@ -102,7 +102,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Page number</th>
+                                        <th>{!! __('language.pagenumber') !!}</th>
                                         <td>
                                             <input type="text" name="page_number" class="form-control" value="{{$book_detail->page_number}}">
                                             @if($errors->any())
@@ -111,7 +111,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>Release</th>
+                                        <th>{!! __('language.release') !!}</th>
                                         <td>
                                             <input type="date" name="release" class="form-control" value="{{$book_detail->release}}">
                                             @if($errors->any())

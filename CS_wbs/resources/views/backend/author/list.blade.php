@@ -17,8 +17,8 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>FirstName</th>
-                                    <th>LastName</th>
+                                    <th>{!! __('language.FirstName') !!}</th>
+                                    <th>{!! __('language.LastName') !!}</th>
                                     <th>Action</th>
                                     <th></th>
                                 </tr>
