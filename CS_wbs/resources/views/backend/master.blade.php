@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -25,6 +25,10 @@
     <!-- Navbar Search-->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
+            <select name="change-language" onchange="location = this.value;" title="Change Language">
+                <option value="{!! route('user.change-language', ['vi']) !!}"{{ (app()->getLocale() == 'vi') ? ' selected' : '' }} title="Change to Vietnamese">Vietnamese</option>
+                <option value="{!! route('user.change-language', ['en']) !!}"{{ (app()->getLocale() == 'en') ? ' selected' : '' }} title="Change to English">English</option>
+            </select> &nbsp;
             <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
             <div class="input-group-append">
                 <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
@@ -57,35 +61,35 @@
                     <div class="sb-sidenav-menu-heading">Interface</div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Tác giả
+                        {!! __('language.author') !!}
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{route('author.list')}}">Danh sách tác giả</a>
-                            <a class="nav-link" href="{{route('author.create')}}">Thêm tác giả</a>
+                            <a class="nav-link" href="{{route('author.list')}}">{!! __('language.list_author') !!}</a>
+                            <a class="nav-link" href="{{route('author.create')}}">{!! __('language.add_author') !!}</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts1">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Chủ đề
+                        {!! __('language.category') !!}
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{route('category.index')}}">Danh sách chủ đề</a>
-                            <a class="nav-link" href="{{route('category.create')}}">Thêm chủ đề</a>
+                            <a class="nav-link" href="{{route('category.index')}}">{!! __('language.list_category') !!}</a>
+                            <a class="nav-link" href="{{route('category.create')}}">{!! __('language.add_category') !!}</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts2">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Sách
+                        {!! __('language.book') !!}
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{route('book.list')}}">Danh sách Sách</a>
-                            <a class="nav-link" href="{{ route('book.add') }}">Thêm sách</a>
+                            <a class="nav-link" href="{{route('book.list')}}">{!! __('language.list_books') !!}</a>
+                            <a class="nav-link" href="{{ route('book.add') }}">{!! __('language.add_book') !!}</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

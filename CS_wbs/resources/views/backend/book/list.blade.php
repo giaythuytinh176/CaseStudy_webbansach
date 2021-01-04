@@ -17,9 +17,9 @@
                                 <thead>
                                 <tr>
                                     <th style="width: 5%">#</th>
-                                    <th>Name</th>
-                                    <th>Category</th>
-                                    <th style="width: 30%">Image</th>
+                                    <th>{!! __('language.BookName') !!}</th>
+                                    <th>{!! __('language.category') !!}</th>
+                                    <th style="width: 30%">{!! __('language.ImageBook') !!}</th>
                                     <th style="width: 10%"></th>
                                 </tr>
                                 </thead>

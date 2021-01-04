@@ -17,7 +17,7 @@
     <table class="table">
         @csrf
         <tr>
-            <td>FirstName
+            <td>{!! __('language.FirstName') !!}
                 <div class="form-control"><input type="text" name="first_name"></div>
                 @if ($errors->any())
                     <div class=" alert-danger">{{ $errors->first('first_name') }}</div>
@@ -25,7 +25,7 @@
             </td>
         </tr>
         <tr>
-            <td>LastName
+            <td>{!! __('language.LastName') !!}
                 <div class="form-control"><input type="text" name="last_name"></div>
                 @if ($errors->any())
                     <div class=" alert-danger">{{ $errors->first('last_name') }}</div>
