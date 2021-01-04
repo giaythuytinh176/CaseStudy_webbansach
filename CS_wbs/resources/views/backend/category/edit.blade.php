@@ -1,7 +1,8 @@
 @extends('backend.master')
 @section('content')
         <main>
-            <div class="container-fluid">
+            <div class="container">
+                <h1 class="mt-4">Dashboard</h1>
                 <div class="card mb-4">
                     <div class="card-header">
                         Sửa Thể Loại
