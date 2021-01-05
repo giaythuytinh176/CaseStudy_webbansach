@@ -2,11 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\Controller;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AuthAdmin
+class permissionAccessUserAdmin extends Controller
 {
     /**
      * Handle an incoming request.
@@ -17,10 +17,10 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()) {
+        if ($this->userCan('page-user-admin')) {
             return $next($request);
-        } else {
-            return redirect()->route('showlogin.admin');
         }
+        //return abort(403, 'Unauthorized action.');
+        return response()->view('backend.user.403', ['permission' => 'Bạn không có quyền truy cập!!!']);
     }
 }

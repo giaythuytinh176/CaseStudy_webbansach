@@ -26,5 +26,8 @@ return [
     'CategoryName' => 'Category Name',
     'Add' => 'Add',
     'Back' => 'Back',
+    'list_users' => 'List Users',
+    'add_user' => 'Add User',
+    'user' => 'User Admin',
     /* -- Form --- */
 ];

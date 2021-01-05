@@ -26,5 +26,8 @@ return [
     'CategoryName' => 'Tên chủ đề',
     'Add' => 'Thêm mới',
     'Back' => 'Hủy',
+    'list_users' => 'Danh sách tài khoản Admin',
+    'add_user' => 'Thêm tài khoản Admin',
+    'user' => 'Tài khoản Admin',
     /* -- Form --- */
 ];
