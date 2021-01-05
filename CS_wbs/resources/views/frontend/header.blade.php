@@ -612,7 +612,7 @@
                                     </ul>
                                 </li>
                                 <li class="last leaf dhtml-menu" id="dhtml_menu-1265">
-                                    <a href="https://nxbkimdong.com.vn/tac-gia" title="">Tác giả</a></li>
+                                    <a href="{{ route('show.author') }}" title="">Tác giả</a></li>
                             </ul>
                         </section>
                     </div>

@@ -23,7 +23,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
-
+    Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
+    Route::prefix('/')->group(function (){
+        Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
+    });
     Route::prefix('/admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\LoginAdmin::class, 'showLogin'])->name('showlogin.admin');
         Route::post('login', [\App\Http\Controllers\LoginAdmin::class, 'checkLogin'])->name('checklogin.admin');
