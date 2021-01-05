@@ -24,7 +24,7 @@ class permissionAccessUserAdmin extends Controller
         if ($user->can('user.view', Auth::user())) {
             return $next($request);
         }
-         //return abort(403, 'Unauthorized action.');
+        //return abort(403, 'Unauthorized action.');
         return response()->view('backend.user.403', ['permission' => 'Bạn không có quyền truy cập!!!']);
     }
 }
