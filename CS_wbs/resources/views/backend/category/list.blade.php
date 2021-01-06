@@ -27,7 +27,9 @@
                                     @foreach($categorys as $key => $category)
                                         <tr>
                                             <th scope="row">{{ ++$key }}</th>
-                                            <td>{{ $category->name }}</td>
+                                            <td>
+                                                <a href="{{ route('category.detail', $category->id) }}">{{ $category->name }}</a>
+                                            </td>
                                             <td>
                                                 <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">sửa</a>
                                                 <a href="{{ route('category.destroy', $category->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>

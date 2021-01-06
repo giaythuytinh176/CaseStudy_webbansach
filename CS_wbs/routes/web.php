@@ -38,6 +38,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::get('edit/{id}', [AuthorController::class, 'edit'])->name('author.edit');
                 Route::post('edit/{id}', [AuthorController::class, 'update'])->name('author.update');
                 Route::get('delete/{id}', [AuthorController::class, 'destroy'])->name('author.delete');
+                Route::get('/{id}/detail', [AuthorController::class, 'show'])->name('author.detail');
             });
             Route::prefix('category')->group(function () {
                 Route::get('/', [CategoryController::class, 'index'])->name('category.index');

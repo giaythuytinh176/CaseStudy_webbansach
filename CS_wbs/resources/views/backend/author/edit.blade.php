@@ -13,26 +13,44 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-<form method="post" action="{{route('author.edit', ['id'=>$author->id])}}">
+<form method="post" action="{{route('author.edit', ['id'=>$author->id])}}" enctype="multipart/form-data">
     <table class="table">
         @csrf
         <tr>
-            <td>{!! __('language.FirstName') !!}<div class="form-control"><input type="text" name="first_name" value="{{$author->first_name}}">
+            <td>{!! __('language.nameAuthor') !!}
+                <div class="form-control"><input type="text" name="name" value="{{$author->name}}">
+
+                @if ($errors->any())
+                    <div class=" alert-danger">{{ $errors->first('name') }}</div>
+                @endif
                 </div>
-                @if ($errors->any())
-                    <div class=" alert-danger">{{ $errors->first('first_name') }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th style="width: 15%">{!! __('language.ImageAuthor') !!}</th>
+            <td>
+                <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$author->image) }} " alt="">
+                <input type="hidden" name="imgName" class="form-control" value="{{ $author->image }}">
+                <input type="file" name="image" class="form-control">
+                @if($errors->any())
+                    <p class="alert-danger my-sm-4">{{ $errors->first('image') }}</p>
+                @endif
+            </td>
+        </tr>
+
+        <tr>
+            <th>{!! __('language.description') !!}</th>
+            <td>
+                                        <textarea id="mytextarea" name="description" cols="100%" rows="25">
+                                             {!! $author->description !!}
+                                        </textarea>
+                @if($errors->any())
+                    <p class="alert-danger my-sm-4">{{ $errors->first('description') }}</p>
                 @endif
             </td>
         </tr>
         <tr>
-            <td>{!! __('language.LastName') !!}<div class="form-control"><input type="text" name="last_name" value="{{$author->last_name}}"></div>
-                @if ($errors->any())
-                    <div class=" alert-danger">{{ $errors->first('last_name') }}</div>
-                @endif
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><div class="form-submit"><input type="submit" value="submit"></div></td>
+            <td colspan="3"><div class="form-submit"><input type="submit" value="submit"></div></td>
         </tr>
     </table>
 </form>

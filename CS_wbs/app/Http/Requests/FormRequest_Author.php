@@ -24,17 +24,14 @@ class FormRequest_Author extends FormRequest
     public function rules()
     {
         return [
-            'first_name'=>'required|string|max:20',
-            'last_name'=>'required|string|max:20'
+            'name'=>'required|string',
         ];
     }
 
     public function messages()
     {
         return [
-            'first_name.required'=>'firstname is required',
-            'last_name.required'=>'last_name is required'
-
+            'name.required'=>'Name is required',
         ];
     }
 }

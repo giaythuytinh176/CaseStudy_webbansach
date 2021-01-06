@@ -17,6 +17,7 @@ return [
     'LastName' => 'Tên',
     'BookName' => 'Tên sách',
     'ImageBook' => 'Ảnh sách',
+    'ImageAuthor' => 'Ảnh tác giả',
     'PriceBook' => 'Giá',
     'StockBook' => 'Số lượng còn lại',
     'description' => 'Mô tả',
@@ -29,5 +30,6 @@ return [
     'list_users' => 'Danh sách tài khoản Admin',
     'add_user' => 'Thêm tài khoản Admin',
     'user' => 'Tài khoản Admin',
+    'nameAuthor' => 'Tên tác giả',
     /* -- Form --- */
 ];
