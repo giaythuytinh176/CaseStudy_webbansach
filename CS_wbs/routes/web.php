@@ -44,6 +44,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('edit/{id}', [AuthorController::class, 'update'])->name('author.update');
                 Route::get('delete/{id}', [AuthorController::class, 'destroy'])->name('author.delete');
                 Route::get('/{id}/detail', [AuthorController::class, 'show'])->name('author.detail');
+                Route::post('/search', [AuthorController::class, 'search'])->name('author.search');
             });
             Route::prefix('category')->group(function () {
                 Route::get('/', [CategoryController::class, 'index'])->name('category.index');
@@ -53,6 +54,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('category.update');
                 Route::get('/delete/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
                 Route::get('/{id}/detail', [CategoryController::class, 'show'])->name('category.detail');
+                Route::post('/search', [CategoryController::class, 'search'])->name('category.search');
             });
             Route::prefix('book')->group(function () {
                 Route::get('/', [BookController::class, 'index'])->name('book.list');

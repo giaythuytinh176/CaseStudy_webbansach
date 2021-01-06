@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d23b0f8f-7f33-45d8-80d7-04bbed0746c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CaseStudy_webbansach.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/AuthorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS_wbs/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,6 +186,7 @@
       <workItem from="1609830395004" duration="117000" />
       <workItem from="1609839555901" duration="4276000" />
       <workItem from="1609853324477" duration="11574000" />
+      <workItem from="1609975216667" duration="977000" />
     </task>
     <servers />
   </component>
