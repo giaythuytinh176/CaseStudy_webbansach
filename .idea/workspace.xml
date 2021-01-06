@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d23b0f8f-7f33-45d8-80d7-04bbed0746c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/UserAdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Middleware/permissionAccessUserAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/app/Policies/UserPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/database/migrations/2021_01_05_232524_drop_column_name_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/database/migrations/2021_01_05_234313_add_column_admin_authorization_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/database/migrations/2021_01_06_140850_add_name_column_author_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/database/migrations/2021_01_06_172325_add_description_column_authors_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/public/images/1609938660.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/public/images/1609939046.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/detail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/user/403.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/user/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/user/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/user/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/AuthorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/LoginAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Controllers/LoginAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Middleware/AuthAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Middleware/AuthAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_EditBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Http/Requests/FormRequest_EditBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Models/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/public/images/1609315014.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/public/images/1609939069.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/public/images/1609315026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/public/images/1609940176.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/public/images/1609722950.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/lang/en/language.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/lang/en/language.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/lang/vi/language.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/lang/vi/language.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/author/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/book/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS_wbs/resources/views/backend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/resources/views/backend/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CS_wbs/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/CS_wbs/routes/web.php" afterDir="false" />
     </list>
