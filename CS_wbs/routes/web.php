@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+//Route::get('/', function () {
+//    return view('frontend.index');
+//})->name('index');
 
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
