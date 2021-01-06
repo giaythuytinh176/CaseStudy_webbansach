@@ -25,7 +25,6 @@ Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
     Route::prefix('/')->group(function (){
         Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
-        Route::get('/showCategory', [\App\Http\Controllers\frontend\CategoryFrontendController::class, 'showCategory'])->name('show.category');
         Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
     });
     Route::prefix('/admin')->group(function () {
