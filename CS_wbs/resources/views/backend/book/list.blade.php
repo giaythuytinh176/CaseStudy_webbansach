@@ -18,6 +18,7 @@
                                 <tr>
                                     <th style="width: 5%">#</th>
                                     <th>{!! __('language.BookName') !!}</th>
+                                    <th>{!! __('language.nameAuthor') !!}</th>
                                     <th>{!! __('language.category') !!}</th>
                                     <th style="width: 30%">{!! __('language.ImageBook') !!}</th>
                                     <th style="width: 10%"></th>
@@ -29,6 +30,19 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>
                                             <a href="{{ route('book.detail', $val->id) }}">{{$val->name}}</a>
+                                        </td>
+                                        <td>
+                                            @php
+                                                $arr_book = [];
+                                                $book_id = $val->id;
+                                                $book = \App\Models\Author::whereHas('books', function (\Illuminate\Database\Eloquent\Builder $q) use ($book_id) {
+                                                    $q->where("books.id", "=", $book_id);
+                                                })->get();
+                                                foreach ($book as $item) {
+                                                    $arr_book[] = '<a href="'.route('author.detail', $item->id).'">'.$item->name.'</a>';
+                                                }
+                                                echo implode("<br/><br/>", $arr_book);
+                                            @endphp
                                         </td>
                                         <td>
                                             @php

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FormRequest_Book;
 use App\Http\Requests\FormRequest_EditBook;
+use App\Models\Author;
+use App\Models\AuthorBook;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -19,7 +21,8 @@ class BookController extends Controller
     {
         $books = Book::all();
         $categories = Category::all();
-        return view("backend.book.list", compact(['books', 'categories']));
+        $authors = Author::all();
+        return view("backend.book.list", compact(['books', 'categories', 'authors']));
     }
 
     /**
@@ -30,7 +33,8 @@ class BookController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('backend.book.create', compact(['categories']));
+        $authors = Author::all();
+        return view('backend.book.create', compact(['categories', 'authors']));
     }
 
     /**
@@ -55,6 +59,15 @@ class BookController extends Controller
                 $book->fill($request->all());
                 $book->img = $imageName;
                 $book->save();
+
+                $last_inserrt_book_id = $book->id;
+                foreach ($request->author as $auths) {
+                    $AuthorBook = new AuthorBook();
+                    $AuthorBook->author_id = $auths;
+                    $AuthorBook->book_id = $last_inserrt_book_id;
+                    $AuthorBook->save();
+                }
+
             } catch (\Exception $e) {
                 if (file_exists(public_path('images') . "/" . $imageName)) {
                     unlink(public_path('images') . "/" . $imageName);
@@ -95,10 +108,11 @@ class BookController extends Controller
      */
     public function edit(Book $book, $id)
     {
+        $authors = Author::all();
         $book_detail = Book::findOrFail($id);
         $category_detail = Category::findOrFail($book_detail->category_id);
         $categories = Category::all();
-        return view("backend.book.edit", compact(['book_detail', 'category_detail', 'categories']));
+        return view("backend.book.edit", compact(['book_detail', 'category_detail', 'categories', 'authors']));
     }
 
     /**
@@ -114,8 +128,7 @@ class BookController extends Controller
         $book->fill($request->all());
         if (!$request->hasFile('img') && file_exists(public_path('images') . "/" . $request->imgName)) {
             $book->img = $request->imgName;
-        }
-        else {
+        } else {
             if (file_exists(public_path('images') . "/" . $request->imgName)) {
                 unlink(public_path('images') . "/" . $request->imgName);
             }
@@ -124,6 +137,14 @@ class BookController extends Controller
             $book->img = $imageName;
         }
         $book->save();
+
+//        dd($book->authors()->get()->toArray());
+//
+//        foreach ($request->author as $auth) {
+//            $book = Book::find($request->id);
+//            $book->authors()->attach($auth);
+//        }
+
         return redirect()->route('book.list');
     }
 

@@ -17,6 +17,7 @@ return [
     'LastName' => 'Last Name',
     'BookName' => 'Book Name',
     'ImageBook' => 'Image Book',
+    'ImageAuthor' => 'Image Author',
     'PriceBook' => 'Price',
     'StockBook' => 'Stock',
     'description' => 'Description',
@@ -26,5 +27,9 @@ return [
     'CategoryName' => 'Category Name',
     'Add' => 'Add',
     'Back' => 'Back',
+    'list_users' => 'List Users',
+    'add_user' => 'Add User',
+    'user' => 'User Admin',
+    'nameAuthor' => 'Author Name',
     /* -- Form --- */
 ];

@@ -2,43 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
-class LoginAdmin extends Controller
+class UserAdminController extends Controller
 {
-    public function showLogin()
+    public function __construct()
     {
-        if (Auth::check()) {
-            return back();
-        }
-        return view('backend.login.login');
+        $this->middleware('permissionAccessUserAdmin');
     }
 
-    public function checkLogin(Request $request)
-    {
-        $auth = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-        $rememberme = ($request->rememberme == 'on') ? true : false;
-        if (Auth::attempt($auth, $rememberme)) {
-            $request->session()->regenerate();
-            return redirect()->route('book.list');
-        } else {
-            Session::flash('error', 'Email or password is incorrect');
-            return redirect()->route('showlogin.admin');
-        }
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('showlogin.admin');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +20,8 @@ class LoginAdmin extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('backend.user.list', compact(['users']));
     }
 
     /**
@@ -56,7 +31,7 @@ class LoginAdmin extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.user.create');
     }
 
     /**
@@ -67,7 +42,11 @@ class LoginAdmin extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->fill($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -89,7 +68,8 @@ class LoginAdmin extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('backend.user.edit', compact(['user']));
     }
 
     /**
@@ -101,7 +81,11 @@ class LoginAdmin extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->fill($request->all());
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return redirect()->route('user.index');
     }
 
     /**
@@ -112,6 +96,11 @@ class LoginAdmin extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->userCan('delete-yourself', $id)) {
+            return view('backend.user.403', ['permission' => 'Bạn không thể xoá chính tải khoản của bạn!!!.']);
+        }
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }
