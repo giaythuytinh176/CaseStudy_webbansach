@@ -14,18 +14,18 @@
 
                     <div class="views-field views-field-nothing">        <span class="field-content"><div class="row">
 	<div class="col-xs-12 col-sm-7 col-md-7">
-		<a href="/francoize-boucher"><img class="img-responsive"
-                                          src="https://nxbkimdong.com.vn/sites/default/files/styles/278_auto/public/francoize_boucher_f.jpg?itok=lC-WyzKP"
-                                          width="278" height="207" alt="" style="display: block;"><noscript><img
-                    class="img-responsive"
-                    src="https://nxbkimdong.com.vn/sites/default/files/styles/278_auto/public/francoize_boucher_f.jpg?itok=lC-WyzKP"
-                    width="278" height="207" alt=""/></noscript></a>
+		<a href="{{ route('show.authors', $val->id) }}"><img class="img-responsive"
+                                                             src="{{ asset('images/'.$val->image) }}" width="278"
+                                                             height="207" alt="" style="display: block;">
+            <noscript>
+                <img class="img-responsive" src="{{ asset('images/'.$val->image) }}" width="278" height="207" alt=""/>
+            </noscript>
+        </a>
 	</div>
 	<div class="col-xs-12 col-sm-5 col-md-5">
 		<div class="c-author-listing--details">
             <div class="c-author-listing--title" aria-label="Françoize Boucher">
-                <span class="word1" aria-hidden="true">First Name: {{$val->first_name}}</span>
-                <span class="word2 lastname" aria-hidden="true">Name:{{$val->last_name}}</span>
+                <span class="word2 lastname" aria-hidden="true">{{$val->name}}</span>
             </div>
 			<div class="c-author-listing--subtitle">
 				<div
