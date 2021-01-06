@@ -18,15 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-})->name('index');
+//Route::get('/', function () {
+//    return view('frontend.index');
+//})->name('index');
 
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
 
     Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
     Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
+    Route::get('/showBookDetail',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
+
 
 //    Route::get('/',[\App\Http\Controllers\frontend\HomeController::class,'showlist'])->name('showlist');
 
