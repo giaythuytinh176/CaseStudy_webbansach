@@ -7,6 +7,11 @@
                         <i class="fas fa-table mr-1"></i>
                         Loại Sách
                     </div>
+                    <form method="post" action="{{ route('category.search') }}" class="form-inline">
+                        @csrf
+                        <input class="form-control mr-sm-2" type="search" name="search_category" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" width="100%" cellspacing="0">

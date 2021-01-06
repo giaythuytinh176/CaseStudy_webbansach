@@ -26,7 +26,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($books as $key => $val)
+                            @forelse($books as $key => $val)
                                 <tr>
                                     <td>{{ $key + $books->firstItem()}}</td>
                                     <td>
@@ -78,7 +78,11 @@
                                         <a href="{{route('book.delete',['id'=>$val->id])}}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">Delete</a>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td style="text-align: center" colspan="6">Không tìm thấy dữ liệu.</td>
+                                </tr>
+                            @endforelse
                             </tbody>
                         </table>
                         <div style="float: right;">{{ $books->links( "pagination::bootstrap-4") }}</div>

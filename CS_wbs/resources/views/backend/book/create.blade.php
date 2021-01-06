@@ -34,12 +34,7 @@
                                                     name="author[]"
                                                     type="checkbox"
                                                     value="{{ $author->id }}"
-                                                    @if ($loop->first)
-                                                    id="flexCheckChecked"
-                                                    checked
-                                                    @else
                                                     id="flexCheckDefault"
-                                                    @endif
                                                 />
                                                 <label class="form-check-label" for="flexCheckDefault">
                                                     {{ $author->name }}
