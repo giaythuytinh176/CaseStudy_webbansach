@@ -10,7 +10,7 @@ class CategoryFrontendController extends Controller
 {
     public function showCategory()
     {
-        $categorys = Category::class;
+        $categorys = Category::all();
         return view('frontend.header',compact('categorys'));
     }
 }
