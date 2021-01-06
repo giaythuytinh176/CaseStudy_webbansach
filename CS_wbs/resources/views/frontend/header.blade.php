@@ -543,76 +543,18 @@
 
 
                             <ul class="menu nav">
-                                <li class="first expanded active-trail dhtml-menu active dropdown" id="dhtml_menu-1262">
-                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Sách
+                                <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1262">
+                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Thể Loại
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
+                                        @foreach($categorys as $key => $cate)
                                         <li class="first leaf active-trail dhtml-menu active" id="dhtml_menu-1284">
-                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail active">Sách
-                                                mới</a></li>
-                                        <li class="expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1285">
-                                            <a href="https://nxbkimdong.com.vn/sach-theo-chu-de" title="" data-target="#" class="dropdown-toggle">Sách
-                                                theo chủ đề <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li class="first leaf dhtml-menu" id="dhtml_menu-2720">
-                                                    <a href="https://nxbkimdong.com.vn/lich-su-truyen-thong" title="">Lịch
-                                                        sử - Truyền thống</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2722">
-                                                    <a href="https://nxbkimdong.com.vn/kien-thuc-khoa-hoc" title="">Kiến
-                                                        thức - Khoa học</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2723">
-                                                    <a href="https://nxbkimdong.com.vn/van-hoc-viet-nam-0" title="">Văn
-                                                        học Việt Nam</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2724">
-                                                    <a href="https://nxbkimdong.com.vn/van-hoc-nuoc-ngoai-0" title="">Văn
-                                                        học nước ngoài</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2725">
-                                                    <a href="https://nxbkimdong.com.vn/truyen-tranh-0" title="">Truyện
-                                                        tranh</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2726">
-                                                    <a href="https://nxbkimdong.com.vn/manga-comic-0" title="">Manga -
-                                                        Comic</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2727">
-                                                    <a href="https://nxbkimdong.com.vn/wings-books" title="">Wings
-                                                        Books</a></li>
-                                                <li class="last leaf dhtml-menu" id="dhtml_menu-3026">
-                                                    <a href="https://nxbkimdong.com.vn/giai-ma-ban" title="">Giải mã bản
-                                                        thân</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1286">
-                                            <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi" title="" data-target="#" class="dropdown-toggle">Sách
-                                                theo độ tuổi <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li class="first leaf dhtml-menu" id="dhtml_menu-2728">
-                                                    <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi?field_product_dotuoi_tid=141" title="">Nhà
-                                                        trẻ - mẫu giáo (0-6)</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2729">
-                                                    <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi?field_product_dotuoi_tid=80" title="">Nhi
-                                                        đồng (6-11)</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2730">
-                                                    <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi?field_product_dotuoi_tid=81" title="">Thiếu
-                                                        niên (11-15)</a></li>
-                                                <li class="leaf dhtml-menu" id="dhtml_menu-2731">
-                                                    <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi?field_product_dotuoi_tid=82" title="">Tuổi
-                                                        mới lớn (15-18)</a></li>
-                                                <li class="last leaf dhtml-menu" id="dhtml_menu-2732">
-                                                    <a href="https://nxbkimdong.com.vn/sach-theo-do-tuoi?field_product_dotuoi_tid=78" title="">Cha
-                                                        mẹ đọc cùng con</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2530">
-                                            <a href="https://nxbkimdong.com.vn/wings-books" title="">Wings Books</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-1366">
-                                            <a href="https://nxbkimdong.com.vn/hieu-sach" title="">Hiệu sách</a></li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-1266">
-                                            <a href="https://nxbkimdong.com.vn/landing-page" title="">Khuyến mãi</a>
-                                        </li>
+                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail active">{{ $cate->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="last leaf dhtml-menu" id="dhtml_menu-1265">
-                                    <a href="https://nxbkimdong.com.vn/tac-gia" title="">Tác giả</a></li>
+                                    <a href="{{ route('show.author') }}" title="">Tác giả</a></li>
                             </ul>
                         </section>
                     </div>
