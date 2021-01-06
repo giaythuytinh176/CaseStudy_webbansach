@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\AuthAdmin;
 use App\Http\Middleware\Locale;
+use App\Http\Middleware\permissionAccessUserAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -65,6 +66,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'locale' => Locale::class,
-        'AuthAdmin'=>AuthAdmin::class,
+        'AuthAdmin' => AuthAdmin::class,
+        'permissionAccessUserAdmin' => permissionAccessUserAdmin::class,
     ];
 }

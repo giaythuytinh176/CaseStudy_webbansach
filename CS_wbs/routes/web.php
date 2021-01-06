@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('frontend.index');
-//});
+Route::get('/', function () {
+    return view('frontend.index');
+})->name('index');
 
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
@@ -42,6 +43,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::get('edit/{id}', [AuthorController::class, 'edit'])->name('author.edit');
                 Route::post('edit/{id}', [AuthorController::class, 'update'])->name('author.update');
                 Route::get('delete/{id}', [AuthorController::class, 'destroy'])->name('author.delete');
+                Route::get('/{id}/detail', [AuthorController::class, 'show'])->name('author.detail');
             });
             Route::prefix('category')->group(function () {
                 Route::get('/', [CategoryController::class, 'index'])->name('category.index');
@@ -68,6 +70,14 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::get('/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
                 Route::post('/edit/{id}', [CustomerController::class, 'update'])->name('customer.update');
                 Route::get('/delete/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+            });
+            Route::prefix('user')->group(function () {
+                Route::get('/', [UserAdminController::class, 'index'])->name('user.index');
+                Route::get('/add', [UserAdminController::class, 'create'])->name('user.create');
+                Route::post('/add', [UserAdminController::class, 'store'])->name('user.store');
+                Route::get('/edit/{id}', [UserAdminController::class, 'edit'])->name('user.edit');
+                Route::post('/edit/{id}', [UserAdminController::class, 'update'])->name('user.update');
+                Route::get('/delete/{id}', [UserAdminController::class, 'destroy'])->name('user.destroy');
             });
         });
     });
