@@ -50,7 +50,7 @@
 	</div>
 </div></span></div>
                             </div>
-                        @endforeach
+                     @endforeach
                     </div>
                     <div class="text-center">
                         <ul class="pagination">
