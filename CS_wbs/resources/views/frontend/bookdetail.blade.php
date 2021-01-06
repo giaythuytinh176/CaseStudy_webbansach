@@ -14,11 +14,11 @@
     @php
         $arr_bookdetail = [];
         $book_id = $val->id;
-        $book = \App\Models\Author::whereHas('books', function (\Illuminate\Database\Eloquent\Builder $q) use ($book_id) {
+        $author = \App\Models\Author::whereHas('books', function (\Illuminate\Database\Eloquent\Builder $q) use ($book_id) {
             $q->where("books.id", "=", $book_id);
         })->get();
-        foreach ($book as $item) {
-            $arr_bookdetail[] = '<a href="'.route('showbookdetail', $item->id).'">'.$item->name.'</a>';
+        foreach ($author as $item) {
+            $arr_bookdetail[] = '<a href="'.route('showbookdetail',('id'), $book->id).'">'.$item->name.'</a>';
         }
         echo implode("<br/><br/>", $arr_bookdetail);
     @endphp
