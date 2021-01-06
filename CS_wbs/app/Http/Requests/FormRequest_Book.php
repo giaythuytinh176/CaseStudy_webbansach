@@ -27,7 +27,7 @@ class FormRequest_Book extends FormRequest
             'name' => 'required|string|unique:books',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
-            'author' => 'required',
+            'author' => 'required|exists:authors,id',
             'category_id' => 'required|exists:categories,id',
             'img' => 'mimes:jpeg,jpg,png,gif|required|max:2048',
             'description' => 'required|string',

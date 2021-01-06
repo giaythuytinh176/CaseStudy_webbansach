@@ -2,7 +2,7 @@
 @section('content')
         <main>
             <div class="container">
-                <div class="card mb-4">
+                <div class="card mb-4 mt-4">
                     <div class="card-header">
                         Sửa Admin
                     </div>

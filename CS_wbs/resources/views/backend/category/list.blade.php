@@ -2,15 +2,14 @@
 @section('content')
         <main>
             <div class="container-fluid">
-                <h1 class="mt-4">Dashboard</h1>
-                <div class="card mb-4">
+                <div class="card mb-4 mt-4">
                     <div class="card-header">
                         <i class="fas fa-table mr-1"></i>
                         Loại Sách
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-bordered" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -26,7 +25,7 @@
                                 @else
                                     @foreach($categorys as $key => $category)
                                         <tr>
-                                            <th scope="row">{{ ++$key }}</th>
+                                            <th scope="row">{{ $categorys->firstItem() + $key }}</th>
                                             <td>
                                                 <a href="{{ route('category.detail', $category->id) }}">{{ $category->name }}</a>
                                             </td>
@@ -42,6 +41,7 @@
 
                                 </tfoot>
                             </table>
+                            <div style="float: right;">{{ $categorys->links( "pagination::bootstrap-4") }}</div>
                             <a class="btn btn-primary" href="{{ route('category.create') }}">Thêm mới</a>
                         </div>
                     </div>

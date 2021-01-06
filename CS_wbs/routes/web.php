@@ -62,6 +62,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('edit/{id}', [BookController::class, 'update'])->name('book.update');
                 Route::post('store', [BookController::class, 'store'])->name('book.store');
                 Route::get('/delete/{id}', [BookController::class, 'destroy'])->name('book.delete');
+                Route::post('/search', [BookController::class, 'search'])->name('book.search');
             });
             Route::prefix('customer')->group(function () {
                 Route::get('/', [CustomerController::class, 'index'])->name('customer.index');

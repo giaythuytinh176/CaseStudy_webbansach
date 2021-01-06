@@ -12,6 +12,15 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function search(Request $request)
+    {
+        $search = $request->search_book;
+        $books = Book::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->paginate(5);
+        $categories = Category::all();
+        $authors = Author::all();
+        return view("backend.book.list", compact(['books', 'categories', 'authors']));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +28,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::paginate(5);
         $categories = Category::all();
         $authors = Author::all();
         return view("backend.book.list", compact(['books', 'categories', 'authors']));
@@ -138,12 +147,25 @@ class BookController extends Controller
         }
         $book->save();
 
-//        dd($book->authors()->get()->toArray());
-//
-//        foreach ($request->author as $auth) {
-//            $book = Book::find($request->id);
-//            $book->authors()->attach($auth);
-//        }
+        foreach ($request->author as $auth) {
+            $exist_book_id_pivot = Author::find($auth)->books()->where('id', $book->id)->exists();
+            if (!$exist_book_id_pivot) {
+                Author::find($auth)->books()->attach($book->id);
+            }
+        }
+
+        $authors = Author::all();
+        $list_expect = [];
+        foreach ($authors as $author) {
+            if (in_array($author->id, $request->author) === false) {
+                $list_expect[] = $author->id;
+            }
+        }
+        if (!empty($list_expect)) {
+            foreach ($list_expect as $item) {
+                Author::find($item)->books()->detach($book->id);
+            }
+        }
 
         return redirect()->route('book.list');
     }
@@ -156,10 +178,11 @@ class BookController extends Controller
      */
     public function destroy(Book $book, Request $request)
     {
-        $book = $book::findOrFail($request->id);
+        $book = Book::findOrFail($request->id);
         if (file_exists(public_path('images') . "/" . $book->img)) {
             unlink(public_path('images') . "/" . $book->img);
         }
+        $book->authors()->detach();
         $book->delete();
         return redirect()->route('book.list');
     }

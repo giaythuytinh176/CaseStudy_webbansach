@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all();
+        $categorys = Category::paginate(5);
         return view('backend.category.list', compact('categorys'));
     }
 

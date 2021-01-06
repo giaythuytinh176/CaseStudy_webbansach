@@ -2,7 +2,7 @@
 @section('content')
         <main>
             <div class="container-fluid">
-                <div class="card mb-4">
+                <div class="card mb-4 mt-4">
                     <div class="card-header">
                         Thêm Thể Loại
                     </div>
