@@ -27,7 +27,7 @@ class FormRequest_EditBook extends FormRequest
             'name' => 'required|string',
             'price' => 'required|numeric',
             'stock' => 'required|numeric',
-            'author' => 'required',
+            'author' => 'required|exists:authors,id',
             'category_id' => 'required|exists:categories,id',
             'img' => 'mimes:jpeg,jpg,png,gif|max:2048',
             'description' => 'required|string',

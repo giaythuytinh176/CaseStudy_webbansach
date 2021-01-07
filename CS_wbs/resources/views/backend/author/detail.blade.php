@@ -2,14 +2,10 @@
 @section('content')
     <main>
         <div class="container">
-            <h1 class="mt-4">Dashboard</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Dashboard</li>
-            </ol>
-            <div class="card mb-4">
+            <div class="card mb-4 mt-4">
                 <div class="card-header">
                     <i class="fas fa-table mr-1"></i>
-                    Chi tiết Sách
+                    Chi tiết tác giả
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -27,10 +23,15 @@
                                         $book = \App\Models\Book::whereHas('authors', function (\Illuminate\Database\Eloquent\Builder $q) use ($author_id) {
                                             $q->where("authors.id", "=", $author_id);
                                         })->get();
-                                        foreach ($book as $item) {
-                                            $arr_book[] = '<a href="'.route('book.detail', $item->id).'">'.$item->name.'</a>';
+                                        if (!empty($book[0])) {
+                                            foreach ($book as $item) {
+                                                $arr_book[] = '<a href="'.route('book.detail', $item->id).'">'.$item->name.'</a>';
+                                            }
+                                            echo implode("<br/>", $arr_book);
                                         }
-                                        echo implode("<br/>", $arr_book);
+                                        else {
+                                            echo "No book";
+                                        }
                                     @endphp
                                 </td>
                             </tr>
