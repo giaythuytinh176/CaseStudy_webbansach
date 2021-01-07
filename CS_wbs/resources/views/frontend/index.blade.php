@@ -56,8 +56,11 @@
 <div class='c-product-item--title-container' title="Nhâm nhi Tết Tân Sửu 2021">
     <a href="{{route('showbookdetail', $book->id)}}">{{ $book->name }}</a></div></div>
 
-	<div class='c-loop-authors-summary'>{{ $book->category_id }}</div>
-	<div class='sanpham-giasp'><div class='gia-sell'>{{ $book->price }}</div></div>
+	<div class='c-loop-authors-summary'>@php
+       $category = $book->categories()->first();
+       echo ($category->name);
+ @endphp</div>
+	<div class='sanpham-giasp'><div class='gia-sell' style="color: red">{{number_format( $book->price) }}đ</div></div>
 
 <div class='sanpham-giasp'><div class='gia-cost'></div></div>
 	<div class="c-product-yeuthick-mua">
@@ -84,19 +87,7 @@
                         @endforeach
                     </div>
                     <div class="text-center">
-                        <ul class="pagination">
-                            <li class="active"><span>1</span></li>
-                            <li><a title="Đến trang 2" href="/sach-moi?page=1">2</a></li>
-                            <li><a title="Đến trang 3" href="/sach-moi?page=2">3</a></li>
-                            <li><a title="Đến trang 4" href="/sach-moi?page=3">4</a></li>
-                            <li class="pager-ellipsis disabled"><span>…</span></li>
-                            <li class="next"><a title="Đến trang sau" href="/sach-moi?page=1">sau ›</a></li>
-                            <li class="pager-last"><a title="Đến trang cuối cùng" href="/sach-moi?page=247">cuối »</a>
-                            </li>
-                        </ul>
-                    </div>
-
-
+                         {{ $books->links( "pagination::bootstrap-4") }}
                 </div>
             </section>
         </div>
