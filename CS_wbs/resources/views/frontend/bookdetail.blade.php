@@ -3,6 +3,14 @@
 @section('content')
 
 
+    <div id="breadcrumb-kd">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
+            <li><a href="/">SÁCH THEO CHỦ ĐỀ</a></li>
+            <li><strong>{{ $bookdetail->name }}</strong></li>
+        </ol>
+    </div>
+    <div class="row">
     <article id="node-680607" class="node node-product clearfix">
         <div class="row chitietsp">
             <div class="col-xs-12 col-sm-6 col-md-5">
@@ -13,11 +21,11 @@
                                 <div class="main-product-image"><a href="sites/default/files/9-lmt_0.jpg" title=""
                                                                    class="colorbox init-colorbox-processed cboxElement"
                                                                    rel="uc_image_0"><img class="img-responsive"
-                                                                                         src="https://nxbkimdong.com.vn/sites/default/files/styles/uc_product/public/9-lmt_0.jpg?itok=kr5uLYCw"
+                                                                                         src="{{asset('images/'.$bookdetail->img)}}"
                                                                                          alt="" title=""
                                                                                          style="display: block;">
                                         <noscript><img class="img-responsive"
-                                                       src="https://nxbkimdong.com.vn/sites/default/files/styles/uc_product/public/9-lmt_0.jpg?itok=kr5uLYCw"
+                                                       src="{{asset('images/'.$bookdetail->img)}}"
                                                        alt="" title=""/></noscript>
                                     </a></div>
                             </div>
@@ -46,15 +54,12 @@
                         <div
                             class="field field-name-field-product-makimdong field-type-text field-label-inline clearfix">
                             <div class="field-label">Mã Kim Đồng:&nbsp;{{$bookdetail->isbn}}</div>
-                            <div class="field-items">
-                                <div class="field-item even">5202813</div>
-                            </div>
                         </div>
                         <div
                             class="field field-name-field-product-tacgia field-type-entityreference field-label-inline clearfix">
                             <div class="field-label">Tác giả:&nbsp;</div>
                             <div class="field-items">
-                                <div class="field-item even"><a href="/jyumonji-ao">
+                                <div class="field-item even">
                                     @php
                                         $arr_author = [];
                                         $author = $bookdetail->authors()->get();
@@ -71,35 +76,22 @@
                             class="field field-name-field-product-sotrang field-type-number-decimal field-label-inline clearfix">
                             <div class="field-label">Số trang:&nbsp;</div>
                             <div class="field-items">
-                                <div class="field-item even">270</div>
-                            </div>
-                        </div>
-                        <div class="field field-name-field-product-loaibia field-type-text field-label-inline clearfix">
-                            <div class="field-label">Định dạng:&nbsp;</div>
-                            <div class="field-items">
-                                <div class="field-item even">bìa mềm</div>
+                                <div class="field-item even">{{ $bookdetail->page_number }}</div>
                             </div>
                         </div>
                         <div
                             class="field field-name-field-product-trongluong field-type-number-decimal field-label-inline clearfix">
                             <div class="field-label">Trọng lượng:&nbsp;</div>
                             <div class="field-items">
-                                <div class="field-item even">270 gram</div>
+                                <div class="field-item even">{{$bookdetail->height}}</div>
                             </div>
                         </div>
-                        <div
-                            class="field field-name-field-product-tax-bosach field-type-taxonomy-term-reference field-label-inline clearfix">
-                            <div class="field-label">Bộ sách:&nbsp;</div>
-                            <div class="field-items">
-                                <div class="field-item even"><a href="/grimgar-ao-anh-va-tro-tan">Grimgar - Ảo ảnh và
-                                        tro tàn</a></div>
-                            </div>
-                        </div>
+
                         <div
                             class="field field-name-field-product-phathanh field-type-datetime field-label-inline clearfix">
                             <div class="field-label">Ngày phát hành:&nbsp;</div>
                             <div class="field-items">
-                                <div class="field-item even"><span class="date-display-single">28/12/2020</span></div>
+                                <div class="field-item even"><span class="date-display-single">{{$bookdetail->release}}</span></div>
                             </div>
                         </div>
                     </div>
@@ -109,9 +101,9 @@
                                 <div class="field-item even">
                                     <div class="sanpham-giasp clearfix">
                                         <div class="gia-bia"></div>
-                                        <div class="gia-cost">Giá bìa: <span class="uc-price">85.000đ</span></div>
+                                        <div class="gia-cost">Giá bìa: <span class="uc-price">{{ number_format($bookdetail->price*1.1) }}đ</span></div>
                                         <div class="gia-ban"></div>
-                                        <div class="gia-sell">Giá bán: <span class="uc-price">76.500đ</span></div>
+                                        <div class="gia-sell">Giá bán: <span class="uc-price">{{ number_format($bookdetail->price) }}đ</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +176,7 @@
                 </div>
                 <div class="field field-name-field-product-gioithieu field-type-markup field-label-hidden">
                     <div class="field-items">
-                        <div class="field-item even"><h4 class="block-title">Giới thiệu tác phẩm</h4></div>
+                        <div class="field-item even"><h4 class="block-title">Giới thiệu tác phẩm</h4>{!!$bookdetail->description!!}</div>
                     </div>
                 </div>
                 <div class="field field-name-field-product-affiliate field-type-markup field-label-hidden">
@@ -1433,4 +1425,6 @@ fanbook ) - Bản Giới Hạn
 
 
     </div>
+    </div>
+
 @endsection

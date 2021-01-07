@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function search(Request $request)
+    {
+        $search = $request->search_category;
+        $categorys = Category::where('name', 'LIKE', "%$search%")->paginate(5);//->orWhere('description', 'LIKE', "%$search%")
+        return view("backend.category.list", compact(['categorys']));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categorys = Category::all();
+        $categorys = Category::paginate(5);
         return view('backend.category.list', compact('categorys'));
     }
 

@@ -2,8 +2,7 @@
 @section('content')
         <main>
             <div class="container">
-                <h1 class="mt-4">Dashboard</h1>
-                <div class="card mb-4">
+                <div class="card mb-4 mt-4">
                     <div class="card-header">
                         {!! __('language.add_category') !!}
                     </div>

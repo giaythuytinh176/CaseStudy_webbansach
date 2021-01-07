@@ -18,16 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('frontend.index');
-//})->name('index');
-
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
 
     Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
     Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
+
+    Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
+
     Route::get('/showBookDetail/{id}',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
+   
+
 
 
 //    Route::get('/',[\App\Http\Controllers\frontend\HomeController::class,'showlist'])->name('showlist');
@@ -46,6 +47,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('edit/{id}', [AuthorController::class, 'update'])->name('author.update');
                 Route::get('delete/{id}', [AuthorController::class, 'destroy'])->name('author.delete');
                 Route::get('/{id}/detail', [AuthorController::class, 'show'])->name('author.detail');
+                Route::post('/search', [AuthorController::class, 'search'])->name('author.search');
             });
             Route::prefix('category')->group(function () {
                 Route::get('/', [CategoryController::class, 'index'])->name('category.index');
@@ -55,6 +57,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('category.update');
                 Route::get('/delete/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
                 Route::get('/{id}/detail', [CategoryController::class, 'show'])->name('category.detail');
+                Route::post('/search', [CategoryController::class, 'search'])->name('category.search');
             });
             Route::prefix('book')->group(function () {
                 Route::get('/', [BookController::class, 'index'])->name('book.list');
@@ -64,6 +67,7 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::post('edit/{id}', [BookController::class, 'update'])->name('book.update');
                 Route::post('store', [BookController::class, 'store'])->name('book.store');
                 Route::get('/delete/{id}', [BookController::class, 'destroy'])->name('book.delete');
+                Route::post('/search', [BookController::class, 'search'])->name('book.search');
             });
             Route::prefix('customer')->group(function () {
                 Route::get('/', [CustomerController::class, 'index'])->name('customer.index');

@@ -34,10 +34,10 @@
                     English
                 </option>
             </select> &nbsp;
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-            </div>
+{{--            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>--}}
+{{--            <div class="input-group-append">--}}
+{{--                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>--}}
+{{--            </div>--}}
         </div>
     </form>
     <!-- Navbar-->
@@ -61,7 +61,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{ route('book.list') }}">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>

@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
+    public function search(Request $request)
+    {
+        $search = $request->search_author;
+        $author = Author::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->paginate(5);
+        return view("backend.author.list", compact(['author']));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $author = Author::all();
+        $author = Author::paginate(5);
         return view('backend.author.list', compact('author'));
     }
 
