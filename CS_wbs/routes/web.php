@@ -27,6 +27,7 @@ Route::group(['middleware' => 'locale'], function () {
     Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
 
     Route::get('/showBookDetail/{id}',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
+   
 
 
 

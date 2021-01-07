@@ -14,9 +14,10 @@ class HomeController extends Controller
 
     public function showHome()
     {
-        $books = Book::all();
+        $books = Book::paginate(4);
         $authors = Author::all();
         $categorys = Category::all();
+
         return view('frontend.index', compact('books', 'authors', 'categorys'));
 
 //        public function showlist()

@@ -23,10 +23,10 @@ class AuthorFrontendController extends Controller
         $categorys = Category::all();
         return view("frontend.authorfrontend.detail", compact('author_detail','authors','categorys'));
     }
-    public function showAuthorBook(Book $book, Request $request)
-    {
-        $book_detail = Book::findOrFail($request->id);
-        $category_detail = Category::findOrFail($book_detail->category_id);
-        return view("backend.book.detail", compact(['book_detail', 'category_detail']));
-    }
+//    public function showAuthorBook(Book $book, Request $request)
+//    {
+//        $book_detail = Book::findOrFail($request->id);
+//        $category_detail = Category::findOrFail($book_detail->category_id);
+//        return view("backend.book.detail", compact(['book_detail', 'category_detail']));
+//    }
 }
