@@ -3,6 +3,14 @@
 @section('content')
 
 
+    <div id="breadcrumb-kd">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
+            <li><a href="/">SÁCH THEO CHỦ ĐỀ</a></li>
+            <li><strong>{{ $bookdetail->name }}</strong></li>
+        </ol>
+    </div>
+    <div class="row">
     <article id="node-680607" class="node node-product clearfix">
         <div class="row chitietsp">
             <div class="col-xs-12 col-sm-6 col-md-5">
@@ -1433,4 +1441,6 @@ fanbook ) - Bản Giới Hạn
 
 
     </div>
+    </div>
+
 @endsection

@@ -3,6 +3,14 @@
 @section('content')
 
 
+    <div id="breadcrumb-kd">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
+            <li><a href="/">Sách</a></li>
+            <li>Sách mới</li>
+        </ol>
+    </div>
+    <div class="row">
     <section class="col-sm-12">
 
         <!--// Old breadcrumb here -->
@@ -93,6 +101,7 @@
             </section>
         </div>
     </section>
+    </div>
 
 
 @endsection

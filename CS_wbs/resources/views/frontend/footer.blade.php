@@ -1,5 +1,4 @@
 </div>
-</div>
 
 <footer class="footer container-fluid">
     <div class="region region-footer">
