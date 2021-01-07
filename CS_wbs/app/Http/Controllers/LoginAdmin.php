@@ -22,7 +22,7 @@ class LoginAdmin extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-        $rememberme = ($request->rememberme == 'on') ? true : false;
+        $rememberme = $request->rememberme == 'on';
         if (Auth::attempt($auth, $rememberme)) {
             $request->session()->regenerate();
             return redirect()->route('book.list');

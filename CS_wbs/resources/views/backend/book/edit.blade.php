@@ -28,26 +28,31 @@
                                 <tr>
                                     <th style="width: 15%">{!! __('language.author') !!}</th>
                                     <td>
-                                        @foreach($authors as $author)
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input"
-                                                    name="author[]"
-                                                    type="checkbox"
-                                                    value="{{ $author->id }}"
-                                                    @if (\App\Models\Author::find($author->id)->books()->where('id', $book_detail->id)->exists())
-                                                    id="flexCheckChecked"
-                                                    checked
-                                                    @else
-                                                    id="flexCheckDefault"
-                                                    @endif
-                                                />
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                    {{ $author->name }}
-                                                    <img class="img-responsive" src="{{ asset('images/'.$author->image) }}" border="1" height="64" width="64" alt=""/>
-                                                </label>
-                                            </div>
-                                        @endforeach
+{{--                                        @foreach($authors as $author)--}}
+{{--                                            <div class="form-check">--}}
+{{--                                                <input--}}
+{{--                                                    class="form-check-input"--}}
+{{--                                                    name="author[]"--}}
+{{--                                                    type="checkbox"--}}
+{{--                                                    value="{{ $author->id }}"--}}
+{{--                                                    @if (\App\Models\Author::find($author->id)->books()->where('id', $book_detail->id)->exists())--}}
+{{--                                                    id="flexCheckChecked"--}}
+{{--                                                    checked--}}
+{{--                                                    @else--}}
+{{--                                                    id="flexCheckDefault"--}}
+{{--                                                    @endif--}}
+{{--                                                />--}}
+{{--                                                <label class="form-check-label" for="flexCheckDefault">--}}
+{{--                                                    {{ $author->name }}--}}
+{{--                                                    <img class="img-responsive" src="{{ asset('images/'.$author->image) }}" border="1" height="64" width="64" alt=""/>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                        @endforeach--}}
+                                            <select name="author[]" class="form-control" multiple>
+                                                @foreach($authors as $author)
+                                                    <option value="{{ $author->id }} {{ (\App\Models\Author::find($author->id)->books()->where('id', $book_detail->id)->exists()) ? 'selected' : '' }}">{{ $author->name }}</option>
+                                                @endforeach
+                                            </select>
 
                                         @if($errors->any())
                                             <p class="alert-danger my-sm-4">{{ $errors->first('author') }}</p>

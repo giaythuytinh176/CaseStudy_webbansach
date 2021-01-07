@@ -69,12 +69,8 @@ class BookController extends Controller
                 $book->img = $imageName;
                 $book->save();
 
-                $last_inserrt_book_id = $book->id;
                 foreach ($request->author as $auths) {
-                    $AuthorBook = new AuthorBook();
-                    $AuthorBook->author_id = $auths;
-                    $AuthorBook->book_id = $last_inserrt_book_id;
-                    $AuthorBook->save();
+                    Author::find($auths)->books()->attach($book->id);
                 }
 
             } catch (\Exception $e) {
