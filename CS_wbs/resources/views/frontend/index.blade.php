@@ -45,8 +45,9 @@
 	</div>
 </div>
 
-<div class='c-product-item--title-container' title="Nhâm nhi Tết Tân Sửu 2021
-"><a href="{{route('showbookdetail,('$book->id')}}}}">{{ $book->name }}</a></div></div>
+<div class='c-product-item--title-container' title="Nhâm nhi Tết Tân Sửu 2021">
+    <a href="{{route('showbookdetail', $book->id)}}">{{ $book->name }}</a></div></div>
+
 	<div class='c-loop-authors-summary'>{{ $book->category_id }}</div>
 	<div class='sanpham-giasp'><div class='gia-sell'>{{ $book->price }}</div></div>
 
