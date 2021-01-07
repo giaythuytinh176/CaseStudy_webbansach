@@ -14,19 +14,16 @@ class AuthorFrontendController extends Controller
     {
         $authors = Author::paginate(6);
         $categorys = Category::all();
-        return view('frontend.authorfrontend.author',compact('authors','categorys'));
+        $book_images = Book::inRandomOrder()->limit(5)->get();
+        return view('frontend.authorfrontend.author', compact('authors', 'categorys', 'book_images'));
     }
+
     public function showAthor(Author $author, Request $request)
     {
         $author_detail = Author::findOrFail($request->id);
         $authors = Author::all();
         $categorys = Category::all();
-        return view("frontend.authorfrontend.detail", compact('author_detail','authors','categorys'));
+        $book_images = Book::inRandomOrder()->limit(5)->get();
+        return view("frontend.authorfrontend.detail", compact('author_detail', 'authors', 'categorys', 'book_images'));
     }
-//    public function showAuthorBook(Book $book, Request $request)
-//    {
-//        $book_detail = Book::findOrFail($request->id);
-//        $category_detail = Category::findOrFail($book_detail->category_id);
-//        return view("backend.book.detail", compact(['book_detail', 'category_detail']));
-//    }
 }
