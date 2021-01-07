@@ -66,5 +66,6 @@
         </div>
     @endforeach
     </div>
+    <div class="text-center">{{ $authors->links( "pagination::bootstrap-4") }}</div>
 
 @endsection

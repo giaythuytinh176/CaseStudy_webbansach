@@ -11,19 +11,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
     public function showHome()
     {
-        $books = Book::all();
+        $books = Book::paginate(4);
         $authors = Author::all();
         $categorys = Category::all();
         $book_images = Book::inRandomOrder()->limit(5)->get();
         return view('frontend.index', compact('books', 'authors', 'categorys', 'book_images'));
-
-//        public function showlist()
-//        {
-//            $books = Book::all();
-//            return view('frontend.index', compact('books'));
-//        }
     }
 }

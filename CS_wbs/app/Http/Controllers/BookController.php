@@ -99,6 +99,7 @@ class BookController extends Controller
     {
         $book_detail = Book::findOrFail($request->id);
         $category_detail = Category::findOrFail($book_detail->category_id);
+
         return view("backend.book.detail", compact(['book_detail', 'category_detail']));
     }
 
