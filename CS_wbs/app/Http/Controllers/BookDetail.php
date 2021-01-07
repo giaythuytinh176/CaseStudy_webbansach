@@ -11,7 +11,8 @@ class BookDetail extends Controller
     public function showBookDeatail($id){
         $bookdetail=Book::findOrFail($id);
         $categorys = Category::all();
-        return view('frontend.bookdetail',compact(['bookdetail', 'categorys']));
+        $book_images = Book::inRandomOrder()->limit(5)->get();
+        return view('frontend.bookdetail',compact(['bookdetail', 'categorys', 'book_images']));
     }
 }
 

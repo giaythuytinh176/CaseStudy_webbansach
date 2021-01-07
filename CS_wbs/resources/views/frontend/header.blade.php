@@ -820,59 +820,25 @@
                     </div>
                     <div class="slider-home-group-center">
                         <section id="block-views-slide-home-block" class="block block-views clearfix">
-
-
                             <div class="view view-slide-home view-id-slide_home view-display-id-block view-dom-id-f02cd2ff3c56a65b613a2d68f817ba90">
-
-
                                 <div class="view-content ">
                                     <div id="flexslider-1" class="flexslider">
                                         <ul class="slides">
+                                            @foreach($book_images as $k => $v)
                                             <li>
                                                 <div class="views-field views-field-field-quangcao-anh">
                                                     <div class="field-content">
-                                                        <a href="https://onepiecewt100.com/" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn201218one100_banner-web.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt=""/>
+                                                        <a href="https://onepiecewt100.com/" target="_blank"><img class="img-responsive" data-src="{{ asset('images/' . $v->img) }}" src="{{ asset('images/' . $v->img) }}" width="1180" height="740" alt=""/>
                                                             <noscript>
-                                                                <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn201218one100_banner-web.jpg" width="1180" height="740" alt=""/>
+                                                                <img class="img-responsive" src="{{ asset('images/' . $v->img) }}" width="1180" height="740" alt=""/>
                                                             </noscript>
                                                         </a></div>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="views-field views-field-field-quangcao-anh">
-                                                    <div class="field-content">
-                                                        <img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_bosachkinangsong.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt=""/>
-                                                        <noscript>
-                                                            <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_bosachkinangsong.jpg" width="1180" height="740" alt=""/>
-                                                        </noscript>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="views-field views-field-field-quangcao-anh">
-                                                    <div class="field-content">
-                                                        <img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnxu-kiwi.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt=""/>
-                                                        <noscript>
-                                                            <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnxu-kiwi.jpg" width="1180" height="740" alt=""/>
-                                                        </noscript>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="views-field views-field-field-quangcao-anh">
-                                                    <div class="field-content">
-                                                        <a href="https://nxbkimdong.com.vn/ho-so-tinh-cach-12-con-giap" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_bimattuoinew.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt=""/>
-                                                            <noscript>
-                                                                <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_bimattuoinew.jpg" width="1180" height="740" alt=""/>
-                                                            </noscript>
-                                                        </a></div>
-                                                </div>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
-
-
                             </div>
                         </section>
                     </div>

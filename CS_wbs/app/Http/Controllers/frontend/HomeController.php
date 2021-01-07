@@ -17,7 +17,8 @@ class HomeController extends Controller
         $books = Book::all();
         $authors = Author::all();
         $categorys = Category::all();
-        return view('frontend.index', compact('books', 'authors', 'categorys'));
+        $book_images = Book::inRandomOrder()->limit(5)->get();
+        return view('frontend.index', compact('books', 'authors', 'categorys', 'book_images'));
 
 //        public function showlist()
 //        {
