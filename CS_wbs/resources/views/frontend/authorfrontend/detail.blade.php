@@ -2,6 +2,14 @@
 @section('content')
 
 
+    <div id="breadcrumb-kd">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
+            <li>Tác giả</li>
+            <li><strong>{{ $author_detail->name }}</strong></li>
+        </ol>
+    </div>
+    <div class="row">
     <div id="thong-tin-tac-gia" class="row">
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="field field-name-field-tacgia-chandung field-type-image field-label-hidden">
@@ -27,6 +35,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 

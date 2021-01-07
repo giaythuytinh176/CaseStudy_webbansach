@@ -914,11 +914,3 @@
             </section>
         </div>
     </div>
-    <div id="breadcrumb-kd">
-        <ol class="breadcrumb">
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="/">Sách</a></li>
-            <li>Sách mới</li>
-        </ol>
-    </div>
-    <div class="row">

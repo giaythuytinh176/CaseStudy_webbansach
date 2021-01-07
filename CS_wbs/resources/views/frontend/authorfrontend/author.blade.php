@@ -1,10 +1,14 @@
 @extends('frontend.master')
 @section('content')
 
-    <ol class="breadcrumb">
-        <li><a href="/">Trang chủ</a></li>
-        <li>Tác giả</li>
-    </ol>
+
+    <div id="breadcrumb-kd">
+        <ol class="breadcrumb">
+            <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
+            <li>Tác giả</li>
+        </ol>
+    </div>
+    <div class="row">
     @foreach($authors as $key => $val)
         <div
             class="view view-danhsach-tacgia view-id-danhsach_tacgia view-display-id-page view-dom-id-1cdefe30a844ed6167658db27056dd9b">
@@ -61,5 +65,6 @@
             </div>
         </div>
     @endforeach
+    </div>
 
 @endsection
