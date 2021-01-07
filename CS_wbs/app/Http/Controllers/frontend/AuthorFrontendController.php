@@ -13,6 +13,13 @@ class AuthorFrontendController extends Controller
     {
         $authors = Author::all();
         $categorys = Category::all();
-        return view('frontend.author',compact('authors','categorys'));
+        return view('frontend.authorfrontend.author',compact('authors','categorys'));
+    }
+    public function showAthor(Author $author, Request $request)
+    {
+        $author_detail = Author::findOrFail($request->id);
+        $authors = Author::all();
+        $categorys = Category::all();
+        return view("frontend.authorfrontend.detail", compact('author_detail','authors','categorys'));
     }
 }
