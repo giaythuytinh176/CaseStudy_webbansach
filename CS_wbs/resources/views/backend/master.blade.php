@@ -34,10 +34,10 @@
                     English
                 </option>
             </select> &nbsp;
-            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-            </div>
+{{--            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2"/>--}}
+{{--            <div class="input-group-append">--}}
+{{--                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>--}}
+{{--            </div>--}}
         </div>
     </form>
     <!-- Navbar-->

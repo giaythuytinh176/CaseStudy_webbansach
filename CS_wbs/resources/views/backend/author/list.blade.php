@@ -29,7 +29,13 @@
                                 <tr>
                                     <td>{{ $author->firstItem() + $key }}</td>
                                     <td>
-                                        <a href="{{ route('author.detail', $val->id) }}">{{$val->name}}</a>
+                                        <a href="{{ route('author.detail', $val->id) }}">
+                                            {{$val->name}}
+                                            @php
+                                            $total_book = \App\Models\Author::find($val->id)->books()->count();
+                                            echo "[$total_book]";
+                                            @endphp
+                                        </a>
                                     </td>
                                     <td>
                                         <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$val->image) }} " alt="">

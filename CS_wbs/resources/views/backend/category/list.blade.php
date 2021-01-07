@@ -32,7 +32,13 @@
                                         <tr>
                                             <th scope="row">{{ $categorys->firstItem() + $key }}</th>
                                             <td>
-                                                <a href="{{ route('category.detail', $category->id) }}">{{ $category->name }}</a>
+                                                <a href="{{ route('category.detail', $category->id) }}">
+                                                    {{ $category->name }}
+                                                    @php
+                                                        $total_book = \App\Models\Category::find($category->id)->books()->count();
+                                                        echo "[$total_book]";
+                                                    @endphp
+                                                </a>
                                             </td>
                                             <td>
                                                 <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">sửa</a>
