@@ -40,7 +40,7 @@
 {{--                                                    <img class="img-responsive" src="{{ asset('images/'.$author->image) }}" border="1" height="64" width="64" alt=""/>--}}
 {{--                                                </label>--}}
 {{--                                            </div>--}}
-                                            <select name="author[]" class="form-control" multiple>
+                                            <select size="11" name="author[]" class="form-control" multiple>
                                                 @foreach($authors as $author)
 
                                                 <option value="{{ $author->id }}">{{ $author->name }}</option>

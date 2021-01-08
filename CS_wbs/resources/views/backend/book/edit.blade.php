@@ -48,7 +48,7 @@
 {{--                                                </label>--}}
 {{--                                            </div>--}}
 {{--                                        @endforeach--}}
-                                            <select name="author[]" class="form-control" multiple>
+                                            <select  size="11" name="author[]" class="form-control" multiple>
                                                 @foreach($authors as $author)
                                                     <option value="{{ $author->id }} {{ (\App\Models\Author::find($author->id)->books()->where('id', $book_detail->id)->exists()) ? 'selected' : '' }}">{{ $author->name }}</option>
                                                 @endforeach
