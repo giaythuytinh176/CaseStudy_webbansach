@@ -23,9 +23,8 @@ Route::group(['middleware' => 'locale'], function () {
 
     Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
     Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
-
+    Route::get('/showCategory/{id}', [\App\Http\Controllers\frontend\CategoryController::class, 'showCategory'])->name('show.category');
     Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
-
     Route::get('/showBookDetail/{id}',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
 
     Route::prefix('cart')->group(function () {
@@ -36,8 +35,6 @@ Route::group(['middleware' => 'locale'], function () {
 
 
     });
-
-//    Route::get('/',[\App\Http\Controllers\frontend\HomeController::class,'showlist'])->name('showlist');
 
     Route::prefix('/admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\LoginAdmin::class, 'showLogin'])->name('showlogin.admin');

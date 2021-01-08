@@ -6,7 +6,7 @@
 
 
             <div class="row">
-                <div class="col-xs-12 top-footer">
+                <div class="col-xs-12 top-footer">w
                     <p class="title-footer text-center">Nhà Xuất Bản kim Đồng</p>
                     <p class="add-footer text-center">55 Quang Trung, Hai Bà Trưng, Hà Nội </p>
                     <p> ĐT: 84 2439434730- Fax: 84 2430454065</p>

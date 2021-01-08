@@ -35,7 +35,6 @@
 				<div
                     class="view view-sachcua-tacgia view-id-sachcua_tacgia view-display-id-block_1 view-dom-id-a857a0396d33c416104040e3a159ed2b">
             <div class="view-header">
-      <span class="views-label views-label-title">Tác giả của</span>
             </div>
 
 
@@ -43,13 +42,23 @@
       <div class="view-content ">
           <div>
 
+
+
   <div class="views-field views-field-title">
       <span class="field-content">
-          <a href="/tai-sao-tre-con-sieu-pham">
-              <div>Tại sao trẻ con thật siêu phàm?</div>
-          </a>
+              <div>
+                  @php
+                  if (!empty(App\Models\Author::find($val->id)->books()->first()->name)){
+                          echo 'Tác giả của: '.'<br>'.'<a href="'.route('showbookdetail', App\Models\Author::find($val->id)->books()->first()).'">'.App\Models\Author::find($val->id)->books()->first()->name.'</a>';
+                } else{
+                                                echo "Tác giả không có sách nào.";
+                }
+                  @endphp
+              </div>
       </span>
   </div>
+
+
         </div>
     </div>
 

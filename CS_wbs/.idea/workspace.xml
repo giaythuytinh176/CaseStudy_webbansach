@@ -327,9 +327,9 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php</url>
-          <line>1</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
+          <line>326</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
