@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" dir="ltr"
+<html lang="{{ app()->getLocale() }}" dir="ltr"
       xmlns:fb="http://ogp.me/ns/fb#"
       xmlns:og="http://ogp.me/ns#"
       xmlns:article="http://ogp.me/ns/article#"
@@ -14,24 +14,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="shortcut icon" href="https://nxbkimdong.com.vn/sites/default/files/favi_kimdong.png" type="image/png"/>
     <meta name="generator" content="Drupal 7 (http://drupal.org)"/>
-    <link rel="canonical" href="https://nxbkimdong.com.vn/cart"/>
-    <link rel="shortlink" href="https://nxbkimdong.com.vn/cart"/>
+    <link rel="canonical" href="https://nxbkimdong.com.vn/sach-moi"/>
+    <link rel="shortlink" href="https://nxbkimdong.com.vn/sach-moi"/>
     <meta property="og:site_name" content="Nhà xuất bản Kim Đồng"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content="https://nxbkimdong.com.vn/cart"/>
-    <meta property="og:title" content="Giỏ hàng"/>
+    <meta property="og:url" content="https://nxbkimdong.com.vn/sach-moi"/>
+    <meta property="og:title" content="Sách mới"/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:url" content="https://nxbkimdong.com.vn/cart"/>
-    <meta name="twitter:title" content="Giỏ hàng"/>
-    <title>Giỏ hàng | Nhà xuất bản Kim Đồng</title>
+    <meta name="twitter:url" content="https://nxbkimdong.com.vn/sach-moi"/>
+    <meta name="twitter:title" content="Sách mới"/>
+    <title>Sách mới | Nhà xuất bản Kim Đồng</title>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_h5AvHQ7kQTTi0F1kePCavupgHy2xtZNtRMgIc7FcAeg.css') }}" media="all"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_fF5FFz4JRTA2dpnf-oOLLLf4QEaiqbWw4072Lwar74g.css') }}" media="screen"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_2dzLqcNHDArja4FQmQH-8XbLzUBCjTRsGnDr3dN3KC8.css') }}" media="all"/>
-    <style>#uc-coupon-active-coupons, #uc-coupon-other-discounts {
-            clear: left;
-        }
-    </style>
-    <link type="text/css" rel="stylesheet" href="https://nxbkimdong.com.vn/sites/default/files/css/css_i61OHsXLkEuKhkp4fZ7i7BoP7ef-byZZoCGzQf-GhYs.css" media="all"/>
     <link type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="all"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}" media="all"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_hXS50BQImtqcZYmO6MHutcAflXkm7pRq5eed4nR79R4.css') }}" media="all"/>
@@ -70,9 +65,10 @@
             "pathPrefix": "",
             "ajaxPageState": {
                 "theme": "bootstrap",
-                "theme_token": "cSq39bg2BIzbZeh87KERiSTxZ0l54LH4tgISBBDMUGI",
+                "theme_token": "JN_rdEvmJ8pXIro3ipJald0IxBfiq0jVyzIR1XbOwY0",
                 "jquery_version": "1.9",
                 "js": {
+                    "sites\/all\/modules\/flexslider\/assets\/js\/flexslider.load.js": 1,
                     "0": 1,
                     "sites\/all\/modules\/vinno\/vinno_table\/handsontable\/dist\/handsontable.full.min.js": 1,
                     "sites\/all\/themes\/bootstrap\/js\/bootstrap.js": 1,
@@ -121,16 +117,23 @@
                     "sites\/all\/modules\/vinno\/vinno_count\/vinno_count.js": 1,
                     "sites\/all\/modules\/vinno\/vinno_table\/handsontable\/dist\/moment\/moment.js": 1,
                     "sites\/all\/modules\/vinno\/vinno_table\/handsontable\/dist\/pikaday\/pikaday.js": 1,
+                    "sites\/all\/modules\/flag\/theme\/flag.js": 1,
+                    "sites\/all\/modules\/uc_out_of_stock\/uc_out_of_stock.js": 1,
+                    "sites\/all\/modules\/contrib\/views\/js\/base.js": 1,
+                    "sites\/all\/libraries\/flexslider\/jquery.flexslider-min.js": 1,
                     "sites\/all\/modules\/responsive_menus\/styles\/sidr\/js\/responsive_menus_sidr.js": 1,
+                    "sites\/all\/modules\/views_load_more\/views_load_more.js": 1,
+                    "sites\/all\/modules\/contrib\/views\/js\/ajax_view.js": 1,
+                    "sites\/all\/modules\/views_show_more\/views_show_more.js": 1,
                     "sites\/all\/libraries\/sidr\/jquery.sidr.min.js": 1,
                     "sites\/all\/modules\/google_analytics\/googleanalytics.js": 1,
                     "3": 1,
                     "sites\/all\/modules\/autodialog\/autodialog.js": 1,
                     "sites\/all\/modules\/autodialog\/jquery.ui.dialog.scrollfix\/jquery.ui.dialog.scrollfix.js": 1,
-                    "misc\/tableheader.js": 1,
                     "sites\/all\/themes\/bootstrap\/js\/site.js": 1,
                     "sites\/all\/themes\/bootstrap\/js\/modules\/ctools\/js\/modal.js": 1,
                     "sites\/all\/themes\/bootstrap\/js\/misc\/ajax.js": 1,
+                    "sites\/all\/themes\/bootstrap\/js\/modules\/views\/js\/ajax_view.js": 1,
                     "sites\/default\/files\/js_injector\/js_injector_20.js": 1
                 },
                 "css": {
@@ -165,11 +168,12 @@
                     "sites\/all\/modules\/vinno\/vinno_table\/handsontable\/dist\/handsontable.min.css": 1,
                     "sites\/all\/modules\/vinno\/vinno_table\/vinno_table.css": 1,
                     "sites\/all\/modules\/vinno\/vinno_table\/handsontable\/dist\/pikaday\/pikaday.css": 1,
-                    "sites\/all\/modules\/uc_coupon\/uc_coupon.css": 1,
-                    "0": 1,
+                    "sites\/all\/modules\/flag\/theme\/flag.css": 1,
+                    "sites\/all\/modules\/uc_out_of_stock\/uc_out_of_stock.css": 1,
+                    "sites\/all\/modules\/flexslider\/assets\/css\/flexslider_img.css": 1,
+                    "sites\/all\/libraries\/flexslider\/flexslider.css": 1,
                     "sites\/all\/libraries\/sidr\/stylesheets\/jquery.sidr.dark.css": 1,
                     "sites\/all\/modules\/autodialog\/jquery.ui.dialog.scrollfix\/jquery.ui.dialog.scrollfix.css": 1,
-                    "sites\/all\/modules\/ubercart\/uc_cart\/uc_cart.css": 1,
                     "\/\/maxcdn.bootstrapcdn.com\/font-awesome\/4.6.3\/css\/font-awesome.min.css": 1,
                     "\/sites\/all\/libraries\/bootstrap\/css\/bootstrap.min.css": 1,
                     "sites\/all\/themes\/bootstrap\/css\/3.3.5\/overrides.min.css": 1,
@@ -273,7 +277,104 @@
                 "COLLAPSIBLE_CART": 1
             },
             "vinno_uid": 0,
-            "urlIsAjaxTrusted": {"\/tim-kiem": true, "\/cart": true},
+            "uc_out_of_stock": {
+                "path": "\/uc_out_of_stock\/query",
+                "throbber": 0,
+                "instock": 1,
+                "msg": "\u003Cspan class =\u0022out-of-stock het-hang\u0022\u003E\u003Ci class=\u0022fa fa-shopping-cart\u0022 title=\u0022H\u1ebft h\u00e0ng\u0022\u003E\u003C\/i\u003E\u003C\/span\u003E"
+            },
+            "urlIsAjaxTrusted": {"\/sach-moi": true, "\/tim-kiem": true},
+            "flag": {"anonymous": true},
+            "better_exposed_filters": {
+                "views": {
+                    "ds_sach": {"displays": {"page": {"filters": []}}},
+                    "slide_home": {
+                        "displays": {
+                            "block_2": {"filters": []},
+                            "block": {"filters": []},
+                            "block_3": {"filters": []}
+                        }
+                    }
+                }
+            },
+            "views": {
+                "ajax_path": "\/views\/ajax",
+                "ajaxViews": {
+                    "views_dom_id:16a3c0a1d0830cf273b909cc159b3457": {
+                        "view_name": "slide_home",
+                        "view_display_id": "block_2",
+                        "view_args": "",
+                        "view_path": "sach-moi",
+                        "view_base_path": null,
+                        "view_dom_id": "16a3c0a1d0830cf273b909cc159b3457",
+                        "pager_element": 0
+                    },
+                    "views_dom_id:f02cd2ff3c56a65b613a2d68f817ba90": {
+                        "view_name": "slide_home",
+                        "view_display_id": "block",
+                        "view_args": "",
+                        "view_path": "sach-moi",
+                        "view_base_path": null,
+                        "view_dom_id": "f02cd2ff3c56a65b613a2d68f817ba90",
+                        "pager_element": 0
+                    },
+                    "views_dom_id:a294e9b8110a1dfd80ca8a461ecba3d5": {
+                        "view_name": "slide_home",
+                        "view_display_id": "block_3",
+                        "view_args": "",
+                        "view_path": "sach-moi",
+                        "view_base_path": null,
+                        "view_dom_id": "a294e9b8110a1dfd80ca8a461ecba3d5",
+                        "pager_element": 0
+                    }
+                }
+            },
+            "flexslider": {
+                "optionsets": {
+                    "default": {
+                        "namespace": "flex-",
+                        "selector": ".slides \u003E li",
+                        "easing": "swing",
+                        "direction": "horizontal",
+                        "reverse": false,
+                        "smoothHeight": false,
+                        "startAt": 0,
+                        "animationSpeed": 600,
+                        "initDelay": 0,
+                        "useCSS": true,
+                        "touch": true,
+                        "video": false,
+                        "keyboard": true,
+                        "multipleKeyboard": false,
+                        "mousewheel": 0,
+                        "controlsContainer": ".flex-control-nav-container",
+                        "sync": "",
+                        "asNavFor": "",
+                        "itemWidth": 0,
+                        "itemMargin": 0,
+                        "minItems": 0,
+                        "maxItems": 0,
+                        "move": 0,
+                        "animation": "slide",
+                        "slideshow": true,
+                        "slideshowSpeed": "7000",
+                        "directionNav": true,
+                        "controlNav": false,
+                        "prevText": "",
+                        "nextText": "",
+                        "pausePlay": false,
+                        "pauseText": "Pause",
+                        "playText": "Play",
+                        "randomize": false,
+                        "thumbCaptions": false,
+                        "thumbCaptionsBoth": false,
+                        "animationLoop": true,
+                        "pauseOnAction": true,
+                        "pauseOnHover": true,
+                        "manualControls": ""
+                    }
+                }, "instances": {"flexslider-1": "default"}
+            },
             "responsive_menus": [{
                 "selectors": ["#block-system-main-menu"],
                 "trigger_txt": "\u003Ci class=\u0022glyphicon glyphicon-menu-hamburger\u0022\u003E\u003C\/i\u003E",
@@ -323,7 +424,7 @@
             }
         });</script>
 </head>
-<body class="html not-front not-logged-in no-sidebars page-cart">
+<body class="html not-front not-logged-in no-sidebars page-sach-moi">
 <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable">Nhảy đến nội dung</a>
 </div>
@@ -337,16 +438,19 @@
     </div>
 </header>
 
-
 <div class="main-container container-fluid">
 
     <header role="banner" id="page-header">
 
         <div class="region region-header">
             <section id="block-block-44" class="block block-block hidden-xs hidden-sm clearfix">
+
+
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 col-md-5 top-left">
                         <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
+
+
                             <form action="https://nxbkimdong.com.vn/tim-kiem" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
                                 <div>
                                     <div class="views-exposed-form">
@@ -390,7 +494,7 @@
                                             </div>
                                         </a></div>
                                     <div class="shopping-cart">
-                                        <a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">1 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
+                                        <a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">0 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
                                         <div class="hidden cart-updated">
                                             <div id="close-cart-noti">
                                                 <i class="fa fa-times-circle" aria-hidden="true"></i></div>
@@ -431,6 +535,8 @@
                 </div>
             </section>
             <section id="block-block-45" class="block block-block hidden-xs hidden-sm clearfix">
+
+
                 <div class="row">
                     <div class="col-xs-7 col-sm-7 col-md-5 menu-logo-left">
                         <section id="block-menu-menu-menu-bar" class="block block-menu hidden-xs hidden-sm clearfix">
@@ -438,12 +544,12 @@
 
                             <ul class="menu nav">
                                 <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1262">
-                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" data-target="#" class="dropdown-toggle">Sách
+                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Thể Loại
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         @foreach($categorys as $key => $cate)
                                         <li class="first leaf active-trail dhtml-menu active" id="dhtml_menu-1284">
-                                            <a href="{{ route('show.category', $cate->id) }}" class="active-trail active">{{ $cate->name }}</a></li>
+                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail active">{{ $cate->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -519,13 +625,13 @@
 
 
                                     <ul class="menu nav">
-                                        <li class="first expanded dropdown">
-                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" data-target="#" class="dropdown-toggle">Sách
+                                        <li class="first expanded active-trail active dropdown">
+                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Sách
                                                 <span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li class="first leaf">
-                                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="">Sách mới</a>
-                                                </li>
+                                                <li class="first leaf active-trail active">
+                                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail active">Sách
+                                                        mới</a></li>
                                                 <li class="leaf">
                                                     <a href="https://nxbkimdong.com.vn/sach-theo-chu-de" title="">Sách
                                                         theo chủ đề</a></li>
@@ -638,7 +744,7 @@
                                                         </div>
                                                     </div>
                                                 </a></div>
-                                            <div class="shopping-cart"><a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">1 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
+                                            <div class="shopping-cart"><a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">0 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
                                                 <div class="hidden cart-updated">
                                                     <div id="close-cart-noti">
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i></div>
@@ -670,3 +776,107 @@
         <!-- New breadcrumb here -->
 
     </header> <!-- /#page-header -->
+    <div class="highlighted">
+        <div class="region region-highlighted">
+            <section id="block-block-54" class="block block-block clearfix">
+
+
+                <div class="slider-home-group">
+                    <div class="slider-home-group-left">
+                        <section id="block-views-slide-home-block-2" class="block block-views clearfix">
+
+
+                            <div class="view view-slide-home view-id-slide_home view-display-id-block_2 view-dom-id-16a3c0a1d0830cf273b909cc159b3457">
+
+
+                                <div class="view-content ">
+                                    <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                                        <div class="views-field views-field-field-quangcao-anh">
+                                            <div class="field-content">
+                                                <a href="https://nxbkimdong.com.vn/landing-page/684223" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/banner_370x370_-_nhap_ma.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt=""/>
+                                                    <noscript>
+                                                        <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/banner_370x370_-_nhap_ma.jpg" width="370" height="370" alt=""/>
+                                                    </noscript>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                    <div class="views-row views-row-2 views-row-even views-row-last">
+
+                                        <div class="views-field views-field-field-quangcao-anh">
+                                            <div class="field-content">
+                                                <a href="https://nxbkimdong.com.vn/grimgar-ao-anh-va-tro-tan-tap-9-tang-01-bookmark-05-bao-li-xi-ban-gioi-han" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/grimgar_9_anh_vuong_370px.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt=""/>
+                                                    <noscript>
+                                                        <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/grimgar_9_anh_vuong_370px.jpg" width="370" height="370" alt=""/>
+                                                    </noscript>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slider-home-group-center">
+                        <section id="block-views-slide-home-block" class="block block-views clearfix">
+                            <div class="view view-slide-home view-id-slide_home view-display-id-block view-dom-id-f02cd2ff3c56a65b613a2d68f817ba90">
+                                <div class="view-content ">
+                                    <div id="flexslider-1" class="flexslider">
+                                        <ul class="slides">
+                                            @foreach($book_images as $k => $v)
+                                            <li>
+                                                <div class="views-field views-field-field-quangcao-anh">
+                                                    <div class="field-content">
+                                                        <a href="https://onepiecewt100.com/" target="_blank"><img class="img-responsive" data-src="{{ asset('images/' . $v->img) }}" src="{{ asset('images/' . $v->img) }}" width="1180" height="740" alt=""/>
+                                                            <noscript>
+                                                                <img class="img-responsive" src="{{ asset('images/' . $v->img) }}" width="1180" height="740" alt=""/>
+                                                            </noscript>
+                                                        </a></div>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="slider-home-group-right">
+                        <section id="block-views-slide-home-block-3" class="block block-views clearfix">
+
+
+                            <div class="view view-slide-home view-id-slide_home view-display-id-block_3 view-dom-id-a294e9b8110a1dfd80ca8a461ecba3d5">
+
+
+                                <div class="view-content ">
+                                    <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                                        <div class="views-field views-field-field-quangcao-anh">
+                                            <div class="field-content">
+                                                <a href="https://nxbkimdong.com.vn/sach-phathanh/708180" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt=""/>
+                                                    <noscript>
+                                                        <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" width="370" height="370" alt=""/>
+                                                    </noscript>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                    <div class="views-row views-row-2 views-row-even views-row-last">
+
+                                        <div class="views-field views-field-field-quangcao-anh">
+                                            <div class="field-content">
+                                                <a href="https://nxbkimdong.com.vn/uu-dai-vui-giang-sinh-chao-2021" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnkd-370x370_t12.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt=""/>
+                                                    <noscript>
+                                                        <img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnkd-370x370_t12.jpg" width="370" height="370" alt=""/>
+                                                    </noscript>
+                                                </a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>

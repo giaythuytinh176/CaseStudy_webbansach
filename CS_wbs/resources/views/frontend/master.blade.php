@@ -1,5 +1,5 @@
-@include('frontend.header')
+@include('frontend.blocks_master.header')
 
 @yield('content')
 
-@include('frontend.footer')
+@include('frontend.blocks_master.footer')

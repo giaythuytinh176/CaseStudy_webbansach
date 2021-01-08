@@ -232,7 +232,7 @@ var Drupal = Drupal || {};
 $(document).ready(function(){
 // click vào nút update giỏ hàng khi thay đổi trường số lượng trong page /cart
 $('form#uc-cart-view-form table.table > tbody  > tr .qty input').on('change keyup',function(){
-	$('button#edit-update').trigger( "click" );
+	$('button#dedit-update').trigger( "click" );
 });
    $('#sidr-0 ul.sidr-class-menu').prepend(
      	$('<li id="sidr-close-opt">').append(
@@ -278,7 +278,7 @@ var x = setInterval(function() {
 
   // Lấy thười gian hiện tại
   var now = new Date().getTime();
-    
+
   // Tình khoảng cách giữa thời gian hiện tại và thời gian được đếm
   var distance = countDownDate - now;
   // Time calculations for days, hours, minutes and seconds
@@ -295,12 +295,12 @@ var x = setInterval(function() {
   if(seconds < 10){
     seconds = '0' + seconds;
   }
-  
+
 
   $('.flash-sale-countdown-content').html("<span class='hour'>" + hours + " </span><span class='dots'> : </span><span class='minutes'> "
   + minutes + "</span><span class='dots'> : </span><span class='second'> " + seconds + "</span>");
 
-    
+
   // Nếu đếm hết thời gian thì sẽ thực hiện điều kiện ở dưới
    if (distance < 0) {
         clearInterval(x);
@@ -309,7 +309,7 @@ var x = setInterval(function() {
    }
 }, 1000);
 
-// Sắp xếp lại menu flash sale 
+// Sắp xếp lại menu flash sale
 $('.flash-sale-breakcrumb span').sort(function(a,b) {
      return parseInt(a.dataset.sid) - parseInt(b.dataset.sid);
 }).appendTo('.flash-sale-breakcrumb');
@@ -354,7 +354,7 @@ $('select#edit-field-quangcao-hienthi-und').on('click',function(){
     }
 });
 
-//resize images 
+//resize images
 // $(document).ready(function(){
 // 	resize_images_banner();
 //   	$(window).resize(function(){
@@ -370,7 +370,7 @@ $('select#edit-field-quangcao-hienthi-und').on('click',function(){
 //     }else{
 //         $('.slider-home-group').css({"max-width":total,"margin":"auto"});
 //     }
-//     let left_right_width = total / 6; 
+//     let left_right_width = total / 6;
 //     let center_width = total - (left_right_width*2)
 //     let left_right_height = total/6;
 //     let center_height =left_right_height*2;

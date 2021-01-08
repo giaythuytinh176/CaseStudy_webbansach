@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 @section('content')
 
 
@@ -94,7 +94,7 @@
                                         $author_id = $author_detail->id;
                                         $book = \App\Models\Book::whereHas('authors', function (\Illuminate\Database\Eloquent\Builder $q) use ($author_id) {
                                             $q->where("authors.id", "=", $author_id);
-                                        })->get();
+                                        })->paginate(4);
                                         if (!empty($book[0])) {
                                             foreach ($book as $item) {
                                                 @endphp
@@ -165,9 +165,9 @@
                                             echo "No book";
                                         }
                                     @endphp
-
                                 </div>
                             </div>
+                            <div style="text-align: center;">{{ $book->links( "pagination::bootstrap-4") }}</div>
 
 
                             <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next"

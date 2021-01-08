@@ -11,26 +11,26 @@
         </ol>
     </div>
     <div class="row">
-    <section class="col-sm-12">
+        <section class="col-sm-12">
 
-        <!--// Old breadcrumb here -->
-        <a id="main-content"></a>
-        <h1 class="page-header">Sách mới</h1>
-        <div class="region region-content">
-            <section id="block-system-main" class="block block-system clearfix">
-
-
-                <div
-                    class="view view-ds-sach view-id-ds_sach view-display-id-page view-dom-id-4c88e3c3a91bcd3d6070f6f770bac76f">
+            <!--// Old breadcrumb here -->
+            <a id="main-content"></a>
+            <h1 class="page-header">Sách mới</h1>
+            <div class="region region-content">
+                <section id="block-system-main" class="block block-system clearfix">
 
 
-                    <div class="view-content ">
+                    <div
+                        class="view view-ds-sach view-id-ds_sach view-display-id-page view-dom-id-4c88e3c3a91bcd3d6070f6f770bac76f">
 
-                        @foreach($books as $key => $book)
-                            <div
-                                class="views-row views-row-1 views-row-odd views-row-first col-xs-6 col-sm-4 col-md-4 col-lg-3 ds-sach-mobile">
 
-                                <div class="views-field views-field-nothing">        <span class="field-content">
+                        <div class="view-content ">
+
+                            @foreach($books as $key => $book)
+                                <div
+                                    class="views-row views-row-1 views-row-odd views-row-first col-xs-6 col-sm-4 col-md-4 col-lg-3 ds-sach-mobile">
+
+                                    <div class="views-field views-field-nothing">        <span class="field-content">
                                     <div class="spnew">
 
 	<div><div class='c-product-item--thumbnail-container'>
@@ -57,32 +57,31 @@
     <a href="{{route('showbookdetail', $book->id)}}">{{ $book->name }}</a></div></div>
 
 	<div class='c-loop-authors-summary'>@php
-       $category = $book->categories()->first();
-       echo ($category->name);
- @endphp</div>
+            $category = $book->categories()->first();
+            echo ($category->name);
+        @endphp</div>
 	<div class='sanpham-giasp'><div class='gia-sell' style="color: red">{{number_format( $book->price) }}đ</div></div>
 
 <div class='sanpham-giasp'><div class='gia-cost'></div></div>
 	<div class="c-product-yeuthick-mua">
-		<div class='sanpham-mua'><form class="ajax-cart-submit-form" action="/sach-moi" method="post"
-                                       id="uc-catalog-buy-it-now-form-714936" accept-charset="UTF-8"><div><input
-                        type="hidden" name="nid" value="714936"/>
-<input type="hidden" name="form_build_id" value="form-NWvgWAdM2aaGuaQgxT2nTuAVQRK4EFxAjQo944jHPUQ"/>
-<input type="hidden" name="form_id" value="uc_catalog_buy_it_now_form_714936"/>
-<input type="hidden" name="product-nid" value="714936"/>
-<div class="form-actions form-wrapper form-group" id="edit-actions"><button title="Đặt hàng"
-                                                                            class="list-add-to-cart ajax-cart-submit-form-button btn btn-default form-submit"
-                                                                            type="submit" id="edit-submit-714936"
-                                                                            name="op" value="Mua ngay">Mua ngay</button>
-</div></div></form></div>
-		<div class='sanpham-yeuthich'><span class="flag-wrapper flag-sach-yeuthich flag-sach-yeuthich-714936">
-      <span class="flag flag-action flag-link-toggle"><a href="/user/login?destination=sach-moi"
-                                                         class="ctools-use-modal ctools-modal-modal-popup-small">+ Thêm vào <b>Yêu thích</b></a></span>
-    </span>
-</div>
+		<div class='sanpham-mua'>
+            <form class="ajax-cart-submit-form" action="{{ route('cart.add.store', $book->id) }}" method="get"
+                  id="uc-catalog-buy-it-now-form-714936" accept-charset="UTF-8">
+<div class="form-actions form-wrapper form-group" id="edit-actions">
+
+    <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+</svg>
+              </button>
+
+</div></form>
+        </div>
+
 	</div>
 </div></span></div>
 
+<<<<<<< HEAD
                             </div>
                         @endforeach
                     </div>
@@ -93,6 +92,17 @@
         </div>
     </section>
 
+=======
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="text-center">
+                            {{ $books->links( "pagination::bootstrap-4") }}
+                        </div>
+                </section>
+            </div>
+        </section>
+>>>>>>> 085ab3b22d1af8e714b995d18b3b80d0955ba8e9
     </div>
     <section id="block-views-sachbanchay-block-9" class="block block-views clearfix">
 
