@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.master2')
 
 @section('content')
 
@@ -7,6 +7,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ route('show.home') }}">Trang chủ</a></li>
             <li><a href="/">SÁCH THEO CHỦ ĐỀ</a></li>
+            <li><a href="{{ route('show.authors', $bookdetail->id) }}"><strong>{{ ($bookdetail->categories()->first()->name) }}</strong></a></li>
             <li><strong>{{ $bookdetail->name }}</strong></li>
         </ol>
     </div>
@@ -64,7 +65,7 @@
                                         $arr_author = [];
                                         $author = $bookdetail->authors()->get();
                                         foreach ($author as $item) {
-                                            $arr_author[] = '<a href="'.route('author.detail', $item->id).'">'.$item->name.'</a>';
+                                            $arr_author[] = '<a href="'.route('show.authors', $item->id).'">'.$item->name.'</a>';
                                         }
                                         echo implode("<br/>", $arr_author);
                                     @endphp

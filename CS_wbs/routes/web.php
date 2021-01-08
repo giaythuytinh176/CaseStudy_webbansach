@@ -27,10 +27,14 @@ Route::group(['middleware' => 'locale'], function () {
     Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
     Route::get('/showBookDetail/{id}',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
 
+    Route::prefix('cart')->group(function () {
+        Route::get('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store'])->name('cart.add.store');
+        Route::get('/', [\App\Http\Controllers\frontend\CartController::class, 'index'])->name('cart.index');
+        Route::get('remove/{id}', [\App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.remove.destroy');
+        Route::post('main', [\App\Http\Controllers\frontend\CartController::class, 'main'])->name('cart.main');
 
 
-
-//    Route::get('/',[\App\Http\Controllers\frontend\HomeController::class,'showlist'])->name('showlist');
+    });
 
     Route::prefix('/admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\LoginAdmin::class, 'showLogin'])->name('showlogin.admin');
