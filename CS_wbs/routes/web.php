@@ -22,6 +22,9 @@ Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
 
     Route::get('/login',[\App\Http\Controllers\frontend\LoginController::class,'showLogin'])->name('login.show');
+
+    Route::get('/register',[\App\Http\Controllers\frontend\RegisterController::class,'showRegisterForm'])->name('register.user');
+    Route::post('/register',[\App\Http\Controllers\frontend\RegisterController::class,'store'])->name('register.user1');
     Route::post('/login',[\App\Http\Controllers\frontend\LoginController::class,'checkLogin'])->name('login.check');
     Route::get('/logout',[\App\Http\Controllers\frontend\LoginController::class,'logout'])->name('logout');
 
