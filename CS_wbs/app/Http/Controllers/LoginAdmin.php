@@ -11,7 +11,7 @@ class LoginAdmin extends Controller
     public function showLogin()
     {
         if (Auth::check()) {
-            return back();
+            return redirect()->route('book.list');
         }
         return view('backend.login.login');
     }

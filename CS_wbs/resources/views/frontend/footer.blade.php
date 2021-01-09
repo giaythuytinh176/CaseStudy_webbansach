@@ -52,12 +52,12 @@
                             <h2 class="block-title">Dịch vụ</h2>
 
                             <ul class="menu nav">
-                                <li class="first leaf"><a href="/dieu-khoan-su-dung" title="">Điều khoản sử dụng</a>
+                                <li class="first leaf"><a href="{{ route('menu.services', 'term_of_use') }}" title="">Điều khoản sử dụng</a>
                                 </li>
-                                <li class="leaf"><a href="/chinh-sach-bao-mat-thong-tin" title="">Chính sách bảo mật</a>
+                                <li class="leaf"><a href="{{ route('menu.services', 'privacy_policy') }}" title="">Chính sách bảo mật</a>
                                 </li>
-                                <li class="leaf"><a href="/lien-he" title="">Liên hệ</a></li>
-                                <li class="last leaf"><a href="/he-thong-nha-sach" title="">Hệ thống nhà sách</a></li>
+                                <li class="leaf"><a href="{{ route('menu.services', 'contact') }}" title="">Liên hệ</a></li>
+                                <li class="last leaf"><a href="{{ route('menu.services', 'bookstore_system') }}" title="">Hệ thống nhà sách</a></li>
                             </ul>
                         </section>
                     </div>
