@@ -4,25 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <title>Đăng Nhập</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/login/assets/css/style.css') }}">
 </head>
 <body>
 <div class="registration-form">
-    <form>
+    <form method="post" action="{{ route('login.check') }}">
+        @csrf
         <div class="form-icon">
             <span><i class="icon icon-user"></i></span>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="username" placeholder="Username">
+            <label class="mb-1" for="inputEmailAddress">Email:</label>
+            <input type="text" class="form-control item" name="email" placeholder="Email" required>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control item" id="password" placeholder="Password">
+            <label class="mb-1" for="inputPassword">Password:</label>
+            <input type="password" class="form-control item" name="password" placeholder="Password" required>
         </div>
+        @if(\Illuminate\Support\Facades\Session::has('error'))
+            <div>
+                <p class="alert alert-danger">{{\Illuminate\Support\Facades\Session::get('error')}}</p>
+            </div>
+        @endif
         <div class="form-group">
-            <button type="button" class="btn btn-block create-account">Login</button>
+            <button type="submit" class="btn btn-block create-account">Login</button>
         </div>
     </form>
     <div class="social-media">
