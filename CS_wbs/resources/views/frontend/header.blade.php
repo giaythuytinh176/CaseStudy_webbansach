@@ -464,13 +464,6 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="col-xs-7 col-sm-7 col-md-2  menu-logo-center">
-                        <section id="block-block-15" class="block block-block clearfix">
-
-
-                            <a class="visible-md visible-lg" href="https://nxbkimdong.com.vn"><img src="https://nxbkimdong.com.vn/images/kimdongnew/logo60kd.png" alt="Kim Đồng"/></a><a class="visible-xs visible-sm" href="https://nxbkimdong.com.vn"><img src="https://nxbkimdong.com.vn/images/kimdongnew/logo60kd.png" alt="Kim Đồng"/></a>
-                        </section>
-                    </div>
                     <div class="col-xs-7 col-sm-7 col-md-5  menu-logo-right">
                         <section id="block-menu-menu-menu-top-right" class="block block-menu clearfix">
 
