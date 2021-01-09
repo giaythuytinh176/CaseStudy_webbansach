@@ -71,7 +71,7 @@
                                         @endphp
                                     </td>
                                     <td>
-                                        <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$val->img) }} " alt="">
+                                        <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$val->img) }}" alt="">
                                     </td>
                                     <td>
                                         <a href="{{route('book.edit',['id'=> $val->id])}}" class="btn btn-primary">Edit</a>

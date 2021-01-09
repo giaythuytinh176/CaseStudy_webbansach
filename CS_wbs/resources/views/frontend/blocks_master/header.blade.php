@@ -543,13 +543,15 @@
 
 
                             <ul class="menu nav">
+                                <li class="last leaf dhtml-menu" id="dhtml_menu-1265">
+                                    <a href="{{ route('show.home') }}" title="">Trang chủ</a></li>
                                 <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1262">
                                     <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Thể Loại
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         @foreach($categorys as $key => $cate)
                                         <li class="first leaf active-trail dhtml-menu active" id="dhtml_menu-1284">
-                                            <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail active">{{ $cate->name }}</a></li>
+                                            <a href="{{ route('show.category', $cate->id) }}" class="active-trail active">{{ $cate->name }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>

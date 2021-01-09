@@ -1,4 +1,4 @@
- @extends('frontend.master2')
+@extends('frontend.master2')
 @section('content')
 
     <div id="breadcrumb-kd">
@@ -19,17 +19,22 @@
                     @if (\Illuminate\Support\Facades\Session::has('sucess_cart'))
                         <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('sucess_cart') }}</div>
                     @endif
+                    @if (\Illuminate\Support\Facades\Session::has('updateCart'))
+                        <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('updateCart') }}</div>
+                    @endif
                     @if (\Illuminate\Support\Facades\Session::has('remove_cart'))
                         <div class="alert alert-danger">{{ \Illuminate\Support\Facades\Session::get('remove_cart') }}</div>
                     @endif
                     <div id="cart-form-pane">
-                        <div class="soluong-sanpham">Số sản phẩm: <span class="number-sanpham">{{ Cart::content()->count() }} sản phẩm</span></div>
+                        <div style="color: red !important;" class="soluong-sanpham">Số sản phẩm: <span class="number-sanpham">{{ count(Cart::content()) }} sản phẩm</span>
+                        </div>
                         <form action="{{ route('cart.main') }}" method="post" id="uc-cart-view-form" accept-charset="UTF-8">
                             @csrf
                             <div>
                                 <div class="uc-default-submit">
                                     <button type="submit" id="edit-update" name="updatecart" value="update_cart" class="btn btn-info form-submit">
-                                        <span class="icon glyphicon glyphicon-ok" aria-hidden="true"></span> Cập nhật giỏ hàng
+                                        <span class="icon glyphicon glyphicon-ok" aria-hidden="true"></span> Cập nhật
+                                        giỏ hàng
                                     </button>
                                 </div>
                                 <div class="table-responsive">
@@ -68,8 +73,9 @@
                                                 </td>
                                                 <td class="qty">
                                                     <div class="form-item form-item-items-0-qty form-type-uc-quantity form-group">
-                                                        <input type="tex" id="edit-items-0-qty" name="items[{{ $cart->id }}][qty]" value="{{ $cart->qty }}" size="5" maxlength="6" class="form-text required"/>
-                                                        <label class="control-label element-invisible" for="edit-items-0-qty">Số lượng
+                                                        <input type="text" id="edit-items-0-qty" name="items[{{ $cart->id }}][qty]" value="{{ $cart->qty }}" size="5" maxlength="6" class="form-text required"/>
+                                                        <label class="control-label element-invisible" for="edit-items-0-qty">Số
+                                                            lượng
                                                             <span class="form-required" title="Trường dữ liệu này là bắt buộc.">*</span>
                                                         </label>
                                                     </div>
@@ -112,9 +118,15 @@
                                         <span class="icon glyphicon glyphicon-ok" aria-hidden="true"></span> Cập nhật
                                         giỏ hàng
                                     </button>
-                                    <button type="submit" id="edit-checkout--2" name="op" value="Thanh toán" class="btn btn-default form-submit">
-                                        Thanh toán
-                                    </button>
+                                    @if(\Illuminate\Support\Facades\Auth::guard('customers')->check())
+                                        <button type="submit" id="edit-checkout--2" name="op" value="Thanh toán" class="btn btn-default form-submit">
+                                            Thanh toán
+                                        </button>
+                                    @else
+                                        <button type="submit" id="edit-checkout--2" name="login_cart" value="Login to checkout" class="btn btn-default form-submit">
+                                            Login to checkout
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
                         </form>

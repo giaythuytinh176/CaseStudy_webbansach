@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -20,6 +21,8 @@ class CartController extends Controller
             return $this->destroy($request->remove_cart);
         } elseif ($request->updatecart == "update_cart") {
             return $this->updateCart($request->items);
+        } elseif ($request->login_cart == "Login to checkout") {
+            return redirect()->route('login.show');
         }
         dd($request);
         return redirect()->route('cart.index');
@@ -32,6 +35,9 @@ class CartController extends Controller
      */
     public function index()
     {
+        //$test = Auth::guard('customers')->guest();
+        //dd($test);
+
         $authors = Author::all();
         $categorys = Category::all();
         return view('frontend.cart.index', compact('authors', 'categorys'));
@@ -42,6 +48,7 @@ class CartController extends Controller
         foreach ($items_update as $key => $itemupdate) {
             foreach (Cart::content() as $k => $cart) {
                 if ($cart->id == $key) {
+                    Session::flash('updateCart', "Successfully updated cart.");
                     Cart::update($cart->rowId, $itemupdate['qty']);
                 }
             }

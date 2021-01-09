@@ -137,13 +137,13 @@
                         <div class="field-items">
                             <div class="field-item even">
                                 <div class="hotline-footer">
-                                    <a href="tel:1900571595">
+                                    <a href="tel:0979029556">
                                         <div class="hotline-footer-icon">
                                             <span class="glyphicon glyphicon glyphicon-earphone"></span>
                                         </div>
                                         <div class="hotline-footer-phone">
                                             <p>Hotline</p>
-                                            <p>1900 57 15 95</p>
+                                            <p>0979 029 556</p>
                                         </div>
                                     </a>
                                 </div>
