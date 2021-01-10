@@ -2254,7 +2254,7 @@ Drupal.behaviors.qtip_js = {
 
 $(document).ready(function () {
   $('.list-add-to-cart, .flag > a').text('');
-  $('button#edit-submit-hieusach').parent().append('<span class="layer-submit"><img class="" src="/images/kimdongnew/search_icon.png"> <span>Tìm kiếm</span></span>');
+  $('button#edit-submit-hieusach').parent().append('<span class="layer-submit"><img class="" src="https://nxbkimdong.com.vn/images/kimdongnew/search_icon.png"> <span>Tìm kiếm</span></span>');
   if ($('#top').length) {$("#dz_main_header").addClass("quantri");}
   $("#edit-panes-delivery-address-delivery-country").append('<option value=0 selected="">- Tỉnh Thành Phố -</option>');
   $("#edit-panes-delivery-address-delivery-zone option[value = 0]").text("-Chọn Quận/Huyện/TX");
