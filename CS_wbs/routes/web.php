@@ -28,6 +28,8 @@ Route::group(['middleware' => 'locale'], function () {
     Route::post('/login',[\App\Http\Controllers\frontend\LoginController::class,'checkLogin'])->name('login.check');
     Route::get('/logout',[\App\Http\Controllers\frontend\LoginController::class,'logout'])->name('logout');
 
+    Route::post('/searchfrontend',[\App\Http\Controllers\frontend\SearchController::class,'search'])->name('searchupdate');
+
     Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
     Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
     Route::get('/showCategory/{id}', [\App\Http\Controllers\frontend\CategoryController::class, 'showCategory'])->name('show.category');

@@ -451,19 +451,26 @@
                         <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
 
 
-                            <form action="https://nxbkimdong.com.vn/tim-kiem" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
+                            <form action="{{route('searchupdate')}}" method="post" accept-charset="UTF-8">
+                            @csrf
+
+
+
+
+
+
                                 <div>
                                     <div class="views-exposed-form">
                                         <div class="views-exposed-widgets clearfix">
                                             <div id="edit-title-wrapper" class="views-exposed-widget views-widget-filter-combine">
                                                 <div class="views-widget">
                                                     <div class="form-item form-item-title form-type-textfield form-group">
-                                                        <input class="form-control form-text" type="text" id="edit-title" name="title" value="" size="30" maxlength="128"/>
+                                                        <input class="form-control form-text" type="text" id="edit-title" name="search_frontend" value="" size="30" maxlength="128"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="views-exposed-widget views-submit-button">
-                                                <button type="submit" id="edit-submit-hieusach" name="" value="Áp dụng" class="btn btn-info form-submit">
+                                                <button type="submit" value="Áp dụng" class="btn btn-info form-submit">
                                                     Áp dụng
                                                 </button>
                                             </div>
