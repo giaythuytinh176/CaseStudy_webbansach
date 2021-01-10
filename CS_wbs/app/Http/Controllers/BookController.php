@@ -17,9 +17,7 @@ class BookController extends Controller
     {
         $search = $request->search_book;
         $books = Book::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->paginate(5);
-        $categories = Category::all();
-        $authors = Author::all();
-        return view("backend.book.list", compact(['books', 'categories', 'authors']));
+        return view("backend.book.list", compact(['books']));
     }
 
     /**
@@ -30,9 +28,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::paginate(5);
-        $categories = Category::all();
-        $authors = Author::all();
-        return view("backend.book.list", compact(['books', 'categories', 'authors']));
+        return view("backend.book.list", compact(['books']));
     }
 
     /**
@@ -42,9 +38,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $authors = Author::all();
-        return view('backend.book.create', compact(['categories', 'authors']));
+        return view('backend.book.create');
     }
 
     /**
@@ -96,7 +90,6 @@ class BookController extends Controller
     {
         $book_detail = Book::findOrFail($request->id);
         $category_detail = Category::findOrFail($book_detail->category_id);
-
         return view("backend.book.detail", compact(['book_detail', 'category_detail']));
     }
 
@@ -115,11 +108,9 @@ class BookController extends Controller
      */
     public function edit(Book $book, $id)
     {
-        $authors = Author::all();
         $book_detail = Book::findOrFail($id);
         $category_detail = Category::findOrFail($book_detail->category_id);
-        $categories = Category::all();
-        return view("backend.book.edit", compact(['book_detail', 'category_detail', 'categories', 'authors']));
+        return view("backend.book.edit", compact(['book_detail', 'category_detail']));
     }
 
     /**

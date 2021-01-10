@@ -11,7 +11,6 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        $categorys = Category::all();
         $search = $request->title;
         $data = DB::table('books')
             ->join('categories', 'books.category_id', '=', 'categories.id')
@@ -21,6 +20,6 @@ class SearchController extends Controller
             ->orWhere('books.description', 'LIKE', "%$search%")
             ->orWhere('books.price', 'LIKE', "%$search%")
             ->get();
-        return view('frontend.search', compact(['search', 'data', 'categorys']));
+        return view('frontend.search', compact(['search', 'data']));
     }
 }
