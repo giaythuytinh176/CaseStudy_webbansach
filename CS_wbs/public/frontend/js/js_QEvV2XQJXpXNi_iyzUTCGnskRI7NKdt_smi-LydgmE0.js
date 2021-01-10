@@ -2138,7 +2138,7 @@ Drupal.behaviors.gallery_js = {
   attach: function (context, settings) {
     $('.field-name-field-news-thuvienanh .field-items > .field-item').addClass('col-xs-6 col-sm-4 col-lg-3');
     $(window).bind('scroll', function () {
-      if ($(window).scrollTop() > 82) {$('#navbar').addClass('fixed');} 
+      if ($(window).scrollTop() > 82) {$('#navbar').addClass('fixed');}
       else {$('#navbar').removeClass('fixed');
       }
     });
@@ -2240,9 +2240,9 @@ Drupal.behaviors.qtip_js = {
       }
     },
     position: {
-      my: 'center center',  
-      at: 'center center', 
-      target: '#qtip-overlay' 
+      my: 'center center',
+      at: 'center center',
+      target: '#qtip-overlay'
     },
     show: {modal: true, escape: true},
     hide: {target: $('#qtip-overlay')},
@@ -2254,7 +2254,7 @@ Drupal.behaviors.qtip_js = {
 
 $(document).ready(function () {
   $('.list-add-to-cart, .flag > a').text('');
-  $('button#edit-submit-hieusach').parent().append('<span class="layer-submit"><img class="" src="/images/kimdongnew/search_icon.png"> <span>Tìm kiếm</span></span>');
+  $('button#edit-submit-hieusach').parent().append('<span class="layer-submit"><img class="" src="https://nxbkimdong.com.vn/images/kimdongnew/search_icon.png"> <span>Tìm kiếm</span></span>');
   if ($('#top').length) {$("#dz_main_header").addClass("quantri");}
   $("#edit-panes-delivery-address-delivery-country").append('<option value=0 selected="">- Tỉnh Thành Phố -</option>');
   $("#edit-panes-delivery-address-delivery-zone option[value = 0]").text("-Chọn Quận/Huyện/TX");
@@ -2266,7 +2266,7 @@ $(document).ready(function () {
   $(document).on('click', '#close-cart-noti', function () {
   $('.cart-updated').addClass('hidden');
   });
-  
+
   $(document).on('change', '#same-address', function () {
   if ($("#same-address").prop('checked')) {
     $('#delivery-pane').show();
@@ -2328,7 +2328,7 @@ $(document).ready(function () {
     $(this).text(str + " ...");
   }
   });
-  
+
 
   // $('.ajax-cart-submit-form .form-type-uc-quantity').append('<div class="plus">+</div>');
   $('.ajax-cart-submit-form .form-type-uc-quantity input#edit-qty').after('<div class="plus">+</div>');

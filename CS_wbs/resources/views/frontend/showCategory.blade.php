@@ -76,7 +76,21 @@
                                 <div class="sanpham-giasp">
                                     <div class="gia-cost"></div>
                                 </div>
+<div class="c-product-yeuthick-mua">
+		<div class="sanpham-mua"><form class="ajax-cart-submit-form uc-out-stock-processed" action="{{ route('cart.add.store', $item->id) }}"
+                                       method="get" id="uc-catalog-buy-it-now-form-5976" accept-charset="UTF-8"><div>
+<div class="form-actions form-wrapper form-group" id="edit-actions--2"><div class="uc-out-of-stock-instock"
+                                                                            style="display: block;">56</div>
+    <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+</svg>
+              </button>
+    <div
+        class="uc_out_of_stock_html"></div>
+</div></div></form></div>
 
+</div>
                             </div>
                         </span>
                         </div>

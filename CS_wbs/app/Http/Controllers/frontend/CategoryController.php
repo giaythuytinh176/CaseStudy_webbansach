@@ -14,6 +14,6 @@ class CategoryController extends Controller
         $category_detail = Category::findOrFail($request->id);
         $categorys = Category::all();
         $book_images = Book::inRandomOrder()->limit(5)->get();
-        return view('frontend.showCategory',compact('category_detail','categorys','book_images'));
+        return view('frontend.showCategory', compact('category_detail', 'categorys', 'book_images'));
     }
 }
