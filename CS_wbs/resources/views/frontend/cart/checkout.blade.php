@@ -131,7 +131,7 @@
                                                 <div id="quote">
                                                     <input type="hidden" name="panes[quotes][quotes][flatrate_2---0][rate]" value="35000">
                                                     <input type="hidden" name="panes[quotes][quotes][quote_option]" value="flatrate_2---0">
-                                                    Vận chuyển trực tiếp trong 48h – Huyện/ Xã Hà Nội, Tp.HCM: 35.000 đ
+                                                    Vận chuyển trực tiếp trong 48h – Huyện/ Xã Hà Nội, Tp.HCM: Freeship
                                                 </div>
                                             </div>
                                         </fieldset>
@@ -279,7 +279,7 @@
                                                         <td class="title">Vận chuyển trực tiếp trong 48h – Huyện/ Xã Hà
                                                             Nội, Tp.HCM:
                                                         </td>
-                                                        <td class="price"><span class="uc-price">30.000 đ</span></td>
+                                                        <td class="price"><span class="uc-price"> Freeship </span></td>
                                                     </tr>
                                                     <tr class="line-item-total">
                                                         <td class="title">Tổng giá trị đơn hàng:</td>

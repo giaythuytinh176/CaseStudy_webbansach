@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\AuthAdmin;
+use App\Http\Middleware\AuthCheckout;
 use App\Http\Middleware\Locale;
 use App\Http\Middleware\permissionAccessUserAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'locale' => Locale::class,
         'AuthAdmin' => AuthAdmin::class,
         'permissionAccessUserAdmin' => permissionAccessUserAdmin::class,
+        'AuthCheckout' => AuthCheckout::class,
     ];
 }

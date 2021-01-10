@@ -36,16 +36,17 @@ Route::get('/showCategory/{id}', [\App\Http\Controllers\frontend\CategoryControl
 Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
 Route::get('/showBookDetail/{id}', [\App\Http\Controllers\BookDetail::class, 'showBookDeatail'])->name('showbookdetail');
 
+
 Route::prefix('cart')->group(function () {
     Route::get('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store'])->name('cart.add.store');
     Route::post('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store2'])->name('cart.add.withquantity.store');
     Route::get('/', [\App\Http\Controllers\frontend\CartController::class, 'index'])->name('cart.index');
     Route::get('remove/{id}', [\App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.remove.destroy');
-    Route::post('main', [\App\Http\Controllers\frontend\CartController::class, 'main'])->name('cart.main');
-    Route::post('checkout', [\App\Http\Controllers\frontend\CartController::class, 'checkout'])->name('cart.checkout');
-    Route::post('checkoutbank', [\App\Http\Controllers\frontend\CartController::class, 'checkOutBank'])->name('cart.checkout.send');
-
-
+    Route::middleware('AuthCheckout')->group(function () {
+        Route::post('main', [\App\Http\Controllers\frontend\CartController::class, 'main'])->name('cart.main');
+        Route::post('checkout', [\App\Http\Controllers\frontend\CartController::class, 'checkout'])->name('cart.checkout');
+        Route::post('checkoutbank', [\App\Http\Controllers\frontend\CartController::class, 'checkOutBank'])->name('cart.checkout.send');
+    });
 });
 
 Route::group(['middleware' => 'locale'], function () {
@@ -107,7 +108,6 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::get('/', [\App\Http\Controllers\OrderController::class, 'index'])->name('order.index');
                 Route::get('/detail/{id}', [\App\Http\Controllers\OrderController::class, 'show'])->name('order.show');
                 Route::get('/delete/{id}', [\App\Http\Controllers\OrderController::class, 'destroy'])->name('order.delete');
-
             });
         });
     });

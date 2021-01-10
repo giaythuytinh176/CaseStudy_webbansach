@@ -10,6 +10,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -25,9 +26,13 @@ class CartController extends Controller
             return $this->destroy($request->remove_cart);
         } elseif ($request->updatecart == "update_cart") {
             return $this->updateCart($request->items);
-        } elseif ($request->login_cart == "Login to checkout") {
-            return redirect()->route('login.show',['url'=> "cart"]);
         }
+        return redirect()->route('cart.index');
+    }
+
+    public function deleteCart()
+    {
+        Cart::destroy();
         return redirect()->route('cart.index');
     }
 
@@ -37,6 +42,38 @@ class CartController extends Controller
         $categorys = Category::all();
         $customer = Auth::guard('customers')->user();
         return view('frontend.cart.checkout', compact('authors', 'categorys', 'customer'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        if (count(Cart::content()) > 0) {
+            foreach (Cart::content() as $k => $cart) {
+                if ($cart->id == $id) {
+                    Cart::remove($cart->rowId);
+                    Session::flash('remove_cart', "Successfully removed.");
+                    return redirect()->route('cart.index');
+                }
+            }
+        }
+    }
+
+    public function updateCart($items_update)
+    {
+        foreach ($items_update as $key => $itemupdate) {
+            foreach (Cart::content() as $k => $cart) {
+                if ($cart->id == $key) {
+                    Session::flash('updateCart', "Successfully updated cart.");
+                    Cart::update($cart->rowId, $itemupdate['qty']);
+                }
+            }
+        }
+        return redirect()->route('cart.index');
     }
 
     public function checkOutBank(Request $request, Customer $customer, Order $order, Book $book)
@@ -93,11 +130,10 @@ class CartController extends Controller
         return view('frontend.cart.cod', compact('authors', 'categorys'));
     }
 
-
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -106,23 +142,10 @@ class CartController extends Controller
         return view('frontend.cart.index', compact('authors', 'categorys'));
     }
 
-    public function updateCart($items_update)
-    {
-        foreach ($items_update as $key => $itemupdate) {
-            foreach (Cart::content() as $k => $cart) {
-                if ($cart->id == $key) {
-                    Session::flash('updateCart', "Successfully updated cart.");
-                    Cart::update($cart->rowId, $itemupdate['qty']);
-                }
-            }
-        }
-        return redirect()->route('cart.index');
-    }
-
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -132,8 +155,8 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -193,17 +216,11 @@ class CartController extends Controller
         return view('frontend.cart.index', compact('authors', 'categorys'));
     }
 
-    public function deleteCart()
-    {
-        Cart::destroy();
-        return redirect()->route('cart.index');
-    }
-
     /**
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -214,7 +231,7 @@ class CartController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit($id)
     {
@@ -224,31 +241,12 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, $id)
     {
         //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        if (count(Cart::content()) > 0) {
-            foreach (Cart::content() as $k => $cart) {
-                if ($cart->id == $id) {
-                    Cart::remove($cart->rowId);
-                    Session::flash('remove_cart', "Successfully removed.");
-                    return redirect()->route('cart.index');
-                }
-            }
-        }
     }
 }
