@@ -450,7 +450,7 @@
                         <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
 
 
-                            <form action="https://nxbkimdong.com.vn/tim-kiem" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
+                            <form action="{{ route('search.home') }}" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
                                 <div>
                                     <div class="views-exposed-form">
                                         <div class="views-exposed-widgets clearfix">
@@ -705,7 +705,7 @@
                                 <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
 
 
-                                    <form action="https://nxbkimdong.com.vn/tim-kiem" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
+                                    <form action="{{ route('search.home') }}" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
                                         <div>
                                             <div class="views-exposed-form">
                                                 <div class="views-exposed-widgets clearfix">

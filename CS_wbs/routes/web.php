@@ -21,21 +21,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('menu')->group(function () {
     Route::get('/{services}', [\App\Http\Controllers\frontend\MenuController::class, 'index'])->name('menu.services');
-
 });
 
 Route::get('/login', [\App\Http\Controllers\frontend\LoginController::class, 'showLogin'])->name('login.show');
+Route::post('/login', [\App\Http\Controllers\frontend\LoginController::class, 'checkLogin'])->name('login.check');
 Route::get('/register', [\App\Http\Controllers\frontend\RegisterController::class, 'showRegisterForm'])->name('register.user');
 Route::post('/register', [\App\Http\Controllers\frontend\RegisterController::class, 'store'])->name('register.user1');
-Route::post('/login', [\App\Http\Controllers\frontend\LoginController::class, 'checkLogin'])->name('login.check');
 Route::get('/logout', [\App\Http\Controllers\frontend\LoginController::class, 'logout'])->name('customer.logout');
+
+Route::get('/search', [\App\Http\Controllers\frontend\SearchController::class, 'search'])->name('search.home');
 
 Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
 Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
 Route::get('/showCategory/{id}', [\App\Http\Controllers\frontend\CategoryController::class, 'showCategory'])->name('show.category');
 Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
 Route::get('/showBookDetail/{id}', [\App\Http\Controllers\BookDetail::class, 'showBookDeatail'])->name('showbookdetail');
-
 
 Route::prefix('cart')->group(function () {
     Route::get('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store'])->name('cart.add.store');

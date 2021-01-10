@@ -4,7 +4,6 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +17,9 @@ class MenuController extends Controller
      */
     public function index($services)
     {
-        $menu_services = DB::table('menu_services')->get()->toArray();
         $categorys = Category::all();
-        $data_menu_services = ($menu_services[0]->$services);
+        $menu_services = DB::table('menu_services')->get();
+        $data_menu_services = $menu_services->first()->$services;
         return view('frontend.menu.index', compact('categorys', 'data_menu_services', 'services'));
     }
 

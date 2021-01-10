@@ -28,17 +28,6 @@
                         </ul>
                     </section>
                 </div>
-                <div class="col-xs-12 bottom-footer">
-                    <p class="lh_voichungtoi text-center">Chúng tôi trên các mạng xã hội</p>
-                    <a href="https://www.facebook.com/nxbkimdong/" title="Kênh facebook" target="_blank"><img src="https://nxbkimdong.com.vn/images/fb.png"></a>
-                    <a href="https://www.instagram.com/kimdongbooks" title="Kênh instagram" target="_blank"><img src="https://nxbkimdong.com.vn/images/ig.png"></a>
-                    <a href="https://www.youtube.com/user/KimDongPublishingHou" title="Kênh youtube" target="_blank"><img src="https://nxbkimdong.com.vn/images/yt.png"></a>
-                    <p class="text-center">GIẤY PHÉP HOẠT ĐỘNG</p>
-                    <p class="text-center">Giấy phép thành lập số: L 517/GP-BTTTT ngày 14/4/2017</p>
-                    <p class="text-center">của Bộ Thông tin và Truyền thông</p>
-                    <p class="text-center">© 2018 NXB Kim Đồng. All Rights Reserved</p>
-                    <p class="text-center">Cơ quan chủ quản: Đoàn TNCS Hồ Chí Minh</p>
-                </div>
             </div>
         </section>
         <section id="block-block-37" class="block block-block clearfix">
@@ -87,41 +76,25 @@
                         <h2>TÀI KHOẢN CỦA TÔI</h2>
                         <ul>
                             <li>
-                                <a class="login ctools-use-modal ctools-modal-modal-popup-small" href="modal_forms/nojs/login" rel="nofollow" title="Đăng nhập">Đăng
+                                <a href="{{ route('login.show') }}" rel="nofollow" title="Đăng nhập">Đăng
                                     nhập</a></li>
                             <li>
-                                <a href="modal_forms/nojs/register" class="register ctools-use-modal ctools-modal-modal-popup-small" rel="nofollow" title="Đăng ký">Tạo
+                                <a href="{{ route('register.user') }}" rel="nofollow" title="Đăng ký">Tạo
                                     mới tài khoản</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-3">
                         <h2>CHỦ SỞ HỮU WEBSITE</h2>
                         <ul>
-                            <li>Nhà xuất bản Kim Đồng</li>
-                            <li>Giám đốc: Bùi Tuấn Nghĩa</li>
-                            <li>Địa chỉ: 55 Quang Trung, Nguyễn Du, Hai Bà Trưng, Hà Nội</li>
-                            <li><a href="tell:02439434490">Điện thoại: 0243 943 4490 </a></li>
-                            <li><a href="tell:02439454963">Copyright Department: 0243 945 4963 </a></li>
-                            <li>Fax: 0243 8229085</li>
-                            <li>Email: <a href="mailto:info@nxbkimdong.com.vn">info@nxbkimdong.com.vn</a>
-                                <a href="mailto:cskh_online@nxbkimdong.com.vn">cskh_online@nxbkimdong.com.vn</a></li>
+                            <li>Nhà xuất bản</li>
+                            <li>Giám đốc: </li>
+                            <li>Địa chỉ: Codegym.vn, Hà Nội</li>
+                            <li><a href="tell:02439434490">Điện thoại: 0979 029 556 </a></li>
+                            <li><a href="tell:02439454963">Copyright Department: 0979 029 556 </a></li>
+                            <li>Fax: 0979 029 556</li>
+                            <li>Email: <a href="mailto:giaythuytinh176@gmail.com">giaythuytinh176@gmail.com</a>
+                                <a href="mailto:giaythuytinh176@gmail.com">giaythuytinh176@gmail.com</a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-sm-4">
-                        <h2>GIẤY PHÉP HOẠT ĐỘNG</h2>
-                        <p>Giấy phép thành lập số: L 517/GP-BTTTT ngày 6/10/2015 của Bộ Thông tin và Truyền thông</p>
-                        <p>© 2018 NXB Kim Đồng. All Rights Reserved</p>
-                    </div>
-                    <div class="col-sm-4 bottom-footer">
-                        <h2>CHÚNG TÔI TRÊN CÁC MẠNG XÃ HỘI</h2>
-                        <a href="https://www.facebook.com/nxbkimdong/" title="Kênh facebook" target="_blank"><img src="/images/fb.png"></a>
-                        <a href="https://www.instagram.com/kimdongbooks" title="Kênh instagram" target="_blank"><img src="/images/ig.png"></a>
-                        <a href="https://www.youtube.com/user/KimDongPublishingHou" title="Kênh youtube" target="_blank"><img src="/images/yt.png"></a>
-                    </div>
-                    <div class="trustbcct col-sm-4">
-                        <a href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=45842" target="_blank"><img style="max-width: 145px; margin-top: 5rem; margin-right: 15px;" src="/images/20150827110756-dathongbao.png"></a>
                     </div>
                 </div>
             </div>

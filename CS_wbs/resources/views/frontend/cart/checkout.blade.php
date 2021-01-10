@@ -243,7 +243,7 @@
                                                                 </a>
                                                             </td>
                                                             <td class="qty">
-                                                                {{ $cart->qty }} đ
+                                                                {{ $cart->qty }}
                                                             </td>
                                                             <td class="price">
                                                             <span class="uc-price">
