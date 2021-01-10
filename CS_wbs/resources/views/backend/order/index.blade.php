@@ -16,8 +16,10 @@
                                 <th>#</th>
                                 <th>Order Id</th>
                                 <th>Customer</th>
+                                <th>Address</th>
                                 <th>Order Date</th>
                                 <th>Status</th>
+                                <th>Total</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -29,8 +31,22 @@
                                     <td>
                                         <a href="{{ route('order.show', $order->id) }}">{{ $order->customers()->get()->first()->first_name . " " . $order->customers()->get()->first()->last_name . " [" . $order->customers()->get()->first()->email . "]" }}</a>
                                     </td>
+                                    <td>
+                                        {{ $order->customers()->get()->first()->address }}
+                                    </td>
                                     <td>{{ $order->order_date }}</td>
                                     <td>{{ $order->status }}</td>
+                                    <td>
+                                        @php
+                                            $oder_detail = DB::table('order_details')->where('order_id', $order->id)->get();
+                                            $priceTotal = 0;
+                                            foreach ($oder_detail as $od) {
+                                                $eachBookPrice = $od->quantity * $od->price;
+                                                $priceTotal += $eachBookPrice;
+                                            }
+                                            echo number_format($priceTotal) . " đ";
+                                        @endphp
+                                    </td>
                                     <td>
                                         <a href="{{ route('order.delete', $order->id) }}" class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a>
                                     </td>
