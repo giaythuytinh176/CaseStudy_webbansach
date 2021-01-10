@@ -38,10 +38,8 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $authors = Author::all();
-        $categorys = Category::all();
         $customer = Auth::guard('customers')->user();
-        return view('frontend.cart.checkout', compact('authors', 'categorys', 'customer'));
+        return view('frontend.cart.checkout', compact('customer'));
     }
 
     /**
@@ -78,9 +76,6 @@ class CartController extends Controller
 
     public function checkOutBank(Request $request, Customer $customer, Order $order, Book $book)
     {
-        $authors = Author::all();
-        $categorys = Category::all();
-
         if (!empty($request->form_id)) {
             if ($request->panes['payment']['payment_method'] == 'cod') {
                 $carts = Cart::content();
@@ -111,7 +106,7 @@ class CartController extends Controller
                     );
                 }
                 Cart::destroy();
-                return view('frontend.cart.cod', compact('authors', 'categorys'));
+                return view('frontend.cart.cod');
             } elseif ($request->panes['payment']['payment_method'] == 'vinno-momo') {
 
                 dd($request);
@@ -127,7 +122,7 @@ class CartController extends Controller
 
         }
 
-        return view('frontend.cart.cod', compact('authors', 'categorys'));
+        return view('frontend.cart.cod');
     }
 
     /**
@@ -137,9 +132,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $authors = Author::all();
-        $categorys = Category::all();
-        return view('frontend.cart.index', compact('authors', 'categorys'));
+        return view('frontend.cart.index');
     }
 
     /**
@@ -181,10 +174,8 @@ class CartController extends Controller
                 }
             }
         }
-        $authors = Author::all();
-        $categorys = Category::all();
         Session::flash('sucess_cart', "Successfully added to cart.");
-        return view('frontend.cart.index', compact('authors', 'categorys'));
+        return view('frontend.cart.index');
     }
 
     public function store2(Request $request, $id)
@@ -210,10 +201,8 @@ class CartController extends Controller
                 }
             }
         }
-        $authors = Author::all();
-        $categorys = Category::all();
         Session::flash('sucess_cart', "Successfully added to cart.");
-        return view('frontend.cart.index', compact('authors', 'categorys'));
+        return view('frontend.cart.index');
     }
 
     /**

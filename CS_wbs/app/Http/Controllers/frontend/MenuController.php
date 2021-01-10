@@ -17,10 +17,9 @@ class MenuController extends Controller
      */
     public function index($services)
     {
-        $categorys = Category::all();
         $menu_services = DB::table('menu_services')->get();
         $data_menu_services = $menu_services->first()->$services;
-        return view('frontend.menu.index', compact('categorys', 'data_menu_services', 'services'));
+        return view('frontend.menu.index', compact('data_menu_services', 'services'));
     }
 
     /**

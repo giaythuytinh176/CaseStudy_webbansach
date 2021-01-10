@@ -570,53 +570,6 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="col-xs-7 col-sm-7 col-md-5  menu-logo-right">
-                        <section id="block-menu-menu-menu-top-right" class="block block-menu clearfix">
-
-
-                            <ul class="menu nav">
-                                <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2513">
-                                    <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="" data-target="#" class="dropdown-toggle">Giới
-                                        thiệu <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2550">
-                                            <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="">Giới
-                                                thiệu về nhà xuất bản</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2551">
-                                            <a href="https://nxbkimdong.com.vn/tac-gia-tac-pham-0" title="">Tác giả -
-                                                Tác phẩm</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2552">
-                                            <a href="https://nxbkimdong.com.vn/cong-tac-xa-hoi-0" title="">Công tác xã
-                                                hội</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2553">
-                                            <a href="https://nxbkimdong.com.vn/khen-thuong-cua-nha-nuoc-0" title="">
-                                                Khen thưởng của nhà nước</a></li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2549">
-                                            <a href="https://nxbkimdong.com.vn/hop-tac-quoc-te-0" title="">Hợp tác quốc
-                                                tế</a></li>
-                                    </ul>
-                                </li>
-                                <li class="last expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2514">
-                                    <a href="https://nxbkimdong.com.vn/tin-tuc" title="" data-target="#" class="dropdown-toggle">Tin
-                                        tức <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2542">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/hoat-dong" title="">Hoạt động</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2543">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/su-kien" title="">Sự kiện</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2544">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/diem-sach" title="">Điểm sách</a>
-                                        </li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2583">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/lich-phat-hanh-sach-dinh-ky" title="">Lịch
-                                                phát hành sách định kỳ</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
                 </div>
             </section>
             <section id="block-block-7" class="block block-block visible-xs visible-sm clearfix">
@@ -789,10 +742,10 @@
                                 <div class="view-content ">
                                     <div class="views-row views-row-1 views-row-odd views-row-first">
 
-                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><a href="https://nxbkimdong.com.vn/ho-so-tinh-cach-12-con-giap" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_12cgvuong_0.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_12cgvuong_0.jpg" width="370" height="370" alt="" /></noscript></a></div>  </div>  </div>
+                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_12cgvuong_0.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_12cgvuong_0.jpg" width="370" height="370" alt="" /></noscript></div>  </div>  </div>
                                     <div class="views-row views-row-2 views-row-even views-row-last">
 
-                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><a href="https://www.facebook.com/media/set/?vanity=kimdongwingsbooks&amp;set=a.3036568469939138" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnbinhchonsach.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnbinhchonsach.jpg" width="370" height="370" alt="" /></noscript></a></div>  </div>  </div>
+                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnbinhchonsach.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnbinhchonsach.jpg" width="370" height="370" alt="" /></noscript></div>  </div>  </div>
                                 </div>
 
 
@@ -813,7 +766,7 @@
                                 <div class="view-content ">
                                     <div  id="flexslider-1" class="flexslider">
                                         <ul class="slides"><li>
-                                                <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><a href="https://www.facebook.com/events/395227478249367" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_n.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_n.jpg" width="1180" height="740" alt="" /></noscript></a></div>  </div></li>
+                                                <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_n.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_n.jpg" width="1180" height="740" alt="" /></noscript></div>  </div></li>
                                             <li>
                                                 <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bn_bosachkinangsong.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="1180" height="740" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bn_bosachkinangsong.jpg" width="1180" height="740" alt="" /></noscript></div>  </div></li>
                                             <li>
@@ -843,10 +796,10 @@
                                 <div class="view-content ">
                                     <div class="views-row views-row-1 views-row-odd views-row-first">
 
-                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><a href="https://nxbkimdong.com.vn/sach-phathanh/708180" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" width="370" height="370" alt="" /></noscript></a></div>  </div>  </div>
+                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="370" height="370" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/bnv_hcttx2370px.jpg" width="370" height="370" alt="" /></noscript></div>  </div>  </div>
                                     <div class="views-row views-row-2 views-row-even views-row-last">
 
-                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><a href="https://nxbkimdong.com.vn/noi-bat-hanh-cua-sophie" target="_blank"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/kd_370x370_t113.png" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="493" height="493" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/kd_370x370_t113.png" width="493" height="493" alt="" /></noscript></a></div>  </div>  </div>
+                                        <div class="views-field views-field-field-quangcao-anh">        <div class="field-content"><img class="img-responsive" data-src="https://nxbkimdong.com.vn/sites/default/files/kd_370x370_t113.png" src="https://nxbkimdong.com.vn/sites/all/modules/lazyloader/image_placeholder.gif" width="493" height="493" alt="" /><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/kd_370x370_t113.png" width="493" height="493" alt="" /></noscript></div>  </div>  </div>
                                 </div>
 
 

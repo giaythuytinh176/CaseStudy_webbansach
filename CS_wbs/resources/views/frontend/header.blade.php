@@ -464,53 +464,6 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="col-xs-7 col-sm-7 col-md-5  menu-logo-right">
-                        <section id="block-menu-menu-menu-top-right" class="block block-menu clearfix">
-
-
-                            <ul class="menu nav">
-                                <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2513">
-                                    <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="" data-target="#" class="dropdown-toggle">Giới
-                                        thiệu <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2550">
-                                            <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="">Giới
-                                                thiệu về nhà xuất bản</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2551">
-                                            <a href="https://nxbkimdong.com.vn/tac-gia-tac-pham-0" title="">Tác giả -
-                                                Tác phẩm</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2552">
-                                            <a href="https://nxbkimdong.com.vn/cong-tac-xa-hoi-0" title="">Công tác xã
-                                                hội</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2553">
-                                            <a href="https://nxbkimdong.com.vn/khen-thuong-cua-nha-nuoc-0" title="">
-                                                Khen thưởng của nhà nước</a></li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2549">
-                                            <a href="https://nxbkimdong.com.vn/hop-tac-quoc-te-0" title="">Hợp tác quốc
-                                                tế</a></li>
-                                    </ul>
-                                </li>
-                                <li class="last expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2514">
-                                    <a href="https://nxbkimdong.com.vn/tin-tuc" title="" data-target="#" class="dropdown-toggle">Tin
-                                        tức <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2542">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/hoat-dong" title="">Hoạt động</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2543">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/su-kien" title="">Sự kiện</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2544">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/diem-sach" title="">Điểm sách</a>
-                                        </li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2583">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/lich-phat-hanh-sach-dinh-ky" title="">Lịch
-                                                phát hành sách định kỳ</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
                 </div>
             </section>
             <section id="block-block-7" class="block block-block visible-xs visible-sm clearfix">
