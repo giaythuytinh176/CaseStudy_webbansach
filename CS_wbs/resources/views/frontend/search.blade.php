@@ -24,7 +24,7 @@
 	<div class="hovereffect">
 		<div class="anh-sanpham">
 <span>
-<div class="anh-sanpham-moi"><a href="/vo-chong-lao-twit"><img class="img-responsive" src="{{ asset('images/'.$dt->img) }}" width="185" height="283" alt="" style="display: block;"><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/vo-chong-lao-twwit.jpg?itok=THfNSW3O" width="185" height="283" alt=""/></noscript></a></div>
+<div class="anh-sanpham-moi"><a href="{{ route('showbookdetail', $dt->booksid) }}"><img class="img-responsive" src="{{ asset('images/'.$dt->img) }}" width="185" height="283" alt="" style="display: block;"><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/vo-chong-lao-twwit.jpg?itok=THfNSW3O" width="185" height="283" alt=""/></noscript></a></div>
 			<span class="onsale c-product-item--on-sale"><div class="sach-phantram-giamgia"><span>-10%</span></div></span>
 </span>
         </div>
@@ -33,7 +33,6 @@
 <div class="c-product-item--title-container" title="{{ $dt->BooksName }}
 "><a href="{{ route('showbookdetail', $dt->booksid) }}">{{ $dt->BooksName }}
 </a></div></div>
-	<div class="c-loop-authors-summary"><a href="/roald-dahl">Roald Dahl</a> </div>
 	<div class="sanpham-giasp"><div class="gia-sell">{{ number_format($dt->price)  }} đ</div></div>
 <div class="sanpham-giasp"><div class="gia-cost"></div></div>
 	<div class="c-product-yeuthick-mua">
