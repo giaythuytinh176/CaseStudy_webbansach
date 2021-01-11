@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FormRequest_Book;
 use App\Http\Requests\FormRequest_EditBook;
 use App\Models\Author;
-use App\Models\AuthorBook;
 use App\Models\Book;
 use App\Models\Category;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BookController extends Controller
 {
@@ -16,41 +17,35 @@ class BookController extends Controller
     {
         $search = $request->search_book;
         $books = Book::where('name', 'LIKE', "%$search%")->orWhere('description', 'LIKE', "%$search%")->paginate(5);
-        $categories = Category::all();
-        $authors = Author::all();
-        return view("backend.book.list", compact(['books', 'categories', 'authors']));
+        return view("backend.book.list", compact(['books']));
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
         $books = Book::paginate(5);
-        $categories = Category::all();
-        $authors = Author::all();
-        return view("backend.book.list", compact(['books', 'categories', 'authors']));
+        return view("backend.book.list", compact(['books']));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
-        $categories = Category::all();
-        $authors = Author::all();
-        return view('backend.book.create', compact(['categories', 'authors']));
+        return view('backend.book.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(FormRequest_Book $request, Book $book)
     {
@@ -58,7 +53,7 @@ class BookController extends Controller
             try {
                 $imageName = time() . '.' . $request->img->getClientOriginalExtension();
                 $request->img->move(public_path('images'), $imageName);
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 if (file_exists(public_path('images') . "/" . $imageName)) {
                     unlink(public_path('images') . "/" . $imageName);
                 }
@@ -73,7 +68,7 @@ class BookController extends Controller
                     Author::find($auths)->books()->attach($book->id);
                 }
 
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 if (file_exists(public_path('images') . "/" . $imageName)) {
                     unlink(public_path('images') . "/" . $imageName);
                 }
@@ -88,14 +83,13 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @return Response
      */
     public function show(Book $book, Request $request)
     {
         $book_detail = Book::findOrFail($request->id);
         $category_detail = Category::findOrFail($book_detail->category_id);
-
         return view("backend.book.detail", compact(['book_detail', 'category_detail']));
     }
 
@@ -109,24 +103,22 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @return Response
      */
     public function edit(Book $book, $id)
     {
-        $authors = Author::all();
         $book_detail = Book::findOrFail($id);
         $category_detail = Category::findOrFail($book_detail->category_id);
-        $categories = Category::all();
-        return view("backend.book.edit", compact(['book_detail', 'category_detail', 'categories', 'authors']));
+        return view("backend.book.edit", compact(['book_detail', 'category_detail']));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Book $book
+     * @return Response
      */
     public function update(FormRequest_EditBook $request, Book $book)
     {
@@ -170,8 +162,8 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Book $book
-     * @return \Illuminate\Http\Response
+     * @param Book $book
+     * @return Response
      */
     public function destroy(Book $book, Request $request)
     {

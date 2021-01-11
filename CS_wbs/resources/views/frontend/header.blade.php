@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" dir="ltr"
+<html lang="{{ app()->getLocale() }}" dir="ltr"
       xmlns:fb="http://ogp.me/ns/fb#"
       xmlns:og="http://ogp.me/ns#"
       xmlns:article="http://ogp.me/ns/article#"
@@ -12,7 +12,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="shortcut icon" href="https://nxbkimdong.com.vn/sites/default/files/favi_kimdong.png" type="image/png"/>
     <meta name="generator" content="Drupal 7 (http://drupal.org)"/>
     <link rel="canonical" href="https://nxbkimdong.com.vn/cart"/>
     <link rel="shortlink" href="https://nxbkimdong.com.vn/cart"/>
@@ -23,7 +22,7 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:url" content="https://nxbkimdong.com.vn/cart"/>
     <meta name="twitter:title" content="Giỏ hàng"/>
-    <title>Giỏ hàng | Nhà xuất bản Kim Đồng</title>
+    <title>Nhà sách online</title>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_h5AvHQ7kQTTi0F1kePCavupgHy2xtZNtRMgIc7FcAeg.css') }}" media="all"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_fF5FFz4JRTA2dpnf-oOLLLf4QEaiqbWw4072Lwar74g.css') }}" media="screen"/>
     <link type="text/css" rel="stylesheet" href="{{ asset('frontend/css/css_2dzLqcNHDArja4FQmQH-8XbLzUBCjTRsGnDr3dN3KC8.css') }}" media="all"/>
@@ -347,8 +346,12 @@
                 <div class="row">
                     <div class="col-xs-5 col-sm-4 col-md-5 top-left">
                         <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
+<<<<<<< HEAD
                             <form  action="{{route('searchupdate')}}" method="post" accept-charset="UTF-8">
                                 @csrf
+=======
+                            <form action="{{ route('search.home') }}" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
+>>>>>>> 3e355a71d215ea416b5b3bfb188ede0d1a690b68
                                 <div>
                                     <div class="views-exposed-form">
                                         <div class="views-exposed-widgets clearfix">
@@ -381,24 +384,24 @@
                         <ul class="header-top-block">
                             <li class="shop-cart js-shop-cart-trigger">
                                 <section id="block-block-30" class="block block-block clearfix">
-
-
-                                    <div class="yeuthich"><a href="https://nxbkimdong.com.vn/yeu-thich">
-                                            <div class="yeuthich--notification">
-                                                <div class="yeuthich--number load-on-view1 ajax-yeuthich-processed" id="ajaxCartUpdate1">
-                                                    <i class="fa fa-heart" aria-hidden="true"></i>0
-                                                </div>
-                                            </div>
-                                        </a></div>
                                     <div class="shopping-cart">
-                                        <a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">1 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
+                                        <a href="{{ route('cart.index') }}">
+                                            <span>cart</span>
+                                            <span class="shop-cart--notification">
+                                                <span class="shop-cart--number load-on-view" id="ajaxCartUpdate">{{ Cart::count() }} </span>
+                                                <span>
+                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                </span>
+                                            </span>
+                                        </a>
                                         <div class="hidden cart-updated">
                                             <div id="close-cart-noti">
                                                 <i class="fa fa-times-circle" aria-hidden="true"></i></div>
                                             <div class="noti"><i class="fa fa-check-circle-o" aria-hidden="true"></i>Thêm
                                                 vào giỏ hàng thành công
                                             </div>
-                                            <div class="go-to-cart"><a href="{{ route('cart.index') }}" class="btn btn-danger">Xem giỏ hàng
+                                            <div class="go-to-cart">
+                                                <a href="{{ route('cart.index') }}" class="btn btn-danger">Xem giỏ hàng
                                                     và thanh toán</a></div>
                                         </div>
                                     </div>
@@ -416,12 +419,21 @@
                                             </div>
                                         </div>
                                         <ul class="hidden-xs hidden-sm">
-                                            <li class="first">
-                                                <a class="login ctools-use-modal ctools-modal-modal-popup-small" href="https://nxbkimdong.com.vn/modal_forms/nojs/login" rel="nofollow" title="Đăng nhập">Đăng
-                                                    nhập</a></li>
-                                            <li class="last">
-                                                <a href="https://nxbkimdong.com.vn/modal_forms/nojs/register" class="register ctools-use-modal ctools-modal-modal-popup-small" rel="nofollow" title="Đăng ký">Đăng
-                                                    ký</a></li>
+                                            @if(\Illuminate\Support\Facades\Auth::guard('customers')->check())
+                                                <li class="first">
+                                                    Welcome, {{ \Illuminate\Support\Facades\Auth::guard('customers')->user()->email }}
+                                                </li>
+                                                <li class="last">
+                                                    <a href="{{ route('customer.logout') }}" rel="nofollow" title="Logout">Logout</a></li>
+                                            @else
+                                                <li class="first">
+                                                    <a href="{{ route('login.check') }}" rel="nofollow" title="Đăng nhập">Đăng
+                                                        nhập</a></li>
+                                                <li class="last">
+                                                    <a href="{{ route('register.user') }}" rel="nofollow" title="Đăng ký">Đăng
+                                                        ký</a></li>
+
+                                            @endif
                                         </ul>
                                     </section>
                                 </div>
@@ -441,71 +453,19 @@
                                 <li class="last leaf dhtml-menu" id="dhtml_menu-1265">
                                     <a href="{{ route('show.home') }}" title="">Trang chủ</a></li>
                                 <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-1262">
-                                    <a href="https://nxbkimdong.com.vn/sach-moi" title="" class="active-trail dropdown-toggle active" data-target="#">Thể Loại
+                                    <a href="#" title="" class="active-trail dropdown-toggle active" data-target="#">Thể
+                                        Loại
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         @foreach($categorys as $key => $cate)
-                                        <li class="first leaf active-trail dhtml-menu active" id="dhtml_menu-1284">
-                                            <a href="{{ route('show.category', $cate->id) }}" class="active-trail active">{{ $cate->name }}</a></li>
+                                            <li class="first leaf active-trail dhtml-menu active" id="dhtml_menu-1284">
+                                                <a href="{{ route('show.category', $cate->id) }}" class="active-trail active">{{ $cate->name }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </li>
                                 <li class="last leaf dhtml-menu" id="dhtml_menu-1265">
                                     <a href="{{ route('show.author') }}" title="">Tác giả</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="col-xs-7 col-sm-7 col-md-2  menu-logo-center">
-                        <section id="block-block-15" class="block block-block clearfix">
-
-
-                            <a class="visible-md visible-lg" href="https://nxbkimdong.com.vn"><img src="https://nxbkimdong.com.vn/images/kimdongnew/logo60kd.png" alt="Kim Đồng"/></a><a class="visible-xs visible-sm" href="https://nxbkimdong.com.vn"><img src="https://nxbkimdong.com.vn/images/kimdongnew/logo60kd.png" alt="Kim Đồng"/></a>
-                        </section>
-                    </div>
-                    <div class="col-xs-7 col-sm-7 col-md-5  menu-logo-right">
-                        <section id="block-menu-menu-menu-top-right" class="block block-menu clearfix">
-
-
-                            <ul class="menu nav">
-                                <li class="first expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2513">
-                                    <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="" data-target="#" class="dropdown-toggle">Giới
-                                        thiệu <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2550">
-                                            <a href="https://nxbkimdong.com.vn/gioi-thieu-nha-xuat-ban-kim-dong" title="">Giới
-                                                thiệu về nhà xuất bản</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2551">
-                                            <a href="https://nxbkimdong.com.vn/tac-gia-tac-pham-0" title="">Tác giả -
-                                                Tác phẩm</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2552">
-                                            <a href="https://nxbkimdong.com.vn/cong-tac-xa-hoi-0" title="">Công tác xã
-                                                hội</a></li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2553">
-                                            <a href="https://nxbkimdong.com.vn/khen-thuong-cua-nha-nuoc-0" title="">
-                                                Khen thưởng của nhà nước</a></li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2549">
-                                            <a href="https://nxbkimdong.com.vn/hop-tac-quoc-te-0" title="">Hợp tác quốc
-                                                tế</a></li>
-                                    </ul>
-                                </li>
-                                <li class="last expanded dhtml-menu collapsed start-collapsed dropdown" id="dhtml_menu-2514">
-                                    <a href="https://nxbkimdong.com.vn/tin-tuc" title="" data-target="#" class="dropdown-toggle">Tin
-                                        tức <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="first leaf dhtml-menu" id="dhtml_menu-2542">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/hoat-dong" title="">Hoạt động</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2543">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/su-kien" title="">Sự kiện</a>
-                                        </li>
-                                        <li class="leaf dhtml-menu" id="dhtml_menu-2544">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/diem-sach" title="">Điểm sách</a>
-                                        </li>
-                                        <li class="last leaf dhtml-menu" id="dhtml_menu-2583">
-                                            <a href="https://nxbkimdong.com.vn/tin-tuc/lich-phat-hanh-sach-dinh-ky" title="">Lịch
-                                                phát hành sách định kỳ</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </section>
                     </div>
@@ -597,7 +557,7 @@
                                 <section id="block-views-exp-hieusach-page" class="block block-views clearfix">
 
 
-                                    <form action="https://nxbkimdong.com.vn/tim-kiem" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
+                                    <form action="{{ route('search.home') }}" method="get" id="views-exposed-form-hieusach-page" accept-charset="UTF-8">
                                         <div>
                                             <div class="views-exposed-form">
                                                 <div class="views-exposed-widgets clearfix">
@@ -632,16 +592,8 @@
                                 <ul class="header-top-block">
                                     <li class="shop-cart js-shop-cart-trigger">
                                         <section id="block-block-30" class="block block-block clearfix">
-
-
-                                            <div class="yeuthich"><a href="https://nxbkimdong.com.vn/yeu-thich">
-                                                    <div class="yeuthich--notification">
-                                                        <div class="yeuthich--number load-on-view1 ajax-yeuthich-processed" id="ajaxCartUpdate1">
-                                                            <i class="fa fa-heart" aria-hidden="true"></i>0
-                                                        </div>
-                                                    </div>
-                                                </a></div>
-                                            <div class="shopping-cart"><a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">1 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
+                                            <div class="shopping-cart">
+                                                <a href="{{ route('cart.index') }}"><span>cart</span><span class="shop-cart--notification"><span class="shop-cart--number load-on-view" id="ajaxCartUpdate">1 </span><span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></span></a>
                                                 <div class="hidden cart-updated">
                                                     <div id="close-cart-noti">
                                                         <i class="fa fa-times-circle" aria-hidden="true"></i></div>
@@ -649,7 +601,8 @@
                                                         <i class="fa fa-check-circle-o" aria-hidden="true"></i>Thêm vào
                                                         giỏ hàng thành công
                                                     </div>
-                                                    <div class="go-to-cart"><a href="{{ route('cart.index') }}" class="btn btn-danger">Xem
+                                                    <div class="go-to-cart">
+                                                        <a href="{{ route('cart.index') }}" class="btn btn-danger">Xem
                                                             giỏ hàng và thanh toán</a></div>
                                                 </div>
                                             </div>

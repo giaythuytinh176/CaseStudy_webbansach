@@ -16,6 +16,11 @@
         <div class="form-icon">
             <span><i class="icon icon-user"></i></span>
         </div>
+        @if(\Illuminate\Support\Facades\Session::has('registed_sucess'))
+            <div>
+                <p class="alert alert-success">{{\Illuminate\Support\Facades\Session::get('registed_sucess')}}</p>
+            </div>
+        @endif
         <div class="form-group">
             <label class="mb-1" for="inputEmailAddress">Email:</label>
             <input type="text" class="form-control item" name="email" placeholder="Email" required>
