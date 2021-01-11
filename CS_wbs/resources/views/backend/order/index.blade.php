@@ -53,7 +53,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5">Chưa có đơn hàng.</td>
+                                    <td colspan="8">Chưa có đơn hàng.</td>
                                 </tr>
                             @endforelse
                             </tbody>

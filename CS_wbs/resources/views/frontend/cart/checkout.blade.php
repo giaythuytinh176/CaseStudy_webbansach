@@ -272,7 +272,7 @@
                                                     <tbody>
                                                     <tr class="line-item-subtotal">
                                                         <td class="title">Thành tiền :</td>
-                                                        <td class="price"><span class="uc-price">{{ number_format(str_replace(',', '', Cart::subTotal())) }} đ</span>
+                                                        <td class="price"><span class="uc-price">{{ Cart::subTotal() }} đ</span>
                                                         </td>
                                                     </tr>
                                                     <tr class="line-item-shipping">
@@ -283,7 +283,7 @@
                                                     </tr>
                                                     <tr class="line-item-total">
                                                         <td class="title">Tổng giá trị đơn hàng:</td>
-                                                        <td class="price"><span class="uc-price">{{ number_format(str_replace(',', '', Cart::subTotal()) + 30000) }} đ</span>
+                                                        <td class="price"><span class="uc-price">{{ Cart::subTotal() }} đ</span>
                                                         </td>
                                                     </tr>
                                                     </tbody>
