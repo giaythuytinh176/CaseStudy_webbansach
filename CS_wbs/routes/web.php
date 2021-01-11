@@ -18,15 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'locale'], function () {
-    Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
 
-    Route::get('/login',[\App\Http\Controllers\frontend\LoginController::class,'showLogin'])->name('login.show');
+Route::prefix('menu')->group(function () {
+    Route::get('/{services}', [\App\Http\Controllers\frontend\MenuController::class, 'index'])->name('menu.services');
+});
 
-    Route::get('/register',[\App\Http\Controllers\frontend\RegisterController::class,'showRegisterForm'])->name('register.user');
-    Route::post('/register',[\App\Http\Controllers\frontend\RegisterController::class,'store'])->name('register.user1');
-    Route::post('/login',[\App\Http\Controllers\frontend\LoginController::class,'checkLogin'])->name('login.check');
-    Route::get('/logout',[\App\Http\Controllers\frontend\LoginController::class,'logout'])->name('logout');
 
     Route::post('/searchfrontend',[\App\Http\Controllers\frontend\SearchController::class,'search'])->name('searchupdate');
 
@@ -36,14 +32,35 @@ Route::group(['middleware' => 'locale'], function () {
     Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
     Route::get('/showBookDetail/{id}',[\App\Http\Controllers\BookDetail::class,'showBookDeatail'])->name('showbookdetail');
 
-    Route::prefix('cart')->group(function () {
-        Route::get('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store'])->name('cart.add.store');
-        Route::get('/', [\App\Http\Controllers\frontend\CartController::class, 'index'])->name('cart.index');
-        Route::get('remove/{id}', [\App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.remove.destroy');
+Route::get('/login', [\App\Http\Controllers\frontend\LoginController::class, 'showLogin'])->name('login.show');
+Route::post('/login', [\App\Http\Controllers\frontend\LoginController::class, 'checkLogin'])->name('login.check');
+Route::get('/register', [\App\Http\Controllers\frontend\RegisterController::class, 'showRegisterForm'])->name('register.user');
+Route::post('/register', [\App\Http\Controllers\frontend\RegisterController::class, 'store'])->name('register.user1');
+Route::get('/logout', [\App\Http\Controllers\frontend\LoginController::class, 'logout'])->name('customer.logout');
+
+
+Route::get('/search', [\App\Http\Controllers\frontend\SearchController::class, 'search'])->name('search.home');
+
+Route::get('/', [\App\Http\Controllers\frontend\HomeController::class, 'showHome'])->name('show.home');
+Route::get('/showAuthor', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAuthor'])->name('show.author');
+Route::get('/showCategory/{id}', [\App\Http\Controllers\frontend\CategoryController::class, 'showCategory'])->name('show.category');
+Route::get('/detailAuthor/{id}', [\App\Http\Controllers\frontend\AuthorFrontendController::class, 'showAthor'])->name('show.authors');
+Route::get('/showBookDetail/{id}', [\App\Http\Controllers\BookDetail::class, 'showBookDeatail'])->name('showbookdetail');
+
+Route::prefix('cart')->group(function () {
+    Route::get('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store'])->name('cart.add.store');
+    Route::post('add/{id}', [\App\Http\Controllers\frontend\CartController::class, 'store2'])->name('cart.add.withquantity.store');
+    Route::get('/', [\App\Http\Controllers\frontend\CartController::class, 'index'])->name('cart.index');
+    Route::get('remove/{id}', [\App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.remove.destroy');
+    Route::middleware('AuthCheckout')->group(function () {
         Route::post('main', [\App\Http\Controllers\frontend\CartController::class, 'main'])->name('cart.main');
-
-
+        Route::post('checkout', [\App\Http\Controllers\frontend\CartController::class, 'checkout'])->name('cart.checkout');
+        Route::post('checkoutbank', [\App\Http\Controllers\frontend\CartController::class, 'checkOutBank'])->name('cart.checkout.send');
     });
+});
+
+Route::group(['middleware' => 'locale'], function () {
+    Route::get('change-language/{language}', [\App\Http\Controllers\LanguageController::class, 'changeLanguage'])->name('user.change-language');
 
     Route::prefix('/admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\LoginAdmin::class, 'showLogin'])->name('showlogin.admin');
@@ -96,6 +113,11 @@ Route::group(['middleware' => 'locale'], function () {
                 Route::get('/edit/{id}', [UserAdminController::class, 'edit'])->name('user.edit');
                 Route::post('/edit/{id}', [UserAdminController::class, 'update'])->name('user.update');
                 Route::get('/delete/{id}', [UserAdminController::class, 'destroy'])->name('user.destroy');
+            });
+            Route::prefix('order')->group(function () {
+                Route::get('/', [\App\Http\Controllers\OrderController::class, 'index'])->name('order.index');
+                Route::get('/detail/{id}', [\App\Http\Controllers\OrderController::class, 'show'])->name('order.show');
+                Route::get('/delete/{id}', [\App\Http\Controllers\OrderController::class, 'destroy'])->name('order.delete');
             });
         });
     });

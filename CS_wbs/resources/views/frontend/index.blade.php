@@ -38,11 +38,11 @@
 		<div class='anh-sanpham'>
 <!--<a href='<div class='sach-phantram-giamgia'><span>-10%</span></div>'>--><span>
 
-<div class='anh-sanpham-moi'><a href="/nham-nhi-tet-tan-suu-2021"><img class="img-responsive"
+<div class='anh-sanpham-moi'><a href="{{route('showbookdetail', $book->id)}}"><img class="img-responsive"
                                                                        data-src="{{ asset('images/'.$book->img) }}"
                                                                        src="{{ asset('images/'.$book->img) }}"
                                                                        width="800" height="813" alt=""/><noscript><img
-                class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/nham-nhi-tet-2021.jpg"
+                class="img-responsive" src="{{ asset('images/'.$book->img) }}"
                 width="800" height="813" alt=""/></noscript></a></div>
 			<span class='onsale c-product-item--on-sale'><div
                     class='sach-phantram-giamgia'><span>-10%</span></div></span>
@@ -56,11 +56,12 @@
 <div class='c-product-item--title-container' title="Nhâm nhi Tết Tân Sửu 2021">
     <a href="{{route('showbookdetail', $book->id)}}">{{ $book->name }}</a></div></div>
 
-	<div class='c-loop-authors-summary'>@php
+	<div class='c-loop-authors-summary'>
+        @php
             $category = $book->categories()->first();
             echo ($category->name);
         @endphp</div>
-	<div class='sanpham-giasp'><div class='gia-sell' style="color: red">{{number_format( $book->price) }}đ</div></div>
+	<div class='sanpham-giasp'><div class='gia-sell' style="color: red">{{number_format($book->price) }}đ</div></div>
 
 <div class='sanpham-giasp'><div class='gia-cost'></div></div>
 	<div class="c-product-yeuthick-mua">

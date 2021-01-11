@@ -26,7 +26,7 @@
                         <div class="alert alert-danger">{{ \Illuminate\Support\Facades\Session::get('remove_cart') }}</div>
                     @endif
                     <div id="cart-form-pane">
-                        <div style="color: red !important;" class="soluong-sanpham">Số sản phẩm: <span class="number-sanpham">{{ count(Cart::content()) }} sản phẩm</span>
+                        <div style="color: red !important;" class="soluong-sanpham">Số sản phẩm: <span class="number-sanpham">{{ Cart::count() }} sản phẩm</span>
                         </div>
                         <form action="{{ route('cart.main') }}" method="post" id="uc-cart-view-form" accept-charset="UTF-8">
                             @csrf
@@ -61,12 +61,14 @@
                                                 <td>
                                                     <a href="{{ route('showbookdetail', $cart->id) }}" title="Xem chi tiết sách" class="cart-title-product">
                                                         <strong>{{ $cart->name }}
-                                                        </strong></a></td>
+                                                        </strong>
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <ul class="text-center">
-                                                        <li><span class="line-through">{{ number_format($cart->price * $cart->qty * 1.2 ) }}đ</span>
+                                                        <li><span class="line-through">{{ number_format($cart->price*1.1) }}đ</span>
                                                         </li>
-                                                        <li><h5><strong>{{ Cart::subtotal() }}</strong></h5>
+                                                        <li><h5><strong>{{ number_format($cart->price) }}</strong></h5>
                                                         </li>
                                                         <li><span class="percent">10 %</span></li>
                                                     </ul>
@@ -95,7 +97,7 @@
                                             <td colspan="5" class="subtotal"><span><h5>Số tiền đã được giảm:</span>
                                                 {{ Cart::tax() }} đ</h5>
                                                 <span id="subtotal-title">TỔNG SỐ TIỀN: </span><span class="uc-price">
-                                                <br>{{ Cart::subtotal() }}
+                                                <br>{{ Cart::subTotal() }}
                                             </span>
                                                 <span class="price-suffixes">  đ </span></td>
                                         </tr>
@@ -119,7 +121,7 @@
                                         giỏ hàng
                                     </button>
                                     @if(\Illuminate\Support\Facades\Auth::guard('customers')->check())
-                                        <button type="submit" id="edit-checkout--2" name="op" value="Thanh toán" class="btn btn-default form-submit">
+                                        <button type="submit" id="edit-checkout--2" name="op" value="checkout" class="btn btn-default form-submit">
                                             Thanh toán
                                         </button>
                                     @else
