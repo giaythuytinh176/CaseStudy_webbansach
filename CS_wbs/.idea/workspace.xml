@@ -9,7 +9,19 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609959070.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609959076.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609989535.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609989942.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609990003.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1609993271.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/1610002689.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/customer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/customer/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/customer/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/customer/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/customer/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/customer/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/bookdetail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/bookdetail.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +299,7 @@
       <workItem from="1610151849073" duration="281000" />
       <workItem from="1610158341824" duration="18809000" />
       <workItem from="1610326318752" duration="2504000" />
-      <workItem from="1610330611436" duration="2609000" />
+      <workItem from="1610330611436" duration="7459000" />
     </task>
     <servers />
   </component>

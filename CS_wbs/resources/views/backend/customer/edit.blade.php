@@ -24,6 +24,13 @@
                                 @endif
                             </div>
                             <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email" value="{{ $customer->email }}">
+                                @if($errors->any())
+                                    <div class=" alert-danger">{{ $errors->first('email') }}</div>
+                                @endif
+                            </div>
+                            <div class="form-group">
                                 <label>Address</label>
                                 <input type="text" class="form-control" name="address" placeholder="Enter name" value="{{ $customer->address }}">
                                 @if($errors->any())
