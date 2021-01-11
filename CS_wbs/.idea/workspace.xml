@@ -9,20 +9,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorBookController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/AuthorFrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/AuthorFrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/MenuController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/frontend/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/frontend/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/blocks_master/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/blocks_master/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/order/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,14 +286,8 @@
       <workItem from="1610110862311" duration="113000" />
       <workItem from="1610151268650" duration="121000" />
       <workItem from="1610151849073" duration="281000" />
-      <workItem from="1610158341824" duration="18733000" />
-      <workItem from="1610194071583" duration="6000" />
-      <workItem from="1610194089878" duration="1000" />
-      <workItem from="1610269248116" duration="1001000" />
-      <workItem from="1610273195350" duration="272000" />
-      <workItem from="1610274102337" duration="5489000" />
-      <workItem from="1610284152112" duration="685000" />
-      <workItem from="1610321134978" duration="17000" />
+      <workItem from="1610158341824" duration="18809000" />
+      <workItem from="1610326318752" duration="2043000" />
     </task>
     <servers />
   </component>
@@ -334,37 +316,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/blocks_master/header.blade.php</url>
-          <line>828</line>
+          <line>756</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>492</line>
+          <line>466</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>342</line>
+          <line>341</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>276</line>
+          <line>275</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>38</line>
+          <line>37</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/header.blade.php</url>
-          <line>349</line>
+          <line>348</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
