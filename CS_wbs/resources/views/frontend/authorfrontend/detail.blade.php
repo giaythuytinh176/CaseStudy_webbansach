@@ -97,7 +97,7 @@
                                         })->paginate(4);
                                         if (!empty($book[0])) {
                                             foreach ($book as $item) {
-                                                @endphp
+                                    @endphp
                                     <div class="views-row views-row-2 views-row-even slick-slide slick-active"
                                          data-slick-index="1" aria-hidden="false" style="width: 244px;">
 
@@ -108,9 +108,9 @@
 		<div class="anh-sanpham">
 <!--<a href='<div class='sach-phantram-giamgia'><span>-10%</span></div>'>--><span>
 <div class="anh-sanpham-moi"><a href="{{ route('showbookdetail', $item->id) }}"><img class="img-responsive"
-                                                                            src="{{ asset('images/'.$item->img) }}"
-                                                                            width="185" height="265" alt=""
-                                                                            style="display: block;"><noscript><img
+                                                                                     src="{{ asset('images/'.$item->img) }}"
+                                                                                     width="185" height="265" alt=""
+                                                                                     style="display: block;"><noscript><img
                 class="img-responsive"
                 src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/bi-kip-khien-ban-thich-doc-sach_bia.jpg?itok=iB_besSA"
                 width="185" height="265" alt=""/></noscript></a></div>
@@ -146,19 +146,18 @@
         class="uc_out_of_stock_html"></div>
 </div></div></form></div>
 
-</div>
 	</div>
 </div></span></div>
                                     </div>
 
                                     @php
-                                                //$arr_book[] = '<img src="'.asset('images/'.$item->img).'"><a href="'.route('showbookdetail', $item->id).'">'.$item->name.'</a>';
-                                            }
-                                            //echo implode("<br/>", $arr_book);
-                                        }
-                                        else {
-                                            echo "No book";
-                                        }
+                                        //$arr_book[] = '<img src="'.asset('images/'.$item->img).'"><a href="'.route('showbookdetail', $item->id).'">'.$item->name.'</a>';
+                                    }
+                                    //echo implode("<br/>", $arr_book);
+                                }
+                                else {
+                                    echo "No book";
+                                }
                                     @endphp
                                 </div>
                             </div>

@@ -24,7 +24,7 @@
 	<div class="hovereffect">
 		<div class="anh-sanpham">
 <span>
-<div class="anh-sanpham-moi"><a href="/vo-chong-lao-twit"><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/vo-chong-lao-twwit.jpg?itok=THfNSW3O" width="185" height="283" alt="" style="display: block;"><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/vo-chong-lao-twwit.jpg?itok=THfNSW3O" width="185" height="283" alt=""/></noscript></a></div>
+<div class="anh-sanpham-moi"><a href="/vo-chong-lao-twit"><img class="img-responsive" src="{{ asset('images/'.$dt->img) }}" width="185" height="283" alt="" style="display: block;"><noscript><img class="img-responsive" src="https://nxbkimdong.com.vn/sites/default/files/styles/158_auto/public/vo-chong-lao-twwit.jpg?itok=THfNSW3O" width="185" height="283" alt=""/></noscript></a></div>
 			<span class="onsale c-product-item--on-sale"><div class="sach-phantram-giamgia"><span>-10%</span></div></span>
 </span>
         </div>

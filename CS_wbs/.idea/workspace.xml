@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/authorfrontend/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/authorfrontend/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/search.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +287,8 @@
       <workItem from="1610151268650" duration="121000" />
       <workItem from="1610151849073" duration="281000" />
       <workItem from="1610158341824" duration="18809000" />
-      <workItem from="1610326318752" duration="2043000" />
+      <workItem from="1610326318752" duration="2504000" />
+      <workItem from="1610330611436" duration="1960000" />
     </task>
     <servers />
   </component>
