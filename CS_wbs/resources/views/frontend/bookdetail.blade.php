@@ -112,13 +112,12 @@
                                             <div class="gia-sell">Giá bán: <span class="uc-price">{{ number_format($bookdetail->price) }}đ</span>
 
                                             </div>
-                                            <div class="form-actions form-wrapper form-group" id="edit-actions--61"><button class="node-add-to-cart ajax-cart-submit-form-button btn btn-default form-submit ajax-cart-processed" type="submit" id="edit-submit-714767" name="op" value="Mua ngay">Thêm vào giỏ hàng</button><div class="uc_out_of_stock_html">
-
-                                                </div>
-                                                <form action="/action_page.php">
+                                            <div class="form-actions form-wrapper form-group" id="edit-actions--61">
+                                                <form action="{{ route('cart.add.withquantity.store', $bookdetail->id) }}" method="post">
+                                                    @csrf
                                                     <label for="quantity">Số lượng</label>
-                                                    <input type="number" id="quantity" name="quantity" min="1" max="100">
-                                                    <button title="Mua ngay" class="btn btn-danger btn-buy">MUA NGAY</button>
+                                                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
+                                                    <button type="submit" title="Mua ngay">MUA NGAY</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -126,35 +125,6 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div class="add-to-cart foo">
-                            <form class="ajax-cart-submit-form uc-out-stock-processed"
-                                  action="/grimgar-ao-anh-va-tro-tan-tap-9-tang-01-bookmark-05-bao-li-xi-ban-gioi-han"
-                                  method="post" id="uc-product-add-to-cart-form-680607" accept-charset="UTF-8">
-                                <div><input type="hidden" name="form_build_id"
-                                            value="form-6sZR2eYxkUoFbf4dcY1hzKmvyAXG7P3VLNfJztBBsLM">
-                                    <input type="hidden" name="form_id" value="uc_product_add_to_cart_form_680607">
-                                    <input type="hidden" name="product-nid" value="680607">
-                                    <div class="form-actions form-wrapper form-group" id="edit-actions--45">
-
-                                        {{--                                    <button--}}
-                                        {{--                                        class="node-add-to-cart ajax-cart-submit-form-button btn btn-default form-submit ajax-cart-processed"--}}
-                                        {{--                                        type="submit" id="edit-submit-680607" name="op" value="Mua ngay"--}}
-                                        {{--                                        style="display: none;">Thêm vào giỏ hàng--}}
-                                        {{--                                    </button>--}}
-                                        <div class="uc_out_of_stock_html"><span class="out-of-stock het-hang"><i
-                                                    class="fa fa-shopping-cart" title="Hết hàng"></i></span></div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="flag-outer flag-outer-sach-yeuthich">
-<span class="flag-wrapper flag-sach-yeuthich flag-sach-yeuthich-680607">
-      <span class="flag flag-action flag-link-toggle"><a
-              href="https://nxbkimdong.com.vn/modal_forms/nojs/login?destination=node/680607"
-              class="ctools-use-modal ctools-modal-modal-popup-small init-modal-forms-login-processed ctools-use-modal-processed"></a></span>
-    </span>
                         </div>
                         <div class="field field-name-field-news-chiase field-type-markup field-label-hidden">
                             <div class="field-items">
@@ -247,17 +217,20 @@
 	<div class="sanpham-giasp"><div class="gia-sell" style="color: red">{{ $val->price }}đ</div></div>
 <div class="sanpham-giasp"><div class="gia-cost"></div></div>
 	<div class="c-product-yeuthick-mua">
-		<div class="sanpham-mua"><form class="ajax-cart-submit-form uc-out-stock-processed" action="/grimgar-ao-anh-va-tro-tan-tap-9-tang-01-bookmark-05-bao-li-xi-ban-gioi-han" method="post" id="uc-catalog-buy-it-now-form-580452" accept-charset="UTF-8"><div><input type="hidden" name="nid" value="580452" tabindex="0">
-<input type="hidden" name="form_build_id" value="form-Af1_9xm3Kna0u1yDP8g-Xj0lGKGFrrdEJOLt5Lvjxtw" tabindex="0">
-<input type="hidden" name="form_id" value="uc_catalog_buy_it_now_form_580452" tabindex="0">
-<input type="hidden" name="product-nid" value="580452" tabindex="0">
-<div class="form-actions form-wrapper form-group" id="edit-actions--22"><div class="uc-out-of-stock-instock" style="display: block;">17</div><button title="Đặt hàng" class="list-add-to-cart ajax-cart-submit-form-button btn btn-default form-submit ajax-cart-processed" type="submit" id="edit-submit-580452" name="op" value="Mua ngay" tabindex="0"></button><div class="uc_out_of_stock_html"></div>
+		<div class="sanpham-mua"><form class="ajax-cart-submit-form uc-out-stock-processed" action="{{ route('cart.add.store', $val->id) }}"
+                                       method="get" id="uc-catalog-buy-it-now-form-5976" accept-charset="UTF-8"><div>
+<div class="form-actions form-wrapper form-group" id="edit-actions--2"><div class="uc-out-of-stock-instock"
+                                                                            style="display: block;">56</div>
+    <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+</svg>
+              </button>
+    <div
+        class="uc_out_of_stock_html"></div>
 </div></div></form></div>
-		<div class="sanpham-yeuthich"><span class="flag-wrapper flag-sach-yeuthich flag-sach-yeuthich-580452">
-      <span class="flag flag-action flag-link-toggle"><a href="https://nxbkimdong.com.vn/modal_forms/nojs/login?destination=node/680607" class="ctools-use-modal ctools-modal-modal-popup-small init-modal-forms-login-processed ctools-use-modal-processed" tabindex="0"></a></span>
-    </span>
+
 </div>
-	</div>
 </div></span></div>
                     </div>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <title>Đăng ký người dùng</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/login/assets/css/style.css') }}">
@@ -23,16 +23,16 @@
             <input type="password" class="form-control item" id="password" placeholder="Password" name="password">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="first_name" placeholder="Firstname" name="first_name" >
+            <input type="text" class="form-control item" id="first_name" placeholder="Firstname" name="first_name">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="last_name" placeholder="Lastname" name="last_name" >
+            <input type="text" class="form-control item" id="last_name" placeholder="Lastname" name="last_name">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="address" placeholder="Address" name="address" >
+            <input type="text" class="form-control item" id="address" placeholder="Address" name="address">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control item" id="phone" placeholder="Phone" name="phone" >
+            <input type="text" class="form-control item" id="phone" placeholder="Phone" name="phone">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-block create-account">Create Account</button>
@@ -40,9 +40,9 @@
         <div class="error-message">
             @if($errors->any())
                 @foreach($errors->all() as $nameError)
-                <p style="color: red">{{$nameError}}</p>
+                    <p style="color: red">{{$nameError}}</p>
                 @endforeach
-                @endif
+            @endif
 
         </div>
         <p style='color:green'>{{ (isset($success)) ? $success : '' }}</p>

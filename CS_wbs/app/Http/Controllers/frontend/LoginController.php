@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
-
-    public function showLogin()
+    public function showLogin(Request $request)
     {
         return view('frontend.login.login');
+    }
+
+    public function logout()
+    {
+        Auth::guard('customers')->logout();
+        return redirect()->route('show.home');
     }
 
     public function checkLogin(Request $request)
@@ -21,14 +26,16 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
-        $rememberme = $request->rememberme == 'on';
-        if (Auth::attempt($auth, $rememberme)) {
+        $rememberme = 'on';
+        if (Auth::guard('customers')->attempt($auth, $rememberme)) {
             $request->session()->regenerate();
+            if (str_contains($request->headers->get('referer'), 'url=cart')) {
+                return redirect()->route('cart.index');
+            }
             return redirect()->route('show.home');
         } else {
             Session::flash('error', 'Email or password is incorrect');
             return redirect()->route('login.show');
-
         }
     }
 }
