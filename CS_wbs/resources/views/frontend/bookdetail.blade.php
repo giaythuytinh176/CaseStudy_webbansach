@@ -73,6 +73,7 @@
                                             echo implode("<br/>", $arr_author);
 
 
+
                                         @endphp
                                     </div>
 
@@ -97,7 +98,8 @@
                                 class="field field-name-field-product-phathanh field-type-datetime field-label-inline clearfix">
                                 <div class="field-label">Ngày phát hành:&nbsp;</div>
                                 <div class="field-items">
-                                    <div class="field-item even"><span class="date-display-single">{{$bookdetail->release}}</span></div>
+                                    <div class="field-item even">
+                                        <span class="date-display-single">{{$bookdetail->release}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +109,8 @@
                                     <div class="field-item even">
                                         <div class="sanpham-giasp clearfix">
                                             <div class="gia-bia"></div>
-                                            <div class="gia-cost">Giá bìa: <span class="uc-price">{{ number_format($bookdetail->price*1.1) }}đ</span></div>
+                                            <div class="gia-cost">Giá bìa: <span class="uc-price">{{ number_format($bookdetail->price*1.1) }}đ</span>
+                                            </div>
                                             <div class="gia-ban"></div>
                                             <div class="gia-sell">Giá bán: <span class="uc-price">{{ number_format($bookdetail->price) }}đ</span>
 
@@ -166,7 +169,8 @@
                     </div>
                     <div class="field field-name-field-product-gioithieu field-type-markup field-label-hidden">
                         <div class="field-items">
-                            <div class="field-item even"><h4 class="block-title">Giới thiệu tác phẩm</h4>{!!$bookdetail->description!!}</div>
+                            <div class="field-item even"><h4 class="block-title">Giới thiệu tác
+                                    phẩm</h4>{!!$bookdetail->description!!}</div>
                         </div>
                     </div>
                     <div class="field field-name-field-product-affiliate field-type-markup field-label-hidden">
@@ -190,9 +194,24 @@
                 </button>
                 <div aria-live="polite" class="slick-list draggable">
                     @php
+                    $list_book_id = [];
                         foreach ($list_author_id as $author_id) {
-                            $relatedbook =\App\Models\Author::find($author_id)->books()->get();;
+                            $relatedbook =\App\Models\Author::find($author_id)->books()->get();
                             foreach ($relatedbook as $val){
+                                if ($val->id == $bookdetail->id) {
+                                    continue;
+                                }
+                                $list_book_id[] = $val->id;
+
+                       }
+                    }
+
+                    $list_book_id = array_unique($list_book_id);
+                    $list_book_id = array_values($list_book_id);
+
+                    foreach ($list_book_id as $item) {
+                            $val = \App\Models\Book::findOrFail($item);
+
                     @endphp
 
                     <div class="views-row views-row-2 views-row-even slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 244px;" tabindex="-1" role="option" aria-describedby="slick-slide01">
@@ -214,7 +233,7 @@
 </div>
 <div class="c-product-item--title-container" title="{{ $val->name }}
     "><a href="{{ route('showbookdetail', $val->id) }}" tabindex="0">{{ $val->name }}</a></div></div>
-	<div class="sanpham-giasp"><div class="gia-sell" style="color: red">{{ $val->price }}đ</div></div>
+	<div class="sanpham-giasp"><div class="gia-sell" style="color: red">{{ number_format($val->price) }} đ</div></div>
 <div class="sanpham-giasp"><div class="gia-cost"></div></div>
 	<div class="c-product-yeuthick-mua">
 		<div class="sanpham-mua"><form class="ajax-cart-submit-form uc-out-stock-processed" action="{{ route('cart.add.store', $val->id) }}"
@@ -236,9 +255,7 @@
 
                     @php
 
-
                         }
-                    }
 
                     @endphp
 
