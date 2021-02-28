@@ -17,12 +17,12 @@
                         <table class="table table-bordered" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th style="width: 5%">#</th>
+                                <th style="width: 3%">#</th>
                                 <th>{!! __('language.BookName') !!}</th>
                                 <th>{!! __('language.nameAuthor') !!}</th>
-                                <th>{!! __('language.category') !!}</th>
-                                <th style="width: 30%">{!! __('language.ImageBook') !!}</th>
-                                <th style="width: 10%"></th>
+                                <th style="width: 20%">{!! __('language.category') !!}</th>
+                                <th style="width: 20%">{!! __('language.ImageBook') !!}</th>
+                                <th style="width: 15%"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,11 +38,11 @@
                                             $book_id = $val->id;
                                             $book = \App\Models\Author::whereHas('books', function (\Illuminate\Database\Eloquent\Builder $q) use ($book_id) {
                                                 $q->where("books.id", "=", $book_id);
-                                            })->get();
+                                            })->take(2)->get();
                                             foreach ($book as $item) {
                                                 $arr_book[] = '<a href="'.route('author.detail', $item->id).'">'.$item->name.'</a>';
                                             }
-                                            echo implode("<br/><br/>", $arr_book);
+                                            echo implode("<br/><br/>", $arr_book) . " ...";
                                         @endphp
                                     </td>
                                     <td>

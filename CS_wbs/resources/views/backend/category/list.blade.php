@@ -36,7 +36,7 @@
                                                     {{ $category->name }}
                                                     @php
                                                         $total_book = \App\Models\Category::find($category->id)->books()->count();
-                                                        echo "[$total_book]";
+                                                        echo "[$total_book books]";
                                                     @endphp
                                                 </a>
                                             </td>
