@@ -21,7 +21,6 @@
                                 <th>{!! __('language.nameAuthor') !!}</th>
                                 <th>{!! __('language.ImageAuthor') !!}</th>
                                 <th>Action</th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -33,12 +32,12 @@
                                             {{$val->name}}
                                             @php
                                             $total_book = \App\Models\Author::find($val->id)->books()->count();
-                                            echo "[$total_book]";
+                                            echo "[$total_book books]";
                                             @endphp
                                         </a>
                                     </td>
                                     <td>
-                                        <img class="img-thumbnail img-fluid" src="{{ asset('images/'.$val->image) }} " alt="">
+                                        <img class="img-thumbnail img-fluid" style="display: block !important; max-width: 25% !important; height: auto !important" src="{{ asset('images/'.$val->image) }} " alt="">
                                     </td>
                                     <td>
                                         <a href="{{route('author.edit',['id'=> $val->id])}}" class="btn btn-primary">Edit</a>
